@@ -1,0 +1,46 @@
+# MegaLinter configuration file for NotepadMac
+# Reference: https://megalinter.io/configuration/
+
+# --- GENERAL CONFIGURATION ---
+APPLY_FIXES: none
+VALIDATE_ALL_CODEBASE: true
+DEFAULT_BRANCH: main
+
+# Exclude generated artifacts, build outputs, and vendor C/C++ engine sources (Scintilla & Lua)
+FILTER_REGEX_EXCLUDE: '(\.build/.*|build/.*|Sources/CLua/.*|Sources/ScintillaCocoa/.*|\.git/.*|__pycache__/.*|Resources/AppIcon\.iconset/.*)'
+
+# --- ACTIVATED LANGUAGES & FORMATS ---
+ENABLE_LINTERS:
+  # Swift
+  - SWIFT_SWIFTLINT
+  # Shell / Bash
+  - BASH_SHELLCHECK
+  - BASH_SHFMT
+  # GitHub Actions
+  - ACTION_ACTIONLINT
+  # Markdown & Documentation
+  - MARKDOWN_MARKDOWNLINT
+  # YAML
+  - YAML_YAMLLINT
+  # Python
+  - PYTHON_FLAKE8
+  - PYTHON_BLACK
+  # Secrets & Security Auditing
+  - REPOSITORY_GITLEAKS
+  - REPOSITORY_TRIVY
+
+# --- LINTER SPECIFIC RULES ---
+MARKDOWN_MARKDOWNLINT_CONFIG_FILE: .markdownlint.json
+YAML_YAMLLINT_CONFIG_FILE: .yamllint.yml
+SWIFT_SWIFTLINT_CONFIG_FILE: .swiftlint.yml
+SWIFT_SWIFTLINT_COMMAND_REMOVE_ARGUMENTS: "--strict"
+SWIFT_SWIFTLINT_ARGUMENTS: "--allow-zero-lintable-files"
+SWIFT_SWIFTLINT_DISABLE_ERRORS: true
+REPOSITORY_GITLEAKS_CONFIG_FILE: .gitleaks.toml
+BASH_SHFMT_ARGUMENTS: "-i 2 -ci"
+BASH_SHELLCHECK_ARGUMENTS: "-s bash"
+
+# Output and reporting
+PRINT_ALPACA: false
+SHOW_ELAPSED_TIME: true
+FILEIO_REPORTER: false

@@ -1,0 +1,10 @@
+title = "Gitleaks Configuration for NotepadMac"
+
+[allowlist]
+description = "Ignore source and vendor paths with false-positive tokens"
+paths = [
+    '''Sources/CLua/.*''',
+    '''Sources/ScintillaCocoa/.*''',
+    '''Sources/NotepadMac/Editor/ScintillaEditorCoordinator\+Search\.swift''',
+    '''Tests/NotepadMacTests/.*'''
+]

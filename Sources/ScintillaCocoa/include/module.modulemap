@@ -1,0 +1,4 @@
+module ScintillaCocoa {
+    header "ScintillaBridge.h"
+    export *
+}

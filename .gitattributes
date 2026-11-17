@@ -1,0 +1,4 @@
+* text=auto
+*.cxx text eol=crlf
+*.h text eol=crlf
+*.mm text eol=crlf

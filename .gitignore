@@ -1,0 +1,17 @@
+.DS_Store
+.build/
+Packages/
+*.xcodeproj
+*.xcworkspace
+xcuserdata/
+DerivedData/
+.swiftpm/
+build/
+dist/
+*.app
+*.dSYM
+*.dmg
+.vscode/
+.idea/
+__pycache__/
+*.pyc

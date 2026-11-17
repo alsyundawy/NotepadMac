@@ -1,0 +1,1057 @@
+[
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexPowerShell.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexPowerShell.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexPowerShell.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexCLW.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexCLW.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexCLW.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexModula.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexModula.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexModula.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexTroff.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexTroff.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexTroff.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexGDScript.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexGDScript.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexGDScript.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexHollywood.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexHollywood.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexHollywood.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexKVIrc.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexKVIrc.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexKVIrc.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexFortran.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexFortran.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexFortran.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexNull.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexNull.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexNull.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexInno.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexInno.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexInno.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexMSSQL.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexMSSQL.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexMSSQL.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexCaml.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexCaml.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexCaml.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexA68k.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexA68k.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexA68k.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexHaskell.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexHaskell.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexHaskell.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexYAML.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexYAML.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexYAML.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexLaTeX.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexLaTeX.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexLaTeX.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexTAL.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexTAL.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexTAL.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexMarkdown.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexMarkdown.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexMarkdown.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexProgress.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexProgress.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexProgress.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexProps.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexProps.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexProps.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexECL.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexECL.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexECL.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexAU3.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexAU3.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexAU3.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexJulia.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexJulia.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexJulia.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexSpice.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexSpice.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexSpice.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexHTML.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexHTML.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexHTML.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexBasic.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexBasic.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexBasic.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexFlagship.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexFlagship.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexFlagship.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexPLM.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexPLM.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexPLM.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexPOV.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexPOV.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexPOV.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexGAP.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexGAP.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexGAP.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexBibTeX.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexBibTeX.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexBibTeX.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexSML.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexSML.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexSML.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexNsis.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexNsis.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexNsis.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexAPDL.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexAPDL.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexAPDL.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexMySQL.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexMySQL.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexMySQL.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexMPT.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexMPT.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexMPT.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexPO.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexPO.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexPO.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexAbaqus.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexAbaqus.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexAbaqus.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexCIL.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexCIL.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexCIL.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexCOBOL.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexCOBOL.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexCOBOL.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexCoffeeScript.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexCoffeeScript.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexCoffeeScript.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexNimrod.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexNimrod.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexNimrod.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexRaku.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexRaku.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexRaku.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexSINEX.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexSINEX.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexSINEX.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexTADS3.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexTADS3.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexTADS3.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexTOML.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexTOML.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexTOML.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexSearchResult.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexSearchResult.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexSearchResult.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexTACL.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexTACL.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexTACL.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexRegistry.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexRegistry.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexRegistry.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexX12.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexX12.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexX12.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexStata.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexStata.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexStata.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexTCMD.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexTCMD.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexTCMD.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexDart.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexDart.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexDart.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexCmake.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexCmake.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexCmake.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexDMIS.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexDMIS.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexDMIS.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexCSS.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexCSS.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexCSS.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexVerilog.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexVerilog.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexVerilog.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexSTTXT.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexSTTXT.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexSTTXT.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexKix.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexKix.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexKix.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexSmalltalk.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexSmalltalk.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexSmalltalk.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexMMIXAL.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexMMIXAL.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexMMIXAL.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexSorcus.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexSorcus.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexSorcus.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexTxt2tags.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexTxt2tags.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexTxt2tags.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexBaan.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexBaan.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexBaan.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexPython.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexPython.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexPython.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexLout.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexLout.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexLout.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexDataflex.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexDataflex.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexDataflex.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexAsn1.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexAsn1.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexAsn1.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexZig.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexZig.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexZig.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexPS.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexPS.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexPS.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexCPP.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexCPP.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexCPP.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexAda.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexAda.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexAda.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexSAS.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexSAS.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexSAS.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexErrorList.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexErrorList.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexErrorList.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexLua.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexLua.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexLua.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexMaxima.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexMaxima.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexMaxima.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexAsciidoc.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexAsciidoc.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexAsciidoc.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexPerl.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexPerl.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexPerl.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexVHDL.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexVHDL.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexVHDL.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexAsm.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexAsm.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexAsm.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexCrontab.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexCrontab.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexCrontab.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexJSON.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexJSON.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexJSON.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexTeX.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexTeX.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexTeX.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexRuby.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexRuby.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexRuby.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexDiff.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexDiff.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexDiff.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexEiffel.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexEiffel.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexEiffel.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexErlang.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexErlang.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexErlang.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexEScript.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexEScript.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexEScript.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexPB.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexPB.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexPB.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexIndent.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexIndent.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexIndent.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexMake.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexMake.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexMake.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexASY.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexASY.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexASY.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexGui4Cli.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexGui4Cli.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexGui4Cli.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexVisualProlog.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexVisualProlog.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexVisualProlog.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexRust.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexRust.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexRust.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexAVE.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexAVE.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexAVE.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexRebol.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexRebol.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexRebol.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexSpecman.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexSpecman.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexSpecman.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexMatlab.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexMatlab.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexMatlab.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexEscSeq.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexEscSeq.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexEscSeq.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexAVS.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexAVS.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexAVS.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexOScript.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexOScript.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexOScript.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexForth.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexForth.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexForth.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexBash.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexBash.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexBash.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexMetapost.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexMetapost.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexMetapost.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexBatch.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexBatch.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexBatch.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexOpal.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexOpal.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexOpal.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexLisp.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexLisp.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexLisp.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexConf.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexConf.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexConf.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexPascal.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexPascal.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexPascal.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexHex.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexHex.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexHex.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexObjC.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexObjC.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexObjC.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexFSharp.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexFSharp.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexFSharp.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexBullant.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexBullant.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexBullant.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexVB.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexVB.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexVB.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexCsound.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexCsound.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexCsound.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexDMAP.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexDMAP.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexDMAP.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexTCL.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexTCL.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexTCL.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexPowerPro.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexPowerPro.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexPowerPro.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexNix.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexNix.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexNix.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexNim.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexNim.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexNim.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexScriptol.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexScriptol.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexScriptol.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexD.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexD.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexD.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexSQL.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexSQL.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexSQL.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexUser.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexUser.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexUser.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexEDIFACT.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexEDIFACT.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexEDIFACT.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexR.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexR.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexR.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexMagik.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexMagik.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexers/LexMagik.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib/DefaultLexer.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib/DefaultLexer.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib/DefaultLexer.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib/LexerBase.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib/LexerBase.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib/LexerBase.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib/InList.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib/InList.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib/InList.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib/PropSetSimple.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib/PropSetSimple.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib/PropSetSimple.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib/LexAccessor.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib/LexAccessor.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib/LexAccessor.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib/Accessor.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib/Accessor.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib/Accessor.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib/LexerSimple.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib/LexerSimple.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib/LexerSimple.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib/LexerModule.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib/LexerModule.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib/LexerModule.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib/CharacterCategory.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib/CharacterCategory.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib/CharacterCategory.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib/CharacterSet.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib/CharacterSet.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib/CharacterSet.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib/StyleContext.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib/StyleContext.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib/StyleContext.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib/WordList.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib/WordList.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib/WordList.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/src/Lexilla.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/src/Lexilla.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/src/Lexilla.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/cocoa/ScintillaCocoa.mm -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/cocoa/ScintillaCocoa.mm.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/cocoa/ScintillaCocoa.mm"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/cocoa/InfoBar.mm -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/cocoa/InfoBar.mm.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/cocoa/InfoBar.mm"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/cocoa/PlatCocoa.mm -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/cocoa/PlatCocoa.mm.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/cocoa/PlatCocoa.mm"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/cocoa/ScintillaView.mm -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/cocoa/ScintillaView.mm.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/cocoa/ScintillaView.mm"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/cocoa/ScintillaBridge.mm -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/cocoa/ScintillaBridge.mm.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/cocoa/ScintillaBridge.mm"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/Selection.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/Selection.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/Selection.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/Indicator.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/Indicator.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/Indicator.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/KeyMap.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/KeyMap.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/KeyMap.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/ViewStyle.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/ViewStyle.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/ViewStyle.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/ContractionState.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/ContractionState.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/ContractionState.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/Document.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/Document.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/Document.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/DBCS.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/DBCS.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/DBCS.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/Editor.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/Editor.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/Editor.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/RunStyles.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/RunStyles.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/RunStyles.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/CallTip.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/CallTip.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/CallTip.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/RESearch.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/RESearch.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/RESearch.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/EditModel.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/EditModel.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/EditModel.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/CaseFolder.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/CaseFolder.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/CaseFolder.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/ScintillaBase.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/ScintillaBase.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/ScintillaBase.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/PositionCache.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/PositionCache.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/PositionCache.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/EditView.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/EditView.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/EditView.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/CaseConvert.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/CaseConvert.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/CaseConvert.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/MarginView.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/MarginView.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/MarginView.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/UndoHistory.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/UndoHistory.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/UndoHistory.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/PerLine.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/PerLine.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/PerLine.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/CellBuffer.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/CellBuffer.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/CellBuffer.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/ChangeHistory.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/ChangeHistory.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/ChangeHistory.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/CharacterType.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/CharacterType.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/CharacterType.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/Style.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/Style.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/Style.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/XPM.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/XPM.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/XPM.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/LineMarker.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/LineMarker.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/LineMarker.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/UniqueString.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/UniqueString.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/UniqueString.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/Decoration.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/Decoration.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/Decoration.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/CharacterCategoryMap.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/CharacterCategoryMap.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/CharacterCategoryMap.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/Geometry.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/Geometry.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/Geometry.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/UniConversion.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/UniConversion.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/UniConversion.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/CharClassify.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/CharClassify.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/CharClassify.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang++ -std=c++17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/AutoComplete.cxx -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/AutoComplete.cxx.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src/AutoComplete.cxx"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang -std=c17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lauxlib.c -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lauxlib.c.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lauxlib.c"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang -std=c17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/liolib.c -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/liolib.c.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/liolib.c"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang -std=c17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lopcodes.c -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lopcodes.c.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lopcodes.c"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang -std=c17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lstate.c -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lstate.c.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lstate.c"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang -std=c17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lobject.c -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lobject.c.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lobject.c"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang -std=c17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lmathlib.c -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lmathlib.c.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lmathlib.c"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang -std=c17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/loadlib.c -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/loadlib.c.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/loadlib.c"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang -std=c17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lvm.c -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lvm.c.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lvm.c"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang -std=c17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lfunc.c -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lfunc.c.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lfunc.c"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang -std=c17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lstrlib.c -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lstrlib.c.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lstrlib.c"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang -std=c17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/linit.c -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/linit.c.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/linit.c"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang -std=c17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lstring.c -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lstring.c.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lstring.c"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang -std=c17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lundump.c -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lundump.c.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lundump.c"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang -std=c17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lctype.c -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lctype.c.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lctype.c"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang -std=c17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/ltable.c -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/ltable.c.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/ltable.c"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang -std=c17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/ldump.c -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/ldump.c.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/ldump.c"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang -std=c17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/loslib.c -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/loslib.c.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/loslib.c"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang -std=c17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lgc.c -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lgc.c.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lgc.c"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang -std=c17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lzio.c -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lzio.c.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lzio.c"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang -std=c17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/ldblib.c -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/ldblib.c.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/ldblib.c"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang -std=c17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lutf8lib.c -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lutf8lib.c.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lutf8lib.c"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang -std=c17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lmem.c -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lmem.c.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lmem.c"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang -std=c17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lcorolib.c -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lcorolib.c.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lcorolib.c"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang -std=c17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lcode.c -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lcode.c.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lcode.c"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang -std=c17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/ltablib.c -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/ltablib.c.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/ltablib.c"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang -std=c17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lapi.c -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lapi.c.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lapi.c"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang -std=c17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lbaselib.c -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lbaselib.c.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lbaselib.c"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang -std=c17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/ldebug.c -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/ldebug.c.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/ldebug.c"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang -std=c17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lparser.c -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lparser.c.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/lparser.c"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang -std=c17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/llex.c -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/llex.c.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/llex.c"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang -std=c17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/ltm.c -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/ltm.c.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/ltm.c"
+  },
+  {
+    "directory": "/Users/alsyundawy/Downloads/GitHub/NotepadMac",
+    "command": "/usr/local/opt/llvm/bin/clang -std=c17 -DDEBUG=1 -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/src -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/include -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/ScintillaCocoa/lexilla/lexlib -I /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/ldo.c -o /Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/ldo.c.o",
+    "file": "/Users/alsyundawy/Downloads/GitHub/NotepadMac/Sources/CLua/ldo.c"
+  }
+]

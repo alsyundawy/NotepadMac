@@ -523,5 +523,71 @@ final class NotepadMacTests: XCTestCase {
         XCTAssertTrue(docMgr.isPurgeOnSearch)
         XCTAssertEqual(docMgr.findDialogTab, 2)
     }
+
+    func testHtmlMinifyAndFormat() {
+        let raw = "<div>\n  <!-- comment -->\n  <p>Hello   World</p>\n</div>"
+        let minified = DeveloperTools.minifyHtml(raw).result
+        XCTAssertFalse(minified.contains("<!-- comment -->"))
+        XCTAssertTrue(minified.contains("<p>Hello World</p>"))
+
+        let formatted = DeveloperTools.formatHtml(minified).result
+        XCTAssertTrue(formatted.contains("<p>"))
+    }
+
+    func testCssMinifyAndFormat() {
+        let raw = "body {\n  color: red;\n  margin: 0px;\n}"
+        let minified = DeveloperTools.minifyCss(raw).result
+        XCTAssertEqual(minified, "body{color:red;margin:0px}")
+
+        let formatted = DeveloperTools.formatCss(minified).result
+        XCTAssertTrue(formatted.contains("body {"))
+        XCTAssertTrue(formatted.contains("color: red;"))
+    }
+
+    func testJsMinifyAndFormat() {
+        let raw = "function add(a, b) {\n  // add two numbers\n  return a + b;\n}"
+        let minified = DeveloperTools.minifyJs(raw).result
+        XCTAssertFalse(minified.contains("// add two numbers"))
+        XCTAssertTrue(minified.contains("return a+b;"))
+
+        let formatted = DeveloperTools.formatJs(minified).result
+        XCTAssertTrue(formatted.contains("function add(a, b)"))
+    }
+
+    func testHtmlEncryptAndDecrypt() {
+        let rawHtml = "<div class=\"hero\"><h1>NotepadMac</h1><p>Test</p></div>"
+        // Test JS escape encryption & decryption
+        let encRes = DeveloperTools.encryptHtml(rawHtml, method: .javascriptEscape)
+        XCTAssertNil(encRes.error)
+        XCTAssertTrue(encRes.result.contains("unescape("))
+
+        let decRes = DeveloperTools.decryptHtml(encRes.result)
+        XCTAssertNil(decRes.error)
+        XCTAssertEqual(decRes.result, rawHtml)
+
+        // Test Base64 obfuscation & decryption
+        let b64Res = DeveloperTools.encryptHtml(rawHtml, method: .base64)
+        XCTAssertNil(b64Res.error)
+        XCTAssertTrue(b64Res.result.contains("window.atob("))
+
+        let decB64Res = DeveloperTools.decryptHtml(b64Res.result)
+        XCTAssertNil(decB64Res.error)
+        XCTAssertEqual(decB64Res.result, rawHtml)
+    }
+
+    func testFileHashComputation() {
+        let tempDir = FileManager.default.temporaryDirectory
+        let tempFile = tempDir.appendingPathComponent("test_hash_\(UUID().uuidString).txt")
+        let content = "NotepadMac Universal Test Content 2026"
+        try? content.data(using: .utf8)?.write(to: tempFile)
+
+        defer {
+            try? FileManager.default.removeItem(at: tempFile)
+        }
+
+        let sha256 = try? HashTools.computeFileHash(at: tempFile, algorithm: .sha256)
+        XCTAssertNotNil(sha256)
+        XCTAssertEqual(sha256, HashTools.computeHash(content, algorithm: .sha256))
+    }
 }
 #endif

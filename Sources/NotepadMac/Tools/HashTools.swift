@@ -42,6 +42,11 @@ public enum HashTools {
         return computeHash(data, algorithm: algorithm)
     }
 
+    public static func computeFileHash(at url: URL, algorithm: HashAlgorithm) throws -> String {
+        let data = try Data(contentsOf: url, options: .mappedIfSafe)
+        return computeHash(data, algorithm: algorithm)
+    }
+
     public static func computeHash(_ data: Data, algorithm: HashAlgorithm) -> String {
         switch algorithm {
         case .md5:

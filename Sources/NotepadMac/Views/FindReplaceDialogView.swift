@@ -71,9 +71,10 @@ public struct FindReplaceDialogView: View {
             Button(action: {
                 documentManager.isFindReplaceDialogPresented = false
             }) {
-                Image(systemName: "xmark.circle.fill")
+                Image(systemName: "xmark")
                     .foregroundColor(.secondary)
-                    .font(.system(size: 16))
+                    .font(.system(size: 13, weight: .semibold))
+                    .frame(width: 20, height: 20)
             }
             .buttonStyle(PlainButtonStyle())
             .keyboardShortcut(.cancelAction)
@@ -86,9 +87,9 @@ public struct FindReplaceDialogView: View {
 
     private var headerIcon: String {
         switch documentManager.findDialogTab {
-        case 1: return "arrow.triangle.2.circlepath.circle.fill"
-        case 2: return "bookmark.circle.fill"
-        default: return "magnifyingglass.circle.fill"
+        case 1: return "arrow.triangle.2.circlepath"
+        case 2: return "bookmark.fill"
+        default: return "magnifyingglass"
         }
     }
 
@@ -166,7 +167,7 @@ public struct FindReplaceDialogView: View {
 
                     if !documentManager.searchQuery.isEmpty {
                         Button(action: { documentManager.searchQuery = "" }) {
-                            Image(systemName: "xmark.circle.fill")
+                            Image(systemName: "xmark.circle")
                                 .font(.system(size: 12))
                                 .foregroundColor(.secondary)
                         }
@@ -208,7 +209,7 @@ public struct FindReplaceDialogView: View {
 
                         if !documentManager.replaceQuery.isEmpty {
                             Button(action: { documentManager.replaceQuery = "" }) {
-                                Image(systemName: "xmark.circle.fill")
+                                Image(systemName: "xmark.circle")
                                     .font(.system(size: 12))
                                     .foregroundColor(.secondary)
                             }
@@ -448,7 +449,7 @@ public struct FindReplaceDialogView: View {
             .buttonStyle(ProminentButtonStyle())
             .keyboardShortcut(.defaultAction)
 
-            DialogActionSecondaryButton(title: loc("replace_all"), icon: "arrow.triangle.2.circlepath.circle.fill") {
+            DialogActionSecondaryButton(title: loc("replace_all"), icon: "arrow.triangle.2.circlepath") {
                 triggerReplaceAll()
             }
 
@@ -538,12 +539,12 @@ public struct FindReplaceDialogView: View {
     private var statusIcon: String {
         let status = documentManager.searchStatus.lowercased()
         if status.contains("not found") || status.contains("no match") || status.contains("invalid") {
-            return "exclamationmark.circle.fill"
+            return "exclamationmark.circle"
         }
         if status.contains("found") || status.contains("replaced") || status.contains("count:") || status.contains("marked") || status.contains("cleared") || status.contains("copied") {
-            return "checkmark.circle.fill"
+            return "checkmark.circle"
         }
-        return "info.circle.fill"
+        return "info.circle"
     }
 
     private var statusColor: Color {
@@ -702,8 +703,6 @@ private struct OptionToggleCard: View {
                     .foregroundColor(isOn ? .blue : .secondary.opacity(0.7))
                     .padding(.horizontal, 4)
                     .padding(.vertical, 1)
-                    .background(Color(NSColor.controlBackgroundColor))
-                    .clipShape(RoundedRectangle(cornerRadius: 3))
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .contentShape(Rectangle())

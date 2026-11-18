@@ -68,7 +68,7 @@ public struct FindReplaceBar: View {
 
                 if !documentManager.searchQuery.isEmpty {
                     Button(action: { documentManager.searchQuery = "" }) {
-                        Image(systemName: "xmark.circle.fill")
+                        Image(systemName: "xmark.circle")
                             .font(.system(size: 11))
                             .foregroundColor(.secondary)
                     }
@@ -178,7 +178,7 @@ public struct FindReplaceBar: View {
 
                 if !documentManager.replaceQuery.isEmpty {
                     Button(action: { documentManager.replaceQuery = "" }) {
-                        Image(systemName: "xmark.circle.fill")
+                        Image(systemName: "xmark.circle")
                             .font(.system(size: 11))
                             .foregroundColor(.secondary)
                     }
@@ -315,7 +315,7 @@ public struct ToggleOptionButton: View {
                     .frame(width: 24, height: 22)
                     .background(
                         RoundedRectangle(cornerRadius: 4)
-                            .fill(isOn ? Color.blue : Color(NSColor.controlBackgroundColor))
+                            .fill(isOn ? Color.blue : Color.clear)
                     )
                     .overlay(
                         RoundedRectangle(cornerRadius: 4)

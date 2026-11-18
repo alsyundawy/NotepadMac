@@ -36,6 +36,11 @@ public struct ToolsDialogView: View {
     @State private var selectedHashAlgo: HashAlgorithm = .sha256
     @State private var compareHashInput: String = ""
     @State private var hashMatchStatus: String?
+    @State private var isFileHashMode: Bool = false
+    @State private var selectedFileUrl: URL?
+    @State private var selectedFileSizeString: String = ""
+    @State private var secondCompareFileUrl: URL?
+    @State private var secondCompareFileSizeString: String = ""
 
     // MIME state
     @State private var isBase64Padding: Bool = true
@@ -95,9 +100,10 @@ public struct ToolsDialogView: View {
             Button(action: {
                 documentManager.isToolsDialogPresented = false
             }) {
-                Image(systemName: "xmark.circle.fill")
+                Image(systemName: "xmark")
                     .foregroundColor(.secondary)
-                    .font(.system(size: 16))
+                    .font(.system(size: 13, weight: .semibold))
+                    .frame(width: 20, height: 20)
             }
             .buttonStyle(PlainButtonStyle())
             .keyboardShortcut(.cancelAction)
@@ -145,6 +151,15 @@ public struct ToolsDialogView: View {
     private var hashTab: some View {
         VStack(alignment: .leading, spacing: 10) {
             HStack {
+                Picker("", selection: $isFileHashMode) {
+                    Text(loc("text_hash")).tag(false)
+                    Text(loc("file_checksum")).tag(true)
+                }
+                .pickerStyle(SegmentedPickerStyle())
+                .frame(width: 220)
+
+                Spacer()
+
                 Text(loc("hash_algorithm") + ":")
                     .font(.subheadline)
 
@@ -153,18 +168,27 @@ public struct ToolsDialogView: View {
                         Text(algo.rawValue).tag(algo)
                     }
                 }
-                .frame(width: 140)
-
-                Spacer()
-
-                Button(loc("generate_hash")) {
-                    outputText = HashTools.computeHash(inputText, algorithm: selectedHashAlgo)
-                    checkHashComparison()
+                .frame(width: 120)
+                .onChange(of: selectedHashAlgo) { _ in
+                    if isFileHashMode, let url = selectedFileUrl {
+                        runFileHash(url: url)
+                    }
                 }
-                .buttonStyle(ProminentButtonStyle())
+
+                if !isFileHashMode {
+                    Button(loc("generate_hash")) {
+                        outputText = HashTools.computeHash(inputText, algorithm: selectedHashAlgo)
+                        checkHashComparison()
+                    }
+                    .buttonStyle(ProminentButtonStyle())
+                }
             }
 
-            inputEditorBox(placeholder: "Enter text to compute checksum...")
+            if isFileHashMode {
+                fileHashSection
+            } else {
+                inputEditorBox(placeholder: "Enter text to compute checksum...")
+            }
 
             outputDisplayBox(title: "Computed Digest (\(selectedHashAlgo.rawValue)):")
 
@@ -183,6 +207,99 @@ public struct ToolsDialogView: View {
                         .foregroundColor(match.contains("MATCH") ? .green : .red)
                 }
             }
+        }
+    }
+
+    private var fileHashSection: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            HStack(spacing: 12) {
+                Button(loc("choose_file")) {
+                    chooseMainFile()
+                }
+                .buttonStyle(ProminentButtonStyle())
+
+                if let url = selectedFileUrl {
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text(url.lastPathComponent)
+                            .font(.system(size: 12, weight: .bold))
+                            .lineLimit(1)
+                        Text("\(url.path) • \(selectedFileSizeString)")
+                            .font(.system(size: 10))
+                            .foregroundColor(.secondary)
+                            .lineLimit(1)
+                    }
+                } else {
+                    Text("No file chosen yet. Click to select any file to hash.")
+                        .font(.system(size: 11))
+                        .foregroundColor(.secondary)
+                }
+
+                Spacer()
+
+                Button(loc("compare_file")) {
+                    chooseSecondFileAndCompare()
+                }
+                .disabled(selectedFileUrl == nil)
+            }
+            .padding(10)
+            .background(Color(NSColor.controlBackgroundColor).opacity(0.5))
+            .cornerRadius(6)
+
+            if let secondUrl = secondCompareFileUrl {
+                HStack(spacing: 8) {
+                    Image(systemName: "doc")
+                        .font(.system(size: 11))
+                        .foregroundColor(.secondary)
+                    Text("Compared against: \(secondUrl.lastPathComponent) (\(secondCompareFileSizeString))")
+                        .font(.system(size: 10))
+                        .foregroundColor(.secondary)
+                    Spacer()
+                }
+            }
+        }
+    }
+
+    private func chooseMainFile() {
+        let panel = NSOpenPanel()
+        panel.allowsMultipleSelection = false
+        panel.canChooseDirectories = false
+        panel.canChooseFiles = true
+        if panel.runModal() == .OK, let url = panel.url {
+            selectedFileUrl = url
+            if let attrs = try? FileManager.default.attributesOfItem(atPath: url.path),
+               let size = attrs[.size] as? Int64 {
+                selectedFileSizeString = ByteCountFormatter.string(fromByteCount: size, countStyle: .file)
+            }
+            runFileHash(url: url)
+        }
+    }
+
+    private func chooseSecondFileAndCompare() {
+        let panel = NSOpenPanel()
+        panel.allowsMultipleSelection = false
+        panel.canChooseDirectories = false
+        panel.canChooseFiles = true
+        panel.message = "Select a second file to compare checksums"
+        if panel.runModal() == .OK, let url = panel.url {
+            secondCompareFileUrl = url
+            if let attrs = try? FileManager.default.attributesOfItem(atPath: url.path),
+               let size = attrs[.size] as? Int64 {
+                secondCompareFileSizeString = ByteCountFormatter.string(fromByteCount: size, countStyle: .file)
+            }
+            if let secondHash = try? HashTools.computeFileHash(at: url, algorithm: selectedHashAlgo) {
+                compareHashInput = secondHash
+                checkHashComparison()
+            }
+        }
+    }
+
+    private func runFileHash(url: URL) {
+        do {
+            let digest = try HashTools.computeFileHash(at: url, algorithm: selectedHashAlgo)
+            outputText = digest
+            checkHashComparison()
+        } catch {
+            outputText = "Error reading file: \(error.localizedDescription)"
         }
     }
 
@@ -353,9 +470,61 @@ public struct ToolsDialogView: View {
 
     private var devToolsTab: some View {
         VStack(alignment: .leading, spacing: 10) {
-            inputEditorBox(placeholder: "Paste JSON, XML, or JWT token...")
+            inputEditorBox(placeholder: "Paste HTML, CSS, JavaScript, JSON, XML, or JWT token...")
 
             HStack(spacing: 8) {
+                Menu("HTML") {
+                    Button(loc("html_format")) {
+                        let res = DeveloperTools.formatHtml(inputText, indentSpaces: jsonIndentSpaces)
+                        outputText = res.error ?? res.result
+                    }
+                    Button(loc("html_minify")) {
+                        let res = DeveloperTools.minifyHtml(inputText)
+                        outputText = res.error ?? res.result
+                    }
+                    Divider()
+                    Button(loc("html_encrypt") + " (JS unescape)") {
+                        let res = DeveloperTools.encryptHtml(inputText, method: .javascriptEscape)
+                        outputText = res.error ?? res.result
+                    }
+                    Button(loc("html_encrypt") + " (Base64)") {
+                        let res = DeveloperTools.encryptHtml(inputText, method: .base64)
+                        outputText = res.error ?? res.result
+                    }
+                    Button(loc("html_encrypt") + " (Password AES)") {
+                        let pass = cryptoPassphrase.isEmpty ? "notepad" : cryptoPassphrase
+                        let res = DeveloperTools.encryptHtml(inputText, method: .passwordProtected, password: pass)
+                        outputText = res.error ?? res.result
+                    }
+                    Divider()
+                    Button(loc("html_decrypt")) {
+                        let res = DeveloperTools.decryptHtml(inputText)
+                        outputText = res.error ?? res.result
+                    }
+                }
+
+                Menu("CSS") {
+                    Button(loc("css_format")) {
+                        let res = DeveloperTools.formatCss(inputText, indentSpaces: jsonIndentSpaces)
+                        outputText = res.error ?? res.result
+                    }
+                    Button(loc("css_minify")) {
+                        let res = DeveloperTools.minifyCss(inputText)
+                        outputText = res.error ?? res.result
+                    }
+                }
+
+                Menu("JS") {
+                    Button(loc("js_format")) {
+                        let res = DeveloperTools.formatJs(inputText, indentSpaces: jsonIndentSpaces)
+                        outputText = res.error ?? res.result
+                    }
+                    Button(loc("js_minify")) {
+                        let res = DeveloperTools.minifyJs(inputText)
+                        outputText = res.error ?? res.result
+                    }
+                }
+
                 Menu("JSON") {
                     Button(loc("format_json")) {
                         let res = DeveloperTools.formatJson(inputText, indentSpaces: jsonIndentSpaces)

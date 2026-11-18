@@ -57,7 +57,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - `CryptoTools`: AES-256-GCM authenticated encryption/decryption with PBKDF2-HMAC-SHA256 key derivation (100,000 rounds) and password strength scoring.
   - `MimeTools`: Base64 encoder/decoder (full and line-by-line), RFC 3986 URL encoder/decoder, and HTML entity encoder/decoder.
   - `ConverterTools`: ASCII to Hexadecimal (and reverse) and multi-base converter (Binary, Octal, Decimal, Hexadecimal).
-  - `DeveloperTools`: JSON Prettify/Minify with custom indent spacing, XML formatter/minifier, JWT token inspector, UUID v4 generator, and Unix Epoch / ISO 8601 converter.
+  - `DeveloperTools`: Syntax minifier & unminifier (formatter) for HTML, JSON, CSS, and JavaScript with custom indentation spacing, HTML Encrypt & Decrypt engine (JS unescape, Base64, and password-protected AES-GCM container), XML formatter/minifier, JWT token inspector, UUID v4 generator, and Unix Epoch / ISO 8601 converter.
+  - `HashTools`: Fast MD5, SHA-1, SHA-256, SHA-384, SHA-512, and IEEE 802.3 CRC32 hash calculation with checksum comparator, file checksum generator via NSOpenPanel, and file-to-file checksum verification.
+- **Dialog Box Icon Polish**:
+  - Removed accidental filled circular and rectangular backgrounds behind icons across Find/Replace, Tools Hub, Update Checker, and About dialogs.
 - **Bilingual Localization (`LocalizationManager`)**:
   - Complete native localization in English and Bahasa Indonesia (`id`) across all menus, toolbars, dialogs, status badges, and toolkits.
 - **Check for Updates Dialog (`CheckUpdateDialogView`)**:

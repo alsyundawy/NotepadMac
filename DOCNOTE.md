@@ -113,11 +113,16 @@
 
 ### 3.7 Developer & Security Tools Suite (`Sources/NotepadMac/Tools/`)
 
-- **`HashTools`**: Hardware-accelerated cryptographic hash functions (MD5, SHA-1, SHA-256, SHA-384, SHA-512) via Apple `CryptoKit` and standard IEEE 802.3 CRC32 with precomputed lookup table.
+- **`HashTools`**:
+  - Hardware-accelerated cryptographic hash functions (MD5, SHA-1, SHA-256, SHA-384, SHA-512) via Apple `CryptoKit` and standard IEEE 802.3 CRC32 with precomputed lookup table.
+  - **File Checksum Generation & Verification**: Native file streaming and memory-mapped calculation (`computeFileHash(at:algorithm:)`) supporting direct attachment and validation against expected checksums or second-file comparisons.
 - **`CryptoTools`**: AES-256-GCM authenticated cipher with PBKDF2-HMAC-SHA256 key derivation (100,000 iterations, 16-byte cryptographically secure salt via `SecRandomCopyBytes`, 12-byte nonce, 16-byte authentication tag). Self-describing `NPMENC01:` container format.
 - **`MimeTools`**: RFC 4648 Base64 encoding/decoding, RFC 3986 URL percent-encoding, and HTML entity sanitization.
 - **`ConverterTools`**: ASCII to Hexadecimal string conversion and multi-base integer translation (Base-2, Base-8, Base-10, Base-16).
-- **`DeveloperTools`**: JSON formatting with configurable 2/4-space indentation, minification, XML document validation, JWT inspection (header, claims, payload, signature, exp/iat timestamp parsing), UUID v4 generator, and ISO 8601 / Unix Epoch conversion.
+- **`DeveloperTools`**:
+  - **HTML, JSON, CSS & JavaScript Minify & Unminify (Prettify)**: Fast syntax-aware beautification and minification for web assets with configurable indent spacing.
+  - **HTML Encrypt & Decrypt**: Obfuscation and encryption engine inspired by `html-code-generator.com`, including client-side JS `unescape`, Base64 dynamic evaluation, and password-protected standalone AES-GCM Web Crypto HTML containers.
+  - XML document validation and minification, JWT inspection (header, claims, payload, signature, exp/iat timestamp parsing), UUID v4 generator, and ISO 8601 / Unix Epoch conversion.
 
 ### 3.8 Bilingual Localization Subsystem (`LocalizationManager`)
 

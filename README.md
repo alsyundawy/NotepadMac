@@ -58,11 +58,11 @@ Unlike heavy Electron-based or web-wrapper text editors, NotepadMac starts insta
   - Full Notepad++ **Mark** engine: Mark All with Indicator 8 highlighting, line bookmarking in margin 1, Clear All Marks, and Copy Marked Text.
   - Modernized in-window collapsible search bar (`⇧⌘F`) with localized buttons, clear buttons, live status pills, and quick expand to full dialog.
 - **Developer & Security Tools Hub**:
-  - **Hash Tools**: Fast computation of MD5, SHA-1, SHA-256, SHA-384, SHA-512, and IEEE 802.3 CRC32 with real-time hash verification and checksum matching.
+  - **Hash Tools**: Fast computation of MD5, SHA-1, SHA-256, SHA-384, SHA-512, and IEEE 802.3 CRC32 with real-time text and attached file checksum calculation, matching verification, and two-file comparison.
   - **Crypto Tools**: Military-grade AES-256-GCM encryption and decryption with PBKDF2-HMAC-SHA256 key derivation (100,000 iterations) and interactive password strength evaluation.
   - **MIME Tools**: Base64 encoding/decoding (full buffer and line-by-line), RFC 3986 URL percent encoding/decoding, and HTML entity encoding/decoding.
   - **Converter Tools**: ASCII to Hexadecimal (and reverse) and multi-base numeric converter (Binary, Octal, Decimal, Hexadecimal).
-  - **Developer Tools**: JSON Prettify/Minify with custom indent spacing, XML formatting/minification, JWT token inspector (header, payload, claims, signature, expiration), UUID v4 generator, and Unix Epoch/ISO 8601 converter.
+  - **Developer Tools**: Syntax minification & unminification (formatting) for HTML, JSON, CSS, and JavaScript, HTML encryption & decryption (JS unescape, Base64, and standalone password-protected AES-GCM container), XML validation, JWT token inspector, UUID v4 generator, and Unix Epoch/ISO 8601 converter.
 - **Bilingual Localization (i18n)**:
   - Full native support for **English** and **Bahasa Indonesia** across all menus, dialogs, toolbar controls, status badges, and toolkits.
 - **Check for Updates Dialog**:

@@ -53,7 +53,7 @@ public struct CheckUpdateDialogView: View {
 
     private var headerBar: some View {
         HStack {
-            Image(systemName: "arrow.triangle.2.circlepath.circle.fill")
+            Image(systemName: "arrow.triangle.2.circlepath")
                 .font(.system(size: 16))
                 .foregroundColor(.blue)
 
@@ -65,9 +65,10 @@ public struct CheckUpdateDialogView: View {
             Button(action: {
                 documentManager.isCheckUpdatePresented = false
             }) {
-                Image(systemName: "xmark.circle.fill")
+                Image(systemName: "xmark")
                     .foregroundColor(.secondary)
-                    .font(.system(size: 15))
+                    .font(.system(size: 13, weight: .semibold))
+                    .frame(width: 20, height: 20)
             }
             .buttonStyle(PlainButtonStyle())
             .keyboardShortcut(.cancelAction)
@@ -111,7 +112,7 @@ public struct CheckUpdateDialogView: View {
                         .progressViewStyle(CircularProgressViewStyle())
                         .scaleEffect(0.9)
                 } else {
-                    Image(systemName: "checkmark.seal.fill")
+                    Image(systemName: "checkmark.circle")
                         .font(.system(size: 26))
                         .foregroundColor(.green)
                 }

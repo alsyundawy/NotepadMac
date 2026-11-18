@@ -220,7 +220,7 @@ public struct AboutView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 10) {
                 HStack {
-                    Image(systemName: "checkmark.seal.fill")
+                    Image(systemName: "checkmark.seal")
                         .foregroundColor(.blue)
                     Text("GNU General Public License v3.0 (GPLv3)")
                         .font(.system(size: 12, weight: .bold))
@@ -375,7 +375,7 @@ struct FeatureCheckRow: View {
 
     var body: some View {
         HStack(spacing: 6) {
-            Image(systemName: "checkmark.circle.fill")
+            Image(systemName: "checkmark.circle")
                 .font(.system(size: 10))
                 .foregroundColor(.green)
             Text(text)

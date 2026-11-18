@@ -60,6 +60,8 @@ echo ">> Cleaning staging folder..."
 rm -rf "${DMG_TEMP}"
 
 echo ">> Verifying disk image..."
-hdiutil verify "${DMG_PATH}"
+sync
+sleep 1
+hdiutil verify "${DMG_PATH}" || (sleep 2 && hdiutil verify "${DMG_PATH}")
 
 echo "=== Successfully built ${DMG_PATH} ==="

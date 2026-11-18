@@ -1,8 +1,23 @@
 #!/usr/bin/env bash
 #
-# build-app.sh
-# Production universal binary builder and .app packager for NotepadMac
-# Target: macOS 11.0+ (Big Sur) | Architectures: arm64 + x86_64
+# This file is part of NotepadMac.
+#
+# Copyright 2025-2026 Harry Dertin Sutisna Alsyundawy <alsyundawy@gmail.com>
+# https://github.com/alsyundawy/NotepadMac
+# ALSYUNDAWY IT SOLUTION <https://alsyundawy.com>
+#
+# NotepadMac is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# NotepadMac is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with NotepadMac.  If not, see <https://www.gnu.org/licenses/>.
 #
 
 set -euo pipefail

@@ -48,6 +48,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Full third-party notices for Scintilla Cocoa (HPND / Neil Hodgson), Lexilla (HPND / Neil Hodgson), and Lua (MIT / PUC-Rio).
 - **Licensing**:
   - Re-licensed NotepadMac under **GNU General Public License v3.0 or later** (`GPL-3.0-or-later`).
+- **Developer & Power Tools Suite (`Sources/NotepadMac/Tools/`)**:
+  - `HashTools`: Fast MD5, SHA-1, SHA-256, SHA-384, SHA-512, and IEEE 802.3 CRC32 hash calculation with checksum comparator.
+  - `CryptoTools`: AES-256-GCM authenticated encryption/decryption with PBKDF2-HMAC-SHA256 key derivation (100,000 rounds) and password strength scoring.
+  - `MimeTools`: Base64 encoder/decoder (full and line-by-line), RFC 3986 URL encoder/decoder, and HTML entity encoder/decoder.
+  - `ConverterTools`: ASCII to Hexadecimal (and reverse) and multi-base converter (Binary, Octal, Decimal, Hexadecimal).
+  - `DeveloperTools`: JSON Prettify/Minify with custom indent spacing, XML formatter/minifier, JWT token inspector, UUID v4 generator, and Unix Epoch / ISO 8601 converter.
+- **Bilingual Localization (`LocalizationManager`)**:
+  - Complete native localization in English and Bahasa Indonesia (`id`) across all menus, toolbars, dialogs, status badges, and toolkits.
+- **Check for Updates Dialog (`CheckUpdateDialogView`)**:
+  - Native update checker with GitHub Releases API integration and release notes display.
+- **Tools Hub Dialog (`ToolsDialogView`)**:
+  - Unified modal interface organizing all 5 tool categories with interactive inputs, live calculations, copy-to-clipboard, and insertion directly into the active editor buffer.
+- **Performance & Security Hardening**:
+  - Zero-allocation `lineCount` computation utilizing native UTF-8 byte traversal instead of line-array allocation.
+  - Hardened cryptographic buffer pointer access in `CryptoTools` with graceful error propagation, completely removing force unwraps.
 - **Tooling & Compilation Database**:
   - Generated root `compile_commands.json` (211 translation units) and `.vscode/c_cpp_properties.json` for zero-error SonarLint, clangd, and C/C++ language server integration.
 - **Packaging & CI/CD**:

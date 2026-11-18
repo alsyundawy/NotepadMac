@@ -1,9 +1,24 @@
-//
-//  MainEditorView.swift
-//  NotepadMac
-//
-//  Primary editor window view composing the toolbar, tab bar, editor, and status bar
-//
+/*
+ *
+ * This file is part of NotepadMac.
+ *
+ * Copyright 2025-2026 Harry Dertin Sutisna Alsyundawy <alsyundawy@gmail.com>
+ * https://github.com/alsyundawy/NotepadMac
+ * ALSYUNDAWY IT SOLUTION <https://alsyundawy.com>
+ *
+ * NotepadMac is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * NotepadMac is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with NotepadMac.  If not, see <https://www.gnu.org/licenses/>.
+ */
 
 import SwiftUI
 
@@ -36,8 +51,16 @@ public struct MainEditorView: View {
         .sheet(isPresented: $documentManager.isGoToLinePresented) {
             GoToLineSheet(documentManager: documentManager)
         }
+        .sheet(isPresented: $documentManager.isToolsDialogPresented) {
+            ToolsDialogView(documentManager: documentManager, initialTab: documentManager.toolsDialogTab)
+        }
+        .sheet(isPresented: $documentManager.isCheckUpdatePresented) {
+            CheckUpdateDialogView(documentManager: documentManager)
+        }
         .applyDocumentNotifications(manager: documentManager)
-        .applyFormattingNotifications(manager: documentManager)
+        .applyViewTogglesNotifications(manager: documentManager)
+        .applyZoomAndSelectionNotifications(manager: documentManager)
+        .applyToolAndDialogNotifications(manager: documentManager)
     }
 
     @ViewBuilder
@@ -152,7 +175,7 @@ private extension View {
             }
     }
 
-    func applyFormattingNotifications(manager: DocumentManager) -> some View {
+    func applyViewTogglesNotifications(manager: DocumentManager) -> some View {
         self
             .onReceive(NotificationCenter.default.publisher(for: .notepadToggleWordWrap)) { _ in
                 manager.isWordWrapEnabled.toggle()
@@ -163,14 +186,33 @@ private extension View {
             .onReceive(NotificationCenter.default.publisher(for: .notepadToggleFolding)) { _ in
                 manager.showFolding.toggle()
             }
+            .onReceive(NotificationCenter.default.publisher(for: .notepadToggleWhiteSpace)) { _ in
+                manager.showWhiteSpace.toggle()
+            }
+            .onReceive(NotificationCenter.default.publisher(for: .notepadToggleIndentGuides)) { _ in
+                manager.showIndentGuides.toggle()
+            }
+    }
+
+    func applyZoomAndSelectionNotifications(manager: DocumentManager) -> some View {
+        self
             .onReceive(NotificationCenter.default.publisher(for: .notepadZoomIn)) { _ in
-                manager.editorZoomIn()
+                if let doc = manager.activeDocument {
+                    doc.zoomOffset = min(20, doc.zoomOffset + 1)
+                    manager.objectWillChange.send()
+                }
             }
             .onReceive(NotificationCenter.default.publisher(for: .notepadZoomOut)) { _ in
-                manager.editorZoomOut()
+                if let doc = manager.activeDocument {
+                    doc.zoomOffset = max(-10, doc.zoomOffset - 1)
+                    manager.objectWillChange.send()
+                }
             }
             .onReceive(NotificationCenter.default.publisher(for: .notepadResetZoom)) { _ in
-                manager.activeDocument?.zoomOffset = 0
+                if let doc = manager.activeDocument {
+                    doc.zoomOffset = 0
+                    manager.objectWillChange.send()
+                }
             }
             .onReceive(NotificationCenter.default.publisher(for: .notepadSelectLanguage)) { notif in
                 if let lang = notif.userInfo?["language"] as? LanguageDefinition {
@@ -182,6 +224,10 @@ private extension View {
                     manager.activeTheme = theme
                 }
             }
+    }
+
+    func applyToolAndDialogNotifications(manager: DocumentManager) -> some View {
+        self
             .onReceive(NotificationCenter.default.publisher(for: .notepadSetLineEnding)) { notif in
                 if let ending = notif.userInfo?["ending"] as? LineEnding {
                     manager.setLineEnding(ending)
@@ -201,6 +247,16 @@ private extension View {
             .onReceive(NotificationCenter.default.publisher(for: .notepadShowAbout)) { _ in
                 manager.isAboutPresented = true
             }
+            .onReceive(NotificationCenter.default.publisher(for: .notepadShowTools)) { notif in
+                let tab = notif.userInfo?["tab"] as? Int ?? 0
+                manager.openToolsDialog(tab: tab)
+            }
+            .onReceive(NotificationCenter.default.publisher(for: .notepadShowCheckUpdate)) { _ in
+                manager.showCheckForUpdates()
+            }
+            .onReceive(NotificationCenter.default.publisher(for: .notepadQuitApp)) { _ in
+                NSApp.terminate(nil)
+            }
             .onReceive(NotificationCenter.default.publisher(for: .notepadUseSelectionForFind)) { notif in
                 if let q = notif.userInfo?["query"] as? String, !q.isEmpty {
                     manager.searchQuery = q
@@ -218,11 +274,11 @@ public struct GoToLineSheet: View {
 
     public var body: some View {
         VStack(alignment: .leading, spacing: 14) {
-            Text("Go to Line")
+            Text(loc("go_to_line"))
                 .font(.headline)
 
             HStack {
-                Text("Line number:")
+                Text(loc("line_number"))
                     .font(.subheadline)
                 TextField("Line", text: $documentManager.targetLineInput)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -231,10 +287,10 @@ public struct GoToLineSheet: View {
 
             HStack {
                 Spacer()
-                Button("Cancel") {
+                Button(loc("cancel")) {
                     documentManager.isGoToLinePresented = false
                 }
-                Button("Go") {
+                Button(loc("ok")) {
                     if let line = Int(documentManager.targetLineInput.trimmingCharacters(in: .whitespaces)) {
                         documentManager.goToLine(line)
                     }
@@ -244,6 +300,8 @@ public struct GoToLineSheet: View {
             }
         }
         .padding(20)
-        .frame(width: 260)
+        .frame(width: 280)
+        .background(Color(NSColor.windowBackgroundColor))
+        .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
     }
 }

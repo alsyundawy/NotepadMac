@@ -1,9 +1,24 @@
-//
-//  EditorDocument.swift
-//  NotepadMac
-//
-//  Model representing an open text document tab in NotepadMac
-//
+/*
+ *
+ * This file is part of NotepadMac.
+ *
+ * Copyright 2025-2026 Harry Dertin Sutisna Alsyundawy <alsyundawy@gmail.com>
+ * https://github.com/alsyundawy/NotepadMac
+ * ALSYUNDAWY IT SOLUTION <https://alsyundawy.com>
+ *
+ * NotepadMac is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * NotepadMac is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with NotepadMac.  If not, see <https://www.gnu.org/licenses/>.
+ */
 
 import Foundation
 import SwiftUI
@@ -121,6 +136,6 @@ public final class EditorDocument: Identifiable, ObservableObject, Hashable {
 
     public var lineCount: Int {
         if content.isEmpty { return 1 }
-        return content.components(separatedBy: "\n").count
+        return content.utf8.reduce(1) { $0 + ($1 == UInt8(ascii: "\n") ? 1 : 0) }
     }
 }

@@ -58,6 +58,16 @@ Unlike heavy Electron-based or web-wrapper text editors, NotepadMac starts insta
   - Bidirectional wrap-around search in both normal and regular expression modes.
   - Smart Highlighting: automatically highlights occurrences of selected text or search queries using Scintilla native indicator 8 (`INDIC_ROUNDBOX`).
   - Collapsible in-window search bar (`⇧⌘F`) also available for lightweight inline searching.
+- **Developer & Security Tools Hub**:
+  - **Hash Tools**: Fast computation of MD5, SHA-1, SHA-256, SHA-384, SHA-512, and IEEE 802.3 CRC32 with real-time hash verification and checksum matching.
+  - **Crypto Tools**: Military-grade AES-256-GCM encryption and decryption with PBKDF2-HMAC-SHA256 key derivation (100,000 iterations) and interactive password strength evaluation.
+  - **MIME Tools**: Base64 encoding/decoding (full buffer and line-by-line), RFC 3986 URL percent encoding/decoding, and HTML entity encoding/decoding.
+  - **Converter Tools**: ASCII to Hexadecimal (and reverse) and multi-base numeric converter (Binary, Octal, Decimal, Hexadecimal).
+  - **Developer Tools**: JSON Prettify/Minify with custom indent spacing, XML formatting/minification, JWT token inspector (header, payload, claims, signature, expiration), UUID v4 generator, and Unix Epoch/ISO 8601 converter.
+- **Bilingual Localization (i18n)**:
+  - Full native support for **English** and **Bahasa Indonesia** across all menus, dialogs, toolbar controls, status badges, and toolkits.
+- **Check for Updates Dialog**:
+  - Live GitHub API integration for checking the latest releases and updates directly inside the application.
 - **Rich Context Menu**:
   - Complete right-click contextual menu on the editor canvas with editing, find/replace submenus, case conversion, line navigation, and view toggles.
 - **About, Credits & GPLv3 Licensing Panel**:
@@ -101,10 +111,12 @@ NotepadMac/
 │   └── NotepadMac/                   # SwiftUI application layer
 │       ├── Editor/                   # ScintillaView wrapper, search & context menu
 │       ├── Lexers/                   # Lexer registry & extension mapping
+│       ├── Localization/             # Multi-language localization manager (en / id)
 │       ├── Lua/                      # LuaEngine bridging Swift <-> Lua
 │       ├── Models/                   # EditorDocument & DocumentManager
 │       ├── Themes/                   # Color palettes & Scintilla BGR converters
-│       ├── Views/                    # Toolbar, TabBar, StatusBar, Preferences, AboutView, etc.
+│       ├── Tools/                    # Developer, Hash, Crypto, Converter & MIME toolkits
+│       ├── Views/                    # Toolbar, TabBar, StatusBar, Tools, Preferences, etc.
 │       ├── NotepadMacApp.swift       # Application entry point & lifecycle
 │       └── NotepadMenuCommands.swift # Native macOS menu bar commands
 ├── Resources/
@@ -164,33 +176,39 @@ Distribution outputs are placed in the `build/` directory:
 
 ## Keyboard Shortcuts
 
-| Shortcut      | Action                     |
-| :------------ | :------------------------- |
-| `⌘ N`         | New Document               |
-| `⌘ O`         | Open File                  |
-| `⌘ S`         | Save File                  |
-| `⇧ ⌘ S`       | Save As...                 |
-| `⌥ ⌘ S`       | Save All Documents         |
-| `⌘ W`         | Close Active Tab           |
-| `⌥ ⌘ W`       | Close All Tabs             |
-| `⌘ F`         | Toggle Find & Replace Bar  |
-| `⌘ G`         | Find Next                  |
-| `⇧ ⌘ G`       | Find Previous              |
-| `⌘ E`         | Use Selection for Find     |
-| `⇧ ⌘ U`       | Make UPPERCASE             |
-| `⌃ ⌘ L`       | Make lowercase             |
-| `⌥ ⌘ L`       | Open Lua Scripting Console |
-| `⌘ L`         | Go To Line...              |
-| `⌘ +` / `⌘ =` | Zoom In                    |
-| `⌘ -`         | Zoom Out                   |
-| `⌘ 0`         | Reset Zoom                 |
-| `⌥ Z`         | Toggle Word Wrap           |
-| `⌘ ,`         | Open Preferences           |
+| Shortcut      | Action                       |
+| :------------ | :--------------------------- |
+| `⌘ N`         | New Document                 |
+| `⌘ O`         | Open File                    |
+| `⌘ S`         | Save File                    |
+| `⇧ ⌘ S`       | Save As...                   |
+| `⌥ ⌘ S`       | Save All Documents           |
+| `⌘ W`         | Close Active Tab             |
+| `⌥ ⌘ W`       | Close All Tabs               |
+| `⌘ F`         | Toggle Find & Replace Bar    |
+| `⌘ G`         | Find Next                    |
+| `⇧ ⌘ G`       | Find Previous                |
+| `⌘ E`         | Use Selection for Find       |
+| `⇧ ⌘ U`       | Make UPPERCASE               |
+| `⌃ ⌘ L`       | Make lowercase               |
+| `⌥ ⌘ L`       | Open Lua Scripting Console   |
+| `⌃ ⌘ T`       | Open Tools Hub               |
+| `⌃ ⌘ H`       | Open Hash Tools              |
+| `⌃ ⌘ M`       | Open MIME Tools (Base64/URL) |
+| `⌃ ⌘ C`       | Open Base / Hex Converter    |
+| `⌃ ⌘ E`       | Open AES-256 Encryption      |
+| `⌃ ⌘ D`       | Open Developer Tools         |
+| `⌘ L`         | Go To Line...                |
+| `⌘ +` / `⌘ =` | Zoom In                      |
+| `⌘ -`         | Zoom Out                     |
+| `⌘ 0`         | Reset Zoom                   |
+| `⌥ Z`         | Toggle Word Wrap             |
+| `⌘ ,`         | Open Preferences             |
 
 ---
 
 ## License
 
-This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the **GNU General Public License v3.0 (GPLv3)**. See the [LICENSE](LICENSE) file for details.
 
 Scintilla and Lexilla are copyright © Neil Hodgson. Lua is copyright © Lua.org, PUC-Rio.

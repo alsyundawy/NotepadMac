@@ -1,9 +1,24 @@
-//
-//  ScintillaEditorCoordinator.swift
-//  NotepadMac
-//
-//  Notification coordinator bridging native Scintilla Cocoa events to SwiftUI
-//
+/*
+ *
+ * This file is part of NotepadMac.
+ *
+ * Copyright 2025-2026 Harry Dertin Sutisna Alsyundawy <alsyundawy@gmail.com>
+ * https://github.com/alsyundawy/NotepadMac
+ * ALSYUNDAWY IT SOLUTION <https://alsyundawy.com>
+ *
+ * NotepadMac is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * NotepadMac is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with NotepadMac.  If not, see <https://www.gnu.org/licenses/>.
+ */
 
 import AppKit
 import SwiftUI
@@ -209,7 +224,11 @@ public final class ScintillaEditorCoordinator: NSObject, ScintillaNotificationPr
             queue: .main
         ) { [weak self] _ in
             guard let view = self?.scintillaView else { return }
-            let printOp = NSPrintOperation(view: view, printInfo: .shared)
+            let text = view.string() ?? ""
+            let printTextView = NSTextView(frame: NSRect(x: 0, y: 0, width: 468, height: 648))
+            printTextView.string = text
+            printTextView.font = NSFont.monospacedSystemFont(ofSize: 10, weight: .regular)
+            let printOp = NSPrintOperation(view: printTextView, printInfo: .shared)
             printOp.showsPrintPanel = true
             printOp.run()
         })
@@ -310,6 +329,8 @@ extension ScintillaEditorCoordinator {
 
         if code == 2008 {
             handleModifiedNotification(notif: notif, view: view)
+        } else if code == 2001 {
+            handleCharAddedNotification(ch: notif.ch, view: view)
         } else if code == 2007 {
             handleUpdateUINotification(view: view)
         } else if code == 2010 {
@@ -399,5 +420,60 @@ extension ScintillaEditorCoordinator {
         guard notif.margin == 2 else { return }
         let line = view.message(UInt32(SCI_LINEFROMPOSITION), wParam: UInt(notif.position))
         view.message(UInt32(SCI_TOGGLEFOLD), wParam: UInt(line))
+    }
+
+    private func handleCharAddedNotification(ch: Int32, view: ScintillaView) {
+        guard parent.documentManager?.isAutocompletionEnabled == true else { return }
+
+        // Trigger on alphanumeric and underscore
+        let isWord = (ch >= 65 && ch <= 90) || (ch >= 97 && ch <= 122) || (ch >= 48 && ch <= 57) || ch == 95
+        guard isWord else { return }
+
+        let currentPos = view.message(UInt32(SCI_GETCURRENTPOS))
+        guard currentPos > 0 else { return }
+
+        let wordStart = view.message(UInt32(2266), wParam: UInt(currentPos), lParam: 1) // SCI_WORDSTARTPOSITION
+        let lenEntered = currentPos - wordStart
+        guard lenEntered >= 2 else { return }
+
+        guard let fullText = view.string() else { return }
+        let utf8 = fullText.utf8
+        let startIdx = utf8.index(utf8.startIndex, offsetBy: wordStart, limitedBy: utf8.endIndex) ?? utf8.startIndex
+        let endIdx = utf8.index(utf8.startIndex, offsetBy: currentPos, limitedBy: utf8.endIndex) ?? utf8.endIndex
+        guard let prefix = String(utf8[startIdx..<endIdx]), !prefix.isEmpty else { return }
+
+        let langKeywords = parent.language.keywords
+            .components(separatedBy: .whitespacesAndNewlines)
+            .filter { $0.count >= 2 }
+
+        let lowerPrefix = prefix.lowercased()
+        var matches = Set<String>()
+        for kw in langKeywords where kw.lowercased().hasPrefix(lowerPrefix) && kw.lowercased() != lowerPrefix {
+            matches.insert(kw)
+        }
+
+        if matches.count < 10 {
+            let bufferTokens = fullText.components(separatedBy: CharacterSet.alphanumerics.inverted)
+            for token in bufferTokens {
+                let lowerToken = token.lowercased()
+                if token.count >= 3 && lowerToken.hasPrefix(lowerPrefix) && lowerToken != lowerPrefix {
+                    matches.insert(token)
+                    if matches.count >= 25 { break }
+                }
+            }
+        }
+
+        guard !matches.isEmpty else { return }
+        let sortedMatches = matches.sorted { $0.localizedCaseInsensitiveCompare($1) == .orderedAscending }
+        let matchString = sortedMatches.prefix(25).joined(separator: " ")
+
+        matchString.withCString { cStr in
+            view.message(UInt32(2106), wParam: UInt(32)) // SCI_AUTOCSETSEPARATOR
+            view.message(UInt32(2115), wParam: 1) // SCI_AUTOCSETIGNORECASE
+            view.message(UInt32(2118), wParam: 1) // SCI_AUTOCSETAUTOHIDE
+            view.message(UInt32(2270), wParam: 1) // SCI_AUTOCSETDROPRESTOFWORD
+            view.message(UInt32(2660), wParam: 0) // SCI_AUTOCSETORDER (SC_ORDER_PRESORTED)
+            view.message(UInt32(2100), wParam: UInt(lenEntered), lParam: Int(bitPattern: cStr)) // SCI_AUTOCSHOW
+        }
     }
 }

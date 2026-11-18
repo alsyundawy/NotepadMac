@@ -1,9 +1,24 @@
-//
-//  DocumentManager.swift
-//  NotepadMac
-//
-//  Multi-tab document manager and editor coordinator
-//
+/*
+ *
+ * This file is part of NotepadMac.
+ *
+ * Copyright 2025-2026 Harry Dertin Sutisna Alsyundawy <alsyundawy@gmail.com>
+ * https://github.com/alsyundawy/NotepadMac
+ * ALSYUNDAWY IT SOLUTION <https://alsyundawy.com>
+ *
+ * NotepadMac is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * NotepadMac is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with NotepadMac.  If not, see <https://www.gnu.org/licenses/>.
+ */
 
 import AppKit
 import SwiftUI
@@ -21,6 +36,7 @@ public final class DocumentManager: ObservableObject, EditorActionDelegate {
     @Published public var showFolding: Bool = true
     @Published public var showWhiteSpace: Bool = false
     @Published public var showIndentGuides: Bool = true
+    @Published public var isAutocompletionEnabled: Bool = false
 
     // UI Panel toggles
     @Published public var isFindReplaceBarVisible: Bool = false
@@ -30,7 +46,14 @@ public final class DocumentManager: ObservableObject, EditorActionDelegate {
     @Published public var isPreferencesPresented: Bool = false
     @Published public var isAboutPresented: Bool = false
     @Published public var isGoToLinePresented: Bool = false
+    @Published public var isToolsDialogPresented: Bool = false
+    @Published public var toolsDialogTab: Int = 0
+    @Published public var isCheckUpdatePresented: Bool = false
     @Published public var targetLineInput: String = ""
+
+    // Formatting & Indentation Preferences
+    @Published public var tabIndentSpaces: Int = 4
+    @Published public var useSpacesForTab: Bool = true
 
     // Search state
     @Published public var searchQuery: String = ""
@@ -86,7 +109,10 @@ public final class DocumentManager: ObservableObject, EditorActionDelegate {
             let data = try Data(contentsOf: url)
             let encoding: String.Encoding = .utf8
             let content = String(bytes: data, encoding: encoding) ?? ""
-            let detectedLanguage = LexerRegistry.shared.language(forExtension: url.pathExtension)
+            let detectedLanguage = LexerRegistry.shared.detectLanguage(
+                forFilename: url.lastPathComponent,
+                content: content
+            )
             let detectedLineEnding = LineEnding.detect(in: content)
 
             let doc = EditorDocument(
@@ -123,7 +149,10 @@ public final class DocumentManager: ObservableObject, EditorActionDelegate {
             doc.fileURL = url
             doc.title = url.lastPathComponent
             doc.isModified = false
-            doc.language = LexerRegistry.shared.language(forExtension: url.pathExtension)
+            doc.language = LexerRegistry.shared.detectLanguage(
+                forFilename: url.lastPathComponent,
+                content: doc.content
+            )
         } catch {
             print("Failed to save document to \(url): \(error.localizedDescription)")
         }
@@ -176,10 +205,22 @@ public final class DocumentManager: ObservableObject, EditorActionDelegate {
         activeDocumentID = id
     }
 
+    public func closeTabsToTheRight(of id: UUID) {
+        guard let index = documents.firstIndex(where: { $0.id == id }) else { return }
+        if index + 1 < documents.count {
+            documents.removeSubrange((index + 1)...)
+            if let activeID = activeDocumentID, !documents.contains(where: { $0.id == activeID }) {
+                activeDocumentID = id
+            }
+        }
+    }
+
     public func saveAllDocuments() {
         for doc in documents {
             if let url = doc.fileURL {
                 saveDocument(doc, to: url)
+            } else if doc.isModified {
+                promptSaveAs(for: doc)
             }
         }
     }
@@ -291,15 +332,36 @@ public final class DocumentManager: ObservableObject, EditorActionDelegate {
         }
     }
 
+    public func zoomIn() {
+        NotificationCenter.default.post(name: .notepadZoomIn, object: nil)
+    }
+
+    public func zoomOut() {
+        NotificationCenter.default.post(name: .notepadZoomOut, object: nil)
+    }
+
+    public func resetZoom() {
+        NotificationCenter.default.post(name: .notepadResetZoom, object: nil)
+    }
+
     public func editorZoomIn() {
         DispatchQueue.main.async { [weak self] in
-            self?.activeDocument?.zoomOffset += 1
+            self?.zoomIn()
         }
     }
 
     public func editorZoomOut() {
         DispatchQueue.main.async { [weak self] in
-            self?.activeDocument?.zoomOffset = max(-10, (self?.activeDocument?.zoomOffset ?? 0) - 1)
+            self?.zoomOut()
         }
+    }
+
+    public func openToolsDialog(tab: Int = 0) {
+        toolsDialogTab = tab
+        isToolsDialogPresented = true
+    }
+
+    public func showCheckForUpdates() {
+        isCheckUpdatePresented = true
     }
 }

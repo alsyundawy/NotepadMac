@@ -1,7 +1,23 @@
 #!/usr/bin/env python3
 """
-Generate macOS AppIcon.icns for NotepadMac.
-Creates a macOS Big Sur squircle icon with Scintilla code styling and Lua accents.
+This file is part of NotepadMac.
+
+Copyright 2025-2026 Harry Dertin Sutisna Alsyundawy <alsyundawy@gmail.com>
+https://github.com/alsyundawy/NotepadMac
+ALSYUNDAWY IT SOLUTION <https://alsyundawy.com>
+
+NotepadMac is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+NotepadMac is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with NotepadMac.  If not, see <https://www.gnu.org/licenses/>.
 """
 
 import os
@@ -132,7 +148,16 @@ def main():
     iconset_dir = os.path.join(repo_root, "Resources", "AppIcon.iconset")
     os.makedirs(iconset_dir, exist_ok=True)
 
-    master = create_master_icon(1024)
+    gemini_source = (
+        "/Users/alsyundawy/Downloads/Gemini_Generated_Image_emckobemckobemck.png"
+    )
+    if os.path.isfile(gemini_source):
+        print(f"Loading custom app icon from {gemini_source}...")
+        source_img = Image.open(gemini_source).convert("RGBA")
+        master = source_img.resize((1024, 1024), Image.Resampling.LANCZOS)
+    else:
+        print("Custom icon not found; creating programmatic master icon...")
+        master = create_master_icon(1024)
 
     sizes = [
         ("icon_16x16.png", 16),

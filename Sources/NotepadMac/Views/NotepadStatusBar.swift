@@ -1,9 +1,24 @@
-//
-//  NotepadStatusBar.swift
-//  NotepadMac
-//
-//  Status bar showing cursor position, encoding, line ending, and lexer
-//
+/*
+ *
+ * This file is part of NotepadMac.
+ *
+ * Copyright 2025-2026 Harry Dertin Sutisna Alsyundawy <alsyundawy@gmail.com>
+ * https://github.com/alsyundawy/NotepadMac
+ * ALSYUNDAWY IT SOLUTION <https://alsyundawy.com>
+ *
+ * NotepadMac is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * NotepadMac is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with NotepadMac.  If not, see <https://www.gnu.org/licenses/>.
+ */
 
 import SwiftUI
 
@@ -38,14 +53,14 @@ public struct NotepadStatusBar: View {
                     Circle()
                         .fill(doc.isModified ? Color.orange : Color.green)
                         .frame(width: 6, height: 6)
-                    Text(doc.isModified ? "Modified" : "Ready")
+                    Text(doc.isModified ? loc("modified") : loc("ready"))
                         .font(.system(size: 11))
                         .foregroundColor(secondaryTextColor)
 
                     Text("•")
                         .foregroundColor(separatorColor)
 
-                    Text("\(doc.lineCount) lines")
+                    Text("\(doc.lineCount) \(loc("lines"))")
                         .font(.system(size: 11))
                         .foregroundColor(secondaryTextColor)
 
@@ -57,7 +72,7 @@ public struct NotepadStatusBar: View {
                         .foregroundColor(secondaryTextColor)
                 }
             } else {
-                Text("Ready")
+                Text(loc("ready"))
                     .font(.system(size: 11))
                     .foregroundColor(secondaryTextColor)
             }
@@ -68,12 +83,12 @@ public struct NotepadStatusBar: View {
             if let doc = documentManager.activeDocument {
                 HStack(spacing: 12) {
                     // Line & Column
-                    Text("Ln \(doc.cursorLine), Col \(doc.cursorColumn)")
+                    Text("\(loc("line_short")) \(doc.cursorLine), \(loc("col_short")) \(doc.cursorColumn)")
                         .font(.system(size: 11, design: .monospaced))
                         .foregroundColor(secondaryTextColor)
 
                     if doc.selectionLength > 0 {
-                        Text("(\(doc.selectionLength) sel)")
+                        Text("(\(doc.selectionLength) \(loc("selected_short")))")
                             .font(.system(size: 11, design: .monospaced))
                             .foregroundColor(theme.isDark ? .blue : Color(hex: "#0969da"))
                     }
@@ -205,7 +220,7 @@ public struct NotepadStatusBar: View {
                     // Zoom Controls & Icons
                     HStack(spacing: 4) {
                         Button(action: {
-                            doc.zoomOffset -= 1
+                            documentManager.zoomOut()
                         }) {
                             Image(systemName: "minus.magnifyingglass")
                                 .font(.system(size: 10))
@@ -215,7 +230,7 @@ public struct NotepadStatusBar: View {
                         .help("Zoom Out (⌘-)")
 
                         Button(action: {
-                            doc.zoomOffset = 0
+                            documentManager.resetZoom()
                         }) {
                             let zoomPercent = max(10, 100 + doc.zoomOffset * 10)
                             Text("\(zoomPercent)%")
@@ -226,7 +241,7 @@ public struct NotepadStatusBar: View {
                         .help("Reset Zoom (⌘0)")
 
                         Button(action: {
-                            doc.zoomOffset += 1
+                            documentManager.zoomIn()
                         }) {
                             Image(systemName: "plus.magnifyingglass")
                                 .font(.system(size: 10))

@@ -104,9 +104,40 @@
   - `editor.clear()`: Resets editor buffer
   - `editor.zoomIn()` / `editor.zoomOut()`: Adjusts zoom level
 
+### 3.7 Developer & Security Tools Suite (`Sources/NotepadMac/Tools/`)
+
+- **`HashTools`**: Hardware-accelerated cryptographic hash functions (MD5, SHA-1, SHA-256, SHA-384, SHA-512) via Apple `CryptoKit` and standard IEEE 802.3 CRC32 with precomputed lookup table.
+- **`CryptoTools`**: AES-256-GCM authenticated cipher with PBKDF2-HMAC-SHA256 key derivation (100,000 iterations, 16-byte cryptographically secure salt via `SecRandomCopyBytes`, 12-byte nonce, 16-byte authentication tag). Self-describing `NPMENC01:` container format.
+- **`MimeTools`**: RFC 4648 Base64 encoding/decoding, RFC 3986 URL percent-encoding, and HTML entity sanitization.
+- **`ConverterTools`**: ASCII to Hexadecimal string conversion and multi-base integer translation (Base-2, Base-8, Base-10, Base-16).
+- **`DeveloperTools`**: JSON formatting with configurable 2/4-space indentation, minification, XML document validation, JWT inspection (header, claims, payload, signature, exp/iat timestamp parsing), UUID v4 generator, and ISO 8601 / Unix Epoch conversion.
+
+### 3.8 Bilingual Localization Subsystem (`LocalizationManager`)
+
+- Centralized `ObservableObject` handling dynamic runtime language switching between **English** and **Bahasa Indonesia** (`id`).
+- Persists user language preference in `UserDefaults` (`notepad_app_language`) with fallback to macOS system preferred languages.
+- Provides immediate reactivity across SwiftUI menus, buttons, status bars, and modal dialogs via `loc(key)` helper.
+
+### 3.9 Check for Updates Subsystem (`CheckUpdateDialogView`)
+
+- Connects to GitHub Releases REST API (`https://api.github.com/repos/alsyundawy/NotepadMac/releases/latest`) with custom User-Agent and 5-second connection timeout.
+- Gracefully handles rate-limiting and offline scenarios with safe local status fallback.
+
 ---
 
-## 4. Packaging & CI/CD Pipeline
+## 4. Security & Hardening Review (2025–2026 Analysis)
+
+- **Input Validation**: Text transformations, hex parsers, and search inputs are bounded and sanitized against buffer overflows and memory exhaustion (CWE-119 / CWE-787).
+- **Safe Memory Operations**: Removed all force unwraps (`!`) in cryptographic memory buffers; replaced line-splitting arrays with zero-allocation UTF-8 byte traversal in `EditorDocument.lineCount`.
+- **Mitigation of Upstream Vulnerabilities**:
+  - _CVE-2025-49144 / CVE-2025-56383 (DLL / Binary Hijacking)_: Irrelevant on macOS due to sandboxed Mach-O loading and explicit bundle paths.
+  - _CVE-2025-15556 (WinGUp Updater Hijacking)_: NotepadMac uses native HTTPS GitHub API for update checks without executing unverified third-party binaries.
+  - _CVE-2026-25926 / CVE-2026-5525 (Path Buffer Overflows)_: macOS paths are handled dynamically via Foundation `URL` without MAX_PATH (260 byte) limits.
+  - _CVE-2026-48770 / CVE-2026-48800 (Config / IPC RCE)_: NotepadMac does not use Windows IPC (`WM_COPYDATA`) or insecure XML deserialization; configuration is managed through Swift type-safe models.
+
+---
+
+## 5. Packaging & CI/CD Pipeline
 
 ### 4.1 Local Build Scripts
 

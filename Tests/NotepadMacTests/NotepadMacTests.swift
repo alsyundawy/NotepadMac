@@ -1,7 +1,24 @@
-//
-//  NotepadMacTests.swift
-//  NotepadMacTests
-//
+/*
+ *
+ * This file is part of NotepadMac.
+ *
+ * Copyright 2025-2026 Harry Dertin Sutisna Alsyundawy <alsyundawy@gmail.com>
+ * https://github.com/alsyundawy/NotepadMac
+ * ALSYUNDAWY IT SOLUTION <https://alsyundawy.com>
+ *
+ * NotepadMac is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * NotepadMac is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with NotepadMac.  If not, see <https://www.gnu.org/licenses/>.
+ */
 
 #if canImport(XCTest)
 import XCTest
@@ -84,8 +101,14 @@ final class NotepadMacTests: XCTestCase {
         let blue = NSColor(red: 0.0, green: 0.0, blue: 1.0, alpha: 1.0)
         XCTAssertEqual(blue.scintillaColorRef, 16711680)
 
-        // All 7 themes registered
-        XCTAssertEqual(Theme.allThemes.count, 7)
+        // All 15 themes registered (including SparkNotePad ported themes)
+        XCTAssertEqual(Theme.allThemes.count, 15)
+        XCTAssertEqual(Theme.catppuccinMocha.name, "Catppuccin Mocha")
+        XCTAssertTrue(Theme.catppuccinMocha.isDark)
+        XCTAssertEqual(Theme.catppuccinLatte.name, "Catppuccin Latte")
+        XCTAssertFalse(Theme.catppuccinLatte.isDark)
+        XCTAssertEqual(Theme.tokyoNight.name, "Tokyo Night")
+        XCTAssertEqual(Theme.nordDark.name, "Nord Dark")
     }
 
     // MARK: - Pillar 4: LexerRegistry logic correctness
@@ -301,6 +324,158 @@ final class NotepadMacTests: XCTestCase {
         // Empty string → fallback gray
         let empty = NSColor(hex: "")
         XCTAssertEqual(empty.redComponent, 0.5, accuracy: 0.01)
+    }
+
+    // MARK: - New Tools Suite Tests (Hash, MIME, Converter, Crypto, Developer)
+
+    func testHashTools() {
+        let input = "SparkNotePad & NotepadMac 2026"
+        let md5 = HashTools.computeHash(input, algorithm: .md5)
+        let sha1 = HashTools.computeHash(input, algorithm: .sha1)
+        let sha256 = HashTools.computeHash(input, algorithm: .sha256)
+        let sha384 = HashTools.computeHash(input, algorithm: .sha384)
+        let sha512 = HashTools.computeHash(input, algorithm: .sha512)
+        let crc32 = HashTools.computeHash(input, algorithm: .crc32)
+
+        XCTAssertEqual(md5.count, 32)
+        XCTAssertEqual(sha1.count, 40)
+        XCTAssertEqual(sha256.count, 64)
+        XCTAssertEqual(sha384.count, 96)
+        XCTAssertEqual(sha512.count, 128)
+        XCTAssertEqual(crc32.count, 8)
+
+        // Empty input known hashes
+        XCTAssertEqual(HashTools.computeHash("", algorithm: .md5), "d41d8cd98f00b204e9800998ecf8427e")
+        XCTAssertEqual(HashTools.computeHash("", algorithm: .sha256), "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855")
+    }
+
+    func testMimeTools() {
+        let plain = "Hello NotepadMac!\nSpecial: äöü & 123"
+        let b64 = MimeTools.base64Encode(plain)
+        XCTAssertEqual(MimeTools.base64Decode(b64), plain)
+
+        // URL encode / decode
+        let url = "https://example.com/search?q=notepad mac & key=val"
+        let urlEnc = MimeTools.urlEncode(url)
+        XCTAssertFalse(urlEnc.contains(" "))
+        XCTAssertEqual(MimeTools.urlDecode(urlEnc), url)
+
+        // HTML entities
+        let html = "<div class=\"test\">Tom & Jerry 'fun'</div>"
+        let htmlEnc = MimeTools.htmlEntityEncode(html)
+        XCTAssertTrue(htmlEnc.contains("&lt;"))
+        XCTAssertTrue(htmlEnc.contains("&amp;"))
+        XCTAssertEqual(MimeTools.htmlEntityDecode(htmlEnc), html)
+
+        // Quoted printable
+        let qpEnc = MimeTools.quotedPrintableEncode("Hello = World!")
+        XCTAssertTrue(qpEnc.contains("=3D"))
+        XCTAssertEqual(MimeTools.quotedPrintableDecode(qpEnc), "Hello = World!")
+    }
+
+    func testConverterTools() {
+        // ASCII <-> HEX
+        let text = "ABC 123"
+        let hex = ConverterTools.asciiToHex(text)
+        XCTAssertEqual(hex, "41 42 43 20 31 32 33")
+        XCTAssertEqual(ConverterTools.hexToAscii(hex), text)
+
+        // Number base
+        XCTAssertEqual(ConverterTools.convertNumber("255", from: .decimal, to: .hexadecimal), "0xFF")
+        XCTAssertEqual(ConverterTools.convertNumber("0xFF", from: .hexadecimal, to: .decimal), "255")
+        XCTAssertEqual(ConverterTools.convertNumber("10", from: .decimal, to: .binary), "0b1010")
+        XCTAssertEqual(ConverterTools.convertNumber("0b1010", from: .binary, to: .decimal), "10")
+
+        // Case conversions
+        XCTAssertEqual(ConverterTools.toUpperCase("test"), "TEST")
+        XCTAssertEqual(ConverterTools.toLowerCase("TEST"), "test")
+        XCTAssertEqual(ConverterTools.toTitleCase("hello world"), "Hello World")
+        XCTAssertEqual(ConverterTools.toInvertCase("Hello World"), "hELLO wORLD")
+        XCTAssertEqual(ConverterTools.toSentenceCase("hello. world."), "Hello. World.")
+    }
+
+    func testCryptoTools() {
+        let plain = "TopSecretPassword#2026!"
+        let pass = "MasterKey_NotepadMac"
+
+        let enc = CryptoTools.encrypt(text: plain, passphrase: pass)
+        XCTAssertTrue(enc.success)
+        XCTAssertTrue(CryptoTools.isEncryptedText(enc.data))
+
+        // Correct decryption
+        let dec = CryptoTools.decrypt(ciphertext: enc.data, passphrase: pass)
+        XCTAssertTrue(dec.success)
+        XCTAssertEqual(dec.data, plain)
+
+        // Wrong passphrase rejection
+        let decWrong = CryptoTools.decrypt(ciphertext: enc.data, passphrase: "WrongPassword")
+        XCTAssertFalse(decWrong.success)
+
+        // Password strength
+        let weak = CryptoTools.evaluatePasswordStrength("123")
+        XCTAssertFalse(weak.isStrong)
+        let strong = CryptoTools.evaluatePasswordStrength("N0t3p@dM@c_2026!ProSecret")
+        XCTAssertTrue(strong.isStrong)
+    }
+
+    func testDeveloperTools() {
+        // JSON Prettify & Minify
+        let raw = "{\"name\":\"NotepadMac\",\"version\":\"1.0.0\",\"items\":[1,2,3]}"
+        let formatted = DeveloperTools.formatJson(raw, indentSpaces: 2)
+        XCTAssertNil(formatted.error)
+        XCTAssertTrue(formatted.result.contains("\n"))
+
+        let minified = DeveloperTools.minifyJson(formatted.result)
+        XCTAssertNil(minified.error)
+        XCTAssertFalse(minified.result.contains("\n"))
+
+        // XML Formatter
+        let rawXml = "<root><item id=\"1\">test</item></root>"
+        let formattedXml = DeveloperTools.formatXml(rawXml)
+        XCTAssertNil(formattedXml.error)
+        XCTAssertTrue(formattedXml.result.contains("<root>"))
+
+        // UUID
+        let uuid = DeveloperTools.generateUuid(uppercase: true, braces: true, hyphens: true)
+        XCTAssertTrue(uuid.hasPrefix("{"))
+        XCTAssertTrue(uuid.hasSuffix("}"))
+
+        // Epoch
+        let epoch: Int64 = 1767225600
+        let iso = DeveloperTools.epochToIso(epoch)
+        XCTAssertTrue(iso.contains("2026"))
+        let roundtrip = DeveloperTools.isoToEpoch(iso)
+        XCTAssertEqual(roundtrip, epoch)
+    }
+
+    func testLocalizationManager() {
+        let manager = LocalizationManager.shared
+        manager.currentLanguage = .english
+        XCTAssertEqual(manager.localized("ready"), "Ready")
+        XCTAssertEqual(manager.localized("new_tab"), "New Tab")
+
+        manager.currentLanguage = .indonesian
+        XCTAssertEqual(manager.localized("ready"), "Siap")
+        XCTAssertEqual(manager.localized("new_tab"), "Tab Baru")
+    }
+
+    func testAutoHighlightAndLexerDetection() {
+        let registry = LexerRegistry.shared
+
+        // Shebang detection
+        let bashContent = "#!/bin/bash\necho 'hello'"
+        XCTAssertEqual(registry.detectLanguage(forFilename: "myscript", content: bashContent).id, "bash")
+
+        let pythonContent = "#!/usr/bin/env python3\nprint('hello')"
+        XCTAssertEqual(registry.detectLanguage(forFilename: "runner", content: pythonContent).id, "python")
+
+        let phpContent = "<?php\necho 'hello';"
+        XCTAssertEqual(registry.detectLanguage(forFilename: "index", content: phpContent).id, "php")
+
+        // Exact filenames
+        XCTAssertEqual(registry.detectLanguage(forFilename: "Makefile", content: "").id, "makefile")
+        XCTAssertEqual(registry.detectLanguage(forFilename: "Dockerfile", content: "").id, "dockerfile")
+        XCTAssertEqual(registry.detectLanguage(forFilename: "CMakeLists.txt", content: "").id, "cmake")
     }
 }
 #endif

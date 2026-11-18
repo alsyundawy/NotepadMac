@@ -1,9 +1,24 @@
-//
-//  NotepadMenuCommands.swift
-//  NotepadMac
-//
-//  Native macOS menu commands for NotepadMac
-//
+/*
+ *
+ * This file is part of NotepadMac.
+ *
+ * Copyright 2025-2026 Harry Dertin Sutisna Alsyundawy <alsyundawy@gmail.com>
+ * https://github.com/alsyundawy/NotepadMac
+ * ALSYUNDAWY IT SOLUTION <https://alsyundawy.com>
+ *
+ * NotepadMac is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * NotepadMac is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with NotepadMac.  If not, see <https://www.gnu.org/licenses/>.
+ */
 
 import SwiftUI
 import AppKit
@@ -11,16 +26,23 @@ import AppKit
 struct AppMenuCommands: Commands {
     var body: some Commands {
         CommandGroup(replacing: .appInfo) {
-            Button("About NotepadMac") {
+            Button(loc("about")) {
                 NotificationCenter.default.post(
                     name: .notepadShowAbout,
                     object: nil
                 )
             }
 
+            Button(loc("check_updates")) {
+                NotificationCenter.default.post(
+                    name: .notepadShowCheckUpdate,
+                    object: nil
+                )
+            }
+
             Divider()
 
-            Button("Preferences...") {
+            Button(loc("preferences") + "...") {
                 NotificationCenter.default.post(
                     name: .notepadShowPreferences,
                     object: nil
@@ -198,7 +220,7 @@ struct FormatMenuCommands: Commands {
                 Button("lowercase") {
                     NotificationCenter.default.post(name: .notepadMakeLowerCase, object: nil)
                 }
-                .keyboardShortcut("l", modifiers: [.control, .command])
+                .keyboardShortcut("u", modifiers: [.option, .command])
 
                 Button("Capitalize") {
                     NotificationCenter.default.post(name: .notepadCapitalize, object: nil)
@@ -392,8 +414,76 @@ struct ExtraMenuCommands: Commands {
             }
         }
 
-        CommandMenu("Tools") {
-            Button("Lua Scripting Console") {
+        CommandMenu(loc("tools")) {
+            Button(loc("tools_hub")) {
+                NotificationCenter.default.post(
+                    name: .notepadShowTools,
+                    object: nil,
+                    userInfo: ["tab": 0]
+                )
+            }
+            .keyboardShortcut("t", modifiers: [.control, .command])
+
+            Divider()
+
+            Menu(loc("hash_tools")) {
+                Button(loc("generate_hash") + " (SHA-256)...") {
+                    NotificationCenter.default.post(
+                        name: .notepadShowTools,
+                        object: nil,
+                        userInfo: ["tab": 0]
+                    )
+                }
+                .keyboardShortcut("h", modifiers: [.control, .command])
+            }
+
+            Menu(loc("mime_tools")) {
+                Button(loc("mime_tools") + " (Base64 / URL)...") {
+                    NotificationCenter.default.post(
+                        name: .notepadShowTools,
+                        object: nil,
+                        userInfo: ["tab": 1]
+                    )
+                }
+                .keyboardShortcut("m", modifiers: [.control, .command])
+            }
+
+            Menu(loc("converter")) {
+                Button(loc("converter") + " (HEX / Numbers)...") {
+                    NotificationCenter.default.post(
+                        name: .notepadShowTools,
+                        object: nil,
+                        userInfo: ["tab": 2]
+                    )
+                }
+                .keyboardShortcut("c", modifiers: [.control, .command])
+            }
+
+            Menu(loc("encryption")) {
+                Button(loc("encryption") + " (AES-256)...") {
+                    NotificationCenter.default.post(
+                        name: .notepadShowTools,
+                        object: nil,
+                        userInfo: ["tab": 3]
+                    )
+                }
+                .keyboardShortcut("e", modifiers: [.control, .command])
+            }
+
+            Menu(loc("developer_tools")) {
+                Button(loc("developer_tools") + " (JSON / XML / JWT)...") {
+                    NotificationCenter.default.post(
+                        name: .notepadShowTools,
+                        object: nil,
+                        userInfo: ["tab": 4]
+                    )
+                }
+                .keyboardShortcut("d", modifiers: [.control, .command])
+            }
+
+            Divider()
+
+            Button(loc("lua_console")) {
                 NotificationCenter.default.post(name: .notepadToggleLuaConsole, object: nil)
             }
             .keyboardShortcut("l", modifiers: [.command, .option])
@@ -405,11 +495,14 @@ struct ExtraMenuCommands: Commands {
                     NSWorkspace.shared.open(url)
                 }
             }
-            Button("About NotepadMac") {
+            Button(loc("about")) {
                 NotificationCenter.default.post(name: .notepadShowAbout, object: nil)
             }
+            Button(loc("check_updates")) {
+                NotificationCenter.default.post(name: .notepadShowCheckUpdate, object: nil)
+            }
             Divider()
-            Button("Keyboard Shortcuts") {
+            Button(loc("keyboard_shortcuts")) {
                 NotificationCenter.default.post(name: .notepadShowPreferences, object: nil)
             }
         }

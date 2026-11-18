@@ -188,6 +188,17 @@ public struct NotepadStatusBar: View {
                         }
                         .buttonStyle(PlainButtonStyle())
                         .help("Replace... (⌥⌘F)")
+
+                        Button(action: {
+                            documentManager.findDialogTab = 2
+                            documentManager.isFindReplaceDialogPresented = true
+                        }) {
+                            Image(systemName: "bookmark.fill")
+                                .font(.system(size: 11))
+                                .foregroundColor(secondaryTextColor)
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                        .help("Mark... (⇧⌘M)")
                     }
 
                     Divider()

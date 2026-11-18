@@ -67,6 +67,30 @@ extension ScintillaEditorCoordinator {
         })
 
         observers.append(center.addObserver(
+            forName: .notepadMarkAll,
+            object: nil,
+            queue: .main
+        ) { [weak self] notif in
+            self?.handleMarkAll(notif: notif)
+        })
+
+        observers.append(center.addObserver(
+            forName: .notepadClearMarks,
+            object: nil,
+            queue: .main
+        ) { [weak self] notif in
+            self?.handleClearMarks(notif: notif)
+        })
+
+        observers.append(center.addObserver(
+            forName: .notepadCopyMarkedText,
+            object: nil,
+            queue: .main
+        ) { [weak self] notif in
+            self?.handleCopyMarkedText(notif: notif)
+        })
+
+        observers.append(center.addObserver(
             forName: .notepadUseSelectionForFind,
             object: nil,
             queue: .main
@@ -411,6 +435,131 @@ extension ScintillaEditorCoordinator {
         }
         let range = NSRange(text.startIndex..<text.endIndex, in: text)
         return regex.numberOfMatches(in: text, options: [], range: range)
+    }
+
+    // MARK: - Mark & Bookmark Operations
+
+    func handleMarkAll(notif: Notification) {
+        guard let view = scintillaView else { return }
+        var query = notif.userInfo?["query"] as? String ?? ""
+        if query.isEmpty {
+            query = parent.documentManager?.searchQuery ?? ""
+        }
+        guard !query.isEmpty else { return }
+
+        let matchCase = notif.userInfo?["matchCase"] as? Bool
+            ?? parent.documentManager?.isMatchCase ?? false
+        let wholeWord = notif.userInfo?["wholeWord"] as? Bool
+            ?? parent.documentManager?.isWholeWord ?? false
+        let isRegex = notif.userInfo?["isRegex"] as? Bool
+            ?? parent.documentManager?.isRegex ?? false
+        let bookmarkLine = notif.userInfo?["bookmarkLine"] as? Bool
+            ?? parent.documentManager?.isBookmarkLine ?? true
+        let purge = notif.userInfo?["purge"] as? Bool
+            ?? parent.documentManager?.isPurgeOnSearch ?? true
+
+        if purge {
+            clearHighlights()
+            view.message(UInt32(2045), wParam: 20) // SCI_MARKERDELETEALL for marker 20
+        }
+
+        let docLen = view.message(UInt32(2183))
+        guard docLen > 0, let fullText = view.string() else { return }
+
+        var totalMatches = 0
+        var bookmarkedLines = Set<Int>()
+
+        let pattern: String
+        if isRegex {
+            pattern = wholeWord ? "\\b(?:\(query))\\b" : query
+        } else {
+            let escaped = NSRegularExpression.escapedPattern(for: query)
+            pattern = wholeWord ? "\\b\(escaped)\\b" : escaped
+        }
+
+        var regexOptions: NSRegularExpression.Options = []
+        if !matchCase { regexOptions.insert(.caseInsensitive) }
+
+        guard let regex = try? NSRegularExpression(pattern: pattern, options: regexOptions) else {
+            notifySearchStatus("Invalid search query or pattern")
+            return
+        }
+
+        view.message(UInt32(2500), wParam: 8) // SCI_SETINDICATORCURRENT (Indicator 8)
+
+        let nsRange = NSRange(fullText.startIndex..<fullText.endIndex, in: fullText)
+        regex.enumerateMatches(in: fullText, options: [], range: nsRange) { match, _, _ in
+            guard let matchRange = match?.range else { return }
+            totalMatches += 1
+
+            if let stringRange = Range(matchRange, in: fullText) {
+                let prefix = fullText[..<stringRange.lowerBound]
+                let matchSub = fullText[stringRange]
+                let startByte = prefix.utf8.count
+                let lenByte = matchSub.utf8.count
+
+                view.message(UInt32(2504), wParam: UInt(startByte), lParam: lenByte) // SCI_INDICATORFILLRANGE
+
+                if bookmarkLine {
+                    let line = view.message(UInt32(2166), wParam: UInt(startByte)) // SCI_LINEFROMPOSITION
+                    if !bookmarkedLines.contains(line) {
+                        bookmarkedLines.insert(line)
+                        view.message(UInt32(2043), wParam: UInt(line), lParam: 20) // SCI_MARKERADD
+                    }
+                }
+            }
+        }
+
+        if totalMatches > 0 {
+            if bookmarkLine {
+                notifySearchStatus("Marked \(totalMatches) match(es) across \(bookmarkedLines.count) line(s)")
+            } else {
+                notifySearchStatus("Marked \(totalMatches) match(es)")
+            }
+        } else {
+            notifySearchStatus("No matches found to mark")
+        }
+    }
+
+    func handleClearMarks(notif: Notification? = nil) {
+        guard let view = scintillaView else { return }
+        clearHighlights()
+        view.message(UInt32(2045), wParam: 20) // SCI_MARKERDELETEALL marker 20
+        notifySearchStatus("Cleared all marks and bookmarks")
+    }
+
+    func handleCopyMarkedText(notif: Notification? = nil) {
+        guard let view = scintillaView, let fullText = view.string() else { return }
+        let totalLines = view.message(UInt32(2154)) // SCI_GETLINECOUNT
+        guard totalLines > 0 else { return }
+
+        var copiedLines: [String] = []
+        let linesArray = fullText.components(separatedBy: "\n")
+
+        for lineIdx in 0..<min(totalLines, linesArray.count) {
+            let markerMask = view.message(UInt32(2046), wParam: UInt(lineIdx)) // SCI_MARKERGET
+            if (markerMask & (1 << 20)) != 0 {
+                copiedLines.append(linesArray[lineIdx])
+            }
+        }
+
+        if copiedLines.isEmpty {
+            let query = parent.documentManager?.searchQuery ?? ""
+            if !query.isEmpty {
+                for line in linesArray where line.localizedCaseInsensitiveContains(query) {
+                    copiedLines.append(line)
+                }
+            }
+        }
+
+        if !copiedLines.isEmpty {
+            let joined = copiedLines.joined(separator: "\n")
+            NSPasteboard.general.clearContents()
+            NSPasteboard.general.setString(joined, forType: .string)
+            notifySearchStatus("Copied \(copiedLines.count) marked line(s) to clipboard")
+        } else {
+            notifySearchStatus("No marked text to copy")
+        }
     }
 
     private func handleUseSelectionForFind() {

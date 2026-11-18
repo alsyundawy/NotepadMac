@@ -65,13 +65,20 @@
   - Regular expression evaluation via `SCFIND_REGEXP`, `SCFIND_MATCHCASE`, and `SCFIND_WHOLEWORD`.
   - Occurrence counting via `countMatches(in:query:matchCase:wholeWord:isRegex:)` without disrupting the user's cursor or viewport.
 
-### 3.3 SparkNotePad-Style Dedicated Find & Replace Dialog (`FindReplaceDialogView`)
+### 3.3 Modernized Find, Replace & Mark Hub (`FindReplaceDialogView` & `FindReplaceBar`)
 
-- Standalone modal sheet dialog inspired by SparkNotePad and Notepad++.
-- Features tabbed navigation between "Find" and "Replace" modes.
-- Search options: Match Case, Whole Word Only, Regular Expression, and Wrap Around.
-- Direction controls: Up and Down radio selectors.
-- Action triggers: Find Next (`Return`), Find Previous, Replace, Replace All, Count occurrences, and Close (`Esc`).
+- **Design Harmony with Tools Hub**: Completely redesigned with the exact same visual architecture, geometry, and styling tokens as `ToolsDialogView`:
+  - Uniform window background (`Color(NSColor.windowBackgroundColor)`), 12pt continuous corner radii, and matching header/footer bars (`Color(NSColor.controlBackgroundColor)`).
+  - Native segmented tab selector seamlessly switching between **Find**, **Replace**, and **Mark** tabs.
+  - Comfortable, non-cramped fixed frame dimensions (`660x490`) eliminating jarring height jumps.
+- **Dedicated Mark & Bookmark Engine**:
+  - Full support for Notepad++-style buffer marking and margin bookmarking.
+  - **Mark All**: Highlights all matches across the buffer using Scintilla Indicator 8 (`INDIC_ROUNDBOX`) and dynamically adds rounded bookmark markers (Marker 20) in margin 1.
+  - **Clear All Marks**: Flushes indicator highlights and removes bookmark markers (`SCI_MARKERDELETEALL`).
+  - **Copy Marked Text**: Automatically extracts all bookmarked/marked lines and commits them to the macOS system pasteboard.
+  - Attribute toggles: **Bookmark Line** (`🔖`) and **Purge for each search** (`🧹`).
+- **Modernized Inline Search Bar (`FindReplaceBar`)**:
+  - Modernized with full localization (`loc(...)`), clean text fields with clear buttons, quick option toggles (`Aa`, `\b`, `.*`, `↩`), navigation buttons, occurrence counting, status pills, and one-click expand to the full dialog hub.
 
 ### 3.4 Text Transformations & Format Menu (`NotepadMenuCommands`)
 

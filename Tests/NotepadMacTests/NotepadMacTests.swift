@@ -500,5 +500,28 @@ final class NotepadMacTests: XCTestCase {
         newDoc.isModified = false
         XCTAssertTrue(docMgr.confirmCloseDocument(newDoc))
     }
+
+    func testFindReplaceAndMarkProperties() {
+        let docMgr = DocumentManager()
+        docMgr.searchQuery = "hello"
+        docMgr.replaceQuery = "world"
+        docMgr.isMatchCase = true
+        docMgr.isWholeWord = true
+        docMgr.isRegex = true
+        docMgr.isWrapAround = true
+        docMgr.isBookmarkLine = true
+        docMgr.isPurgeOnSearch = true
+        docMgr.findDialogTab = 2
+
+        XCTAssertEqual(docMgr.searchQuery, "hello")
+        XCTAssertEqual(docMgr.replaceQuery, "world")
+        XCTAssertTrue(docMgr.isMatchCase)
+        XCTAssertTrue(docMgr.isWholeWord)
+        XCTAssertTrue(docMgr.isRegex)
+        XCTAssertTrue(docMgr.isWrapAround)
+        XCTAssertTrue(docMgr.isBookmarkLine)
+        XCTAssertTrue(docMgr.isPurgeOnSearch)
+        XCTAssertEqual(docMgr.findDialogTab, 2)
+    }
 }
 #endif

@@ -52,6 +52,13 @@ extension ScintillaEditorCoordinator {
             key: "",
             icon: "arrow.triangle.2.circlepath"
         )
+        addMenuItem(
+            to: findSubmenu,
+            title: "Mark...",
+            action: #selector(contextMark),
+            key: "M",
+            icon: "bookmark.fill"
+        )
         addMenuItem(to: findSubmenu, title: "Find Next", action: #selector(contextFindNext), key: "g", icon: "chevron.down")
         addMenuItem(to: findSubmenu, title: "Find Previous", action: #selector(contextFindPrev), key: "G", icon: "chevron.up")
         addMenuItem(
@@ -139,6 +146,9 @@ extension ScintillaEditorCoordinator {
     }
     @objc func contextReplace() {
         NotificationCenter.default.post(name: .notepadShowReplaceDialog, object: nil)
+    }
+    @objc func contextMark() {
+        NotificationCenter.default.post(name: .notepadShowMarkDialog, object: nil)
     }
     @objc func contextFindNext() {
         NotificationCenter.default.post(name: .notepadFindNext, object: nil)

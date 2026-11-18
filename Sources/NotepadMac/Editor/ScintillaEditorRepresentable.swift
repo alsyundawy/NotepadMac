@@ -196,8 +196,14 @@ extension ScintillaEditorRepresentable {
         view.message(UInt32(SCI_SETMARGINSENSITIVEN), wParam: 0, lParam: 0)
 
         view.message(UInt32(SCI_SETMARGINTYPEN), wParam: 1, lParam: Int(SC_MARGIN_SYMBOL))
-        view.message(UInt32(SCI_SETMARGINWIDTHN), wParam: 1, lParam: 4)
-        view.message(UInt32(SCI_SETMARGINMASKN), wParam: 1, lParam: 0)
+        view.message(UInt32(SCI_SETMARGINWIDTHN), wParam: 1, lParam: 14)
+        view.message(UInt32(SCI_SETMARGINMASKN), wParam: 1, lParam: 1 << 20)
+        view.message(UInt32(SCI_SETMARGINSENSITIVEN), wParam: 1, lParam: 1)
+
+        // Bookmark marker definition (Marker 20)
+        view.message(UInt32(SCI_MARKERDEFINE), wParam: 20, lParam: Int(SC_MARK_ROUNDRECT))
+        view.message(SciMsg.markerSetFore, wParam: 20, lParam: 0xFFFFFF)
+        view.message(SciMsg.markerSetBack, wParam: 20, lParam: 0x00A5FF)
 
         view.message(UInt32(SCI_SETMARGINTYPEN), wParam: 2, lParam: Int(SC_MARGIN_SYMBOL))
         view.message(UInt32(SCI_SETMARGINWIDTHN), wParam: 2, lParam: 16)

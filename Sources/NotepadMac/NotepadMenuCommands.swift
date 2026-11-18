@@ -177,6 +177,13 @@ struct EditMenuCommands: Commands {
             .keyboardShortcut("f", modifiers: [.command, .option])
 
             Button(action: {
+                NotificationCenter.default.post(name: .notepadShowMarkDialog, object: nil)
+            }) {
+                Label("Mark...", systemImage: "bookmark.fill")
+            }
+            .keyboardShortcut("m", modifiers: [.command, .shift])
+
+            Button(action: {
                 NotificationCenter.default.post(name: .notepadToggleFind, object: nil)
             }) {
                 Label("Toggle Find Bar", systemImage: "character.magnifyingglass")

@@ -30,30 +30,24 @@ public struct FindReplaceDialogView: View {
         self.documentManager = documentManager
     }
 
-    private var theme: Theme {
-        documentManager.activeTheme
-    }
-
     public var body: some View {
         VStack(spacing: 0) {
             headerBar
+            Divider().background(Color.white.opacity(0.12))
+            tabSelector
             Divider().background(Color.white.opacity(0.12))
             mainContentArea
             Divider().background(Color.white.opacity(0.12))
             statusFooter
         }
-        .frame(
-            width: 550,
-            height: documentManager.findDialogTab == 1 ? 370 : (documentManager.findDialogTab == 2 ? 340 : 325)
-        )
-        .background(Color(red: 0.13, green: 0.15, blue: 0.18))
-        .foregroundColor(.white)
+        .frame(width: 660, height: 490)
+        .background(Color(NSColor.windowBackgroundColor))
         .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
         .overlay(
             RoundedRectangle(cornerRadius: 12, style: .continuous)
                 .stroke(Color.white.opacity(0.15), lineWidth: 1)
         )
-        .shadow(color: Color.black.opacity(0.4), radius: 20, x: 0, y: 10)
+        .shadow(color: Color.black.opacity(0.35), radius: 20, x: 0, y: 10)
         .onReceive(NotificationCenter.default.publisher(for: .notepadSearchStatusUpdate)) { notif in
             if let status = notif.userInfo?["status"] as? String {
                 documentManager.searchStatus = status
@@ -61,59 +55,25 @@ public struct FindReplaceDialogView: View {
         }
     }
 
-    // MARK: - Header Bar with Sliding Tab Switcher
+    // MARK: - Header Bar
 
     private var headerBar: some View {
         HStack {
-            // Elegant Multi-tab Selector (Find, Replace, Mark)
-            HStack(spacing: 4) {
-                TabPillButton(
-                    title: loc("find"),
-                    icon: "magnifyingglass",
-                    isSelected: documentManager.findDialogTab == 0
-                ) {
-                    withAnimation(.easeInOut(duration: 0.15)) {
-                        documentManager.findDialogTab = 0
-                    }
-                }
+            Image(systemName: headerIcon)
+                .foregroundColor(.blue)
+                .font(.system(size: 15, weight: .bold))
 
-                TabPillButton(
-                    title: loc("replace"),
-                    icon: "arrow.triangle.2.circlepath",
-                    isSelected: documentManager.findDialogTab == 1
-                ) {
-                    withAnimation(.easeInOut(duration: 0.15)) {
-                        documentManager.findDialogTab = 1
-                    }
-                }
-
-                TabPillButton(
-                    title: loc("mark"),
-                    icon: "bookmark.fill",
-                    isSelected: documentManager.findDialogTab == 2
-                ) {
-                    withAnimation(.easeInOut(duration: 0.15)) {
-                        documentManager.findDialogTab = 2
-                    }
-                }
-            }
-            .padding(3)
-            .background(Color.black.opacity(0.45))
-            .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
-            .overlay(
-                RoundedRectangle(cornerRadius: 8, style: .continuous)
-                    .stroke(Color.white.opacity(0.12), lineWidth: 0.8)
-            )
+            Text(loc("find_replace_hub"))
+                .font(.system(size: 14, weight: .bold))
 
             Spacer()
 
-            // Close sheet button
             Button(action: {
                 documentManager.isFindReplaceDialogPresented = false
             }) {
                 Image(systemName: "xmark.circle.fill")
+                    .foregroundColor(.secondary)
                     .font(.system(size: 16))
-                    .foregroundColor(Color.white.opacity(0.5))
             }
             .buttonStyle(PlainButtonStyle())
             .keyboardShortcut(.cancelAction)
@@ -121,176 +81,256 @@ public struct FindReplaceDialogView: View {
         }
         .padding(.horizontal, 16)
         .padding(.vertical, 10)
-        .background(Color(red: 0.11, green: 0.13, blue: 0.15))
+        .background(Color(NSColor.controlBackgroundColor))
+    }
+
+    private var headerIcon: String {
+        switch documentManager.findDialogTab {
+        case 1: return "arrow.triangle.2.circlepath.circle.fill"
+        case 2: return "bookmark.circle.fill"
+        default: return "magnifyingglass.circle.fill"
+        }
+    }
+
+    // MARK: - Tab Selector
+
+    private var tabSelector: some View {
+        Picker("", selection: $documentManager.findDialogTab) {
+            Text(loc("find")).tag(0)
+            Text(loc("replace")).tag(1)
+            Text(loc("mark")).tag(2)
+        }
+        .pickerStyle(SegmentedPickerStyle())
+        .padding(.horizontal, 16)
+        .padding(.vertical, 8)
+        .background(Color(NSColor.controlBackgroundColor).opacity(0.5))
     }
 
     // MARK: - Main Content Area
 
     private var mainContentArea: some View {
-        HStack(alignment: .top, spacing: 18) {
-            // Left: Input fields and options
+        HStack(alignment: .top, spacing: 16) {
             leftInputAndOptionsColumn
                 .frame(maxWidth: .infinity, alignment: .leading)
 
-            // Vertical divider separating inputs from actions
             Rectangle()
                 .fill(Color.white.opacity(0.1))
                 .frame(width: 1)
-                .padding(.vertical, 4)
+                .padding(.vertical, 2)
 
-            // Right: Standardized Action Buttons
             rightActionButtonsColumn
-                .frame(width: 116)
+                .frame(width: 140)
         }
         .padding(16)
+        .frame(maxHeight: .infinity, alignment: .top)
     }
 
     // MARK: - Left Column: Inputs & Options
 
     private var leftInputAndOptionsColumn: some View {
         VStack(alignment: .leading, spacing: 12) {
-            // Find What Input
-            VStack(alignment: .leading, spacing: 5) {
-                Text("FIND WHAT")
-                    .font(.system(size: 10, weight: .bold))
-                    .foregroundColor(Color.white.opacity(0.6))
+            inputsCardSection
+
+            optionsCardSection
+
+            secondaryOptionsSection
+
+            Spacer(minLength: 4)
+
+            documentContextBadge
+        }
+    }
+
+    private var inputsCardSection: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            // Find / Mark What Input
+            VStack(alignment: .leading, spacing: 4) {
+                Text(documentManager.findDialogTab == 2 ? loc("mark_what") : loc("find_what"))
+                    .font(.system(size: 11, weight: .semibold))
+                    .foregroundColor(.secondary)
 
                 HStack(spacing: 8) {
-                    Image(systemName: "magnifyingglass")
+                    Image(systemName: documentManager.findDialogTab == 2 ? "bookmark.fill" : "magnifyingglass")
                         .font(.system(size: 12))
-                        .foregroundColor(Color.white.opacity(0.45))
+                        .foregroundColor(.blue.opacity(0.8))
 
-                    TextField("Enter search term...", text: $documentManager.searchQuery, onCommit: {
-                        triggerFindNext()
+                    TextField(loc("search_field_placeholder"), text: $documentManager.searchQuery, onCommit: {
+                        if documentManager.findDialogTab == 2 {
+                            triggerMarkAll()
+                        } else {
+                            triggerFindNext()
+                        }
                     })
                     .textFieldStyle(PlainTextFieldStyle())
                     .font(.system(size: 12))
-                    .foregroundColor(.white)
 
                     if !documentManager.searchQuery.isEmpty {
                         Button(action: { documentManager.searchQuery = "" }) {
                             Image(systemName: "xmark.circle.fill")
                                 .font(.system(size: 12))
-                                .foregroundColor(Color.white.opacity(0.5))
+                                .foregroundColor(.secondary)
                         }
                         .buttonStyle(PlainButtonStyle())
                     }
                 }
                 .padding(.horizontal, 10)
-                .frame(height: 30)
-                .background(Color.black.opacity(0.35))
+                .frame(height: 32)
+                .background(Color(NSColor.controlBackgroundColor).opacity(0.7))
                 .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
                 .overlay(
                     RoundedRectangle(cornerRadius: 6, style: .continuous)
                         .stroke(
                             !documentManager.searchQuery.isEmpty
                                 ? Color.blue.opacity(0.6)
-                                : Color.white.opacity(0.15),
+                                : Color.gray.opacity(0.25),
                             lineWidth: 1
                         )
                 )
             }
 
-            // Replace With Input (Animated visibility for Replace tab)
+            // Replace With Input (in Replace tab)
             if documentManager.findDialogTab == 1 {
-                VStack(alignment: .leading, spacing: 5) {
-                    Text("REPLACE WITH")
-                        .font(.system(size: 10, weight: .bold))
-                        .foregroundColor(Color.white.opacity(0.6))
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(loc("replace_with"))
+                        .font(.system(size: 11, weight: .semibold))
+                        .foregroundColor(.secondary)
 
                     HStack(spacing: 8) {
                         Image(systemName: "arrow.triangle.2.circlepath")
                             .font(.system(size: 11))
-                            .foregroundColor(Color.white.opacity(0.45))
+                            .foregroundColor(.orange.opacity(0.85))
 
-                        TextField("Enter replacement text...", text: $documentManager.replaceQuery, onCommit: {
+                        TextField(loc("replace_field_placeholder"), text: $documentManager.replaceQuery, onCommit: {
                             triggerReplaceNext()
                         })
                         .textFieldStyle(PlainTextFieldStyle())
                         .font(.system(size: 12))
-                        .foregroundColor(.white)
 
                         if !documentManager.replaceQuery.isEmpty {
                             Button(action: { documentManager.replaceQuery = "" }) {
                                 Image(systemName: "xmark.circle.fill")
                                     .font(.system(size: 12))
-                                    .foregroundColor(Color.white.opacity(0.5))
+                                    .foregroundColor(.secondary)
                             }
                             .buttonStyle(PlainButtonStyle())
                         }
                     }
                     .padding(.horizontal, 10)
-                    .frame(height: 30)
-                    .background(Color.black.opacity(0.35))
+                    .frame(height: 32)
+                    .background(Color(NSColor.controlBackgroundColor).opacity(0.7))
                     .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
                     .overlay(
                         RoundedRectangle(cornerRadius: 6, style: .continuous)
-                            .stroke(Color.white.opacity(0.15), lineWidth: 1)
+                            .stroke(Color.gray.opacity(0.25), lineWidth: 1)
                     )
                 }
                 .transition(.opacity.combined(with: .move(edge: .top)))
-            }
-
-            // Search Options Box
-            VStack(alignment: .leading, spacing: 8) {
-                Text("SEARCH OPTIONS")
-                    .font(.system(size: 10, weight: .bold))
-                    .foregroundColor(Color.white.opacity(0.6))
-
-                VStack(spacing: 6) {
-                    HStack(spacing: 16) {
-                        CustomOptionCheckbox(
-                            title: loc("match_case"),
-                            badge: "Aa",
-                            isOn: $documentManager.isMatchCase
-                        )
-                        CustomOptionCheckbox(
-                            title: loc("whole_word"),
-                            badge: "\\b",
-                            isOn: $documentManager.isWholeWord
-                        )
-                    }
-
-                    HStack(spacing: 16) {
-                        CustomOptionCheckbox(
-                            title: loc("regex"),
-                            badge: ".*",
-                            isOn: $documentManager.isRegex
-                        )
-                        CustomOptionCheckbox(
-                            title: loc("wrap_around"),
-                            badge: "↩",
-                            isOn: $documentManager.isWrapAround
-                        )
-                    }
+            } else if documentManager.findDialogTab == 2 {
+                // Informative helper text for Mark tab
+                HStack(spacing: 6) {
+                    Image(systemName: "info.circle.fill")
+                        .foregroundColor(.blue.opacity(0.8))
+                        .font(.system(size: 11))
+                    Text("Highlights matching occurrences and optionally bookmarks lines in the margin.")
+                        .font(.system(size: 10))
+                        .foregroundColor(.secondary)
                 }
-                .padding(10)
-                .background(Color.white.opacity(0.04))
+                .padding(.top, 2)
+            }
+        }
+    }
+
+    private var optionsCardSection: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            Text(loc("search_options"))
+                .font(.system(size: 11, weight: .semibold))
+                .foregroundColor(.secondary)
+
+            VStack(spacing: 6) {
+                HStack(spacing: 12) {
+                    OptionToggleCard(
+                        title: loc("match_case"),
+                        badge: "Aa",
+                        isOn: $documentManager.isMatchCase
+                    )
+                    OptionToggleCard(
+                        title: loc("whole_word"),
+                        badge: "\\b",
+                        isOn: $documentManager.isWholeWord
+                    )
+                }
+
+                HStack(spacing: 12) {
+                    OptionToggleCard(
+                        title: loc("regex"),
+                        badge: ".*",
+                        isOn: $documentManager.isRegex
+                    )
+                    OptionToggleCard(
+                        title: loc("wrap_around"),
+                        badge: "↩",
+                        isOn: $documentManager.isWrapAround
+                    )
+                }
+            }
+            .padding(8)
+            .background(Color(NSColor.controlBackgroundColor).opacity(0.4))
+            .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
+            .overlay(
+                RoundedRectangle(cornerRadius: 8, style: .continuous)
+                    .stroke(Color.gray.opacity(0.2), lineWidth: 0.8)
+            )
+        }
+    }
+
+    @ViewBuilder
+    private var secondaryOptionsSection: some View {
+        if documentManager.findDialogTab == 2 {
+            // Mark Options Card
+            VStack(alignment: .leading, spacing: 6) {
+                Text("MARK ATTRIBUTES")
+                    .font(.system(size: 10, weight: .bold))
+                    .foregroundColor(.secondary)
+
+                HStack(spacing: 12) {
+                    OptionToggleCard(
+                        title: loc("bookmark_line"),
+                        badge: "🔖",
+                        isOn: $documentManager.isBookmarkLine
+                    )
+                    OptionToggleCard(
+                        title: loc("purge_for_each_search"),
+                        badge: "🧹",
+                        isOn: $documentManager.isPurgeOnSearch
+                    )
+                }
+                .padding(8)
+                .background(Color(NSColor.controlBackgroundColor).opacity(0.4))
                 .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
                 .overlay(
                     RoundedRectangle(cornerRadius: 8, style: .continuous)
-                        .stroke(Color.white.opacity(0.08), lineWidth: 1)
+                        .stroke(Color.gray.opacity(0.2), lineWidth: 0.8)
                 )
             }
-
-            // Search Direction Segment
-            HStack(spacing: 10) {
-                Text("Direction:")
+        } else {
+            // Direction Selector
+            HStack(spacing: 12) {
+                Text(loc("direction") + ":")
                     .font(.system(size: 11, weight: .medium))
-                    .foregroundColor(Color.white.opacity(0.75))
+                    .foregroundColor(.secondary)
 
-                HStack(spacing: 2) {
+                HStack(spacing: 4) {
                     Button(action: { documentManager.searchDirectionUp = false }) {
                         HStack(spacing: 4) {
                             Image(systemName: "arrow.down")
                                 .font(.system(size: 10))
-                            Text("Down")
+                            Text(loc("down"))
                                 .font(.system(size: 11, weight: !documentManager.searchDirectionUp ? .semibold : .regular))
                         }
-                        .foregroundColor(!documentManager.searchDirectionUp ? .white : Color.white.opacity(0.6))
+                        .foregroundColor(!documentManager.searchDirectionUp ? .white : .secondary)
                         .padding(.horizontal, 10)
-                        .padding(.vertical, 3)
-                        .background(!documentManager.searchDirectionUp ? Color.blue.opacity(0.4) : Color.clear)
+                        .padding(.vertical, 4)
+                        .background(!documentManager.searchDirectionUp ? Color.blue : Color.clear)
                         .clipShape(RoundedRectangle(cornerRadius: 4, style: .continuous))
                     }
                     .buttonStyle(PlainButtonStyle())
@@ -299,29 +339,76 @@ public struct FindReplaceDialogView: View {
                         HStack(spacing: 4) {
                             Image(systemName: "arrow.up")
                                 .font(.system(size: 10))
-                            Text("Up")
+                            Text(loc("up"))
                                 .font(.system(size: 11, weight: documentManager.searchDirectionUp ? .semibold : .regular))
                         }
-                        .foregroundColor(documentManager.searchDirectionUp ? .white : Color.white.opacity(0.6))
+                        .foregroundColor(documentManager.searchDirectionUp ? .white : .secondary)
                         .padding(.horizontal, 10)
-                        .padding(.vertical, 3)
-                        .background(documentManager.searchDirectionUp ? Color.blue.opacity(0.4) : Color.clear)
+                        .padding(.vertical, 4)
+                        .background(documentManager.searchDirectionUp ? Color.blue : Color.clear)
                         .clipShape(RoundedRectangle(cornerRadius: 4, style: .continuous))
                     }
                     .buttonStyle(PlainButtonStyle())
                 }
                 .padding(2)
-                .background(Color.black.opacity(0.25))
+                .background(Color(NSColor.controlBackgroundColor))
                 .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
             }
         }
     }
 
+    private var documentContextBadge: some View {
+        HStack(spacing: 8) {
+            Image(systemName: "doc.text")
+                .foregroundColor(.secondary)
+                .font(.system(size: 10))
+
+            Text(documentManager.activeDocument?.title ?? "Document")
+                .font(.system(size: 10, weight: .medium))
+                .foregroundColor(.secondary)
+                .lineLimit(1)
+
+            Spacer()
+
+            if let doc = documentManager.activeDocument {
+                Text("\(doc.lineCount) lines")
+                    .font(.system(size: 10, design: .monospaced))
+                    .foregroundColor(.secondary)
+            }
+        }
+        .padding(.horizontal, 8)
+        .padding(.vertical, 4)
+        .background(Color(NSColor.controlBackgroundColor).opacity(0.3))
+        .clipShape(RoundedRectangle(cornerRadius: 4))
+    }
+
     // MARK: - Right Column: Standardized Actions
 
+    @ViewBuilder
     private var rightActionButtonsColumn: some View {
-        VStack(spacing: 7) {
-            // Find Next (Primary Action)
+        VStack(spacing: 8) {
+            switch documentManager.findDialogTab {
+            case 1:
+                replaceTabActions
+            case 2:
+                markTabActions
+            default:
+                findTabActions
+            }
+
+            Spacer(minLength: 8)
+
+            // Close dialog
+            DialogActionSecondaryButton(title: loc("close"), icon: "xmark") {
+                documentManager.isFindReplaceDialogPresented = false
+            }
+            .keyboardShortcut(.cancelAction)
+        }
+    }
+
+    private var findTabActions: some View {
+        VStack(spacing: 8) {
+            // Find Next (Primary)
             Button(action: triggerFindNext) {
                 HStack(spacing: 5) {
                     Image(systemName: "magnifyingglass")
@@ -329,53 +416,82 @@ public struct FindReplaceDialogView: View {
                     Text(loc("find_next"))
                         .font(.system(size: 11, weight: .semibold))
                 }
-                .foregroundColor(.white)
                 .frame(maxWidth: .infinity)
-                .frame(height: 27)
-                .background(
-                    LinearGradient(
-                        colors: [Color(hex: "#0969da"), Color(hex: "#044289")],
-                        startPoint: .top,
-                        endPoint: .bottom
-                    )
-                )
-                .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
-                .overlay(
-                    RoundedRectangle(cornerRadius: 6, style: .continuous)
-                        .stroke(Color.white.opacity(0.25), lineWidth: 0.8)
-                )
-                .contentShape(Rectangle())
+                .frame(height: 28)
             }
-            .buttonStyle(PlainButtonStyle())
-            .contentShape(Rectangle())
+            .buttonStyle(ProminentButtonStyle())
             .keyboardShortcut(.defaultAction)
 
-            // Find Prev
-            DialogSecondaryButton(title: loc("find_prev"), icon: "chevron.up") {
+            DialogActionSecondaryButton(title: loc("find_prev"), icon: "chevron.up") {
                 triggerFindPrevious()
             }
 
-            // Replace actions (only when in Replace tab)
-            if documentManager.findDialogTab == 1 {
-                DialogSecondaryButton(title: loc("replace_next"), icon: "arrow.triangle.2.circlepath") {
-                    triggerReplaceNext()
-                }
-
-                DialogSecondaryButton(title: loc("replace_all"), icon: "arrow.triangle.2.circlepath.circle.fill") {
-                    triggerReplaceAll()
-                }
-            }
-
-            // Count Matches
-            DialogSecondaryButton(title: loc("count_matches"), icon: "number") {
+            DialogActionSecondaryButton(title: loc("count_matches"), icon: "number") {
                 triggerCount()
             }
+        }
+    }
 
-            Spacer(minLength: 8)
+    private var replaceTabActions: some View {
+        VStack(spacing: 8) {
+            // Replace Next (Primary)
+            Button(action: triggerReplaceNext) {
+                HStack(spacing: 5) {
+                    Image(systemName: "arrow.triangle.2.circlepath")
+                        .font(.system(size: 11, weight: .bold))
+                    Text(loc("replace_next"))
+                        .font(.system(size: 11, weight: .semibold))
+                }
+                .frame(maxWidth: .infinity)
+                .frame(height: 28)
+            }
+            .buttonStyle(ProminentButtonStyle())
+            .keyboardShortcut(.defaultAction)
 
-            // Close dialog
-            DialogSecondaryButton(title: loc("close"), icon: "xmark") {
-                documentManager.isFindReplaceDialogPresented = false
+            DialogActionSecondaryButton(title: loc("replace_all"), icon: "arrow.triangle.2.circlepath.circle.fill") {
+                triggerReplaceAll()
+            }
+
+            DialogActionSecondaryButton(title: loc("find_next"), icon: "magnifyingglass") {
+                triggerFindNext()
+            }
+
+            DialogActionSecondaryButton(title: loc("find_prev"), icon: "chevron.up") {
+                triggerFindPrevious()
+            }
+
+            DialogActionSecondaryButton(title: loc("count_matches"), icon: "number") {
+                triggerCount()
+            }
+        }
+    }
+
+    private var markTabActions: some View {
+        VStack(spacing: 8) {
+            // Mark All (Primary)
+            Button(action: triggerMarkAll) {
+                HStack(spacing: 5) {
+                    Image(systemName: "bookmark.fill")
+                        .font(.system(size: 11, weight: .bold))
+                    Text(loc("mark_all"))
+                        .font(.system(size: 11, weight: .semibold))
+                }
+                .frame(maxWidth: .infinity)
+                .frame(height: 28)
+            }
+            .buttonStyle(ProminentButtonStyle())
+            .keyboardShortcut(.defaultAction)
+
+            DialogActionSecondaryButton(title: loc("clear_all_marks"), icon: "trash") {
+                triggerClearMarks()
+            }
+
+            DialogActionSecondaryButton(title: loc("copy_marked_text"), icon: "doc.on.doc") {
+                triggerCopyMarkedText()
+            }
+
+            DialogActionSecondaryButton(title: loc("count_matches"), icon: "number") {
+                triggerCount()
             }
         }
     }
@@ -385,10 +501,10 @@ public struct FindReplaceDialogView: View {
     private var statusFooter: some View {
         HStack(spacing: 8) {
             Image(systemName: statusIcon)
-                .font(.system(size: 11))
+                .font(.system(size: 12))
                 .foregroundColor(statusColor)
 
-            Text(documentManager.searchStatus.isEmpty ? "Ready to search" : documentManager.searchStatus)
+            Text(documentManager.searchStatus.isEmpty ? loc("ready_to_search") : documentManager.searchStatus)
                 .font(.system(size: 11))
                 .foregroundColor(statusColor)
                 .lineLimit(1)
@@ -398,44 +514,47 @@ public struct FindReplaceDialogView: View {
             // Active flags badges
             HStack(spacing: 4) {
                 if documentManager.isMatchCase {
-                    StatusOptionBadge(title: "Match Case")
+                    StatusFlagPill(title: "Aa")
                 }
                 if documentManager.isWholeWord {
-                    StatusOptionBadge(title: "Whole Word")
+                    StatusFlagPill(title: "\\b")
                 }
                 if documentManager.isRegex {
-                    StatusOptionBadge(title: "Regex")
+                    StatusFlagPill(title: ".*")
                 }
                 if documentManager.isWrapAround {
-                    StatusOptionBadge(title: "Wrap")
+                    StatusFlagPill(title: "↩")
+                }
+                if documentManager.findDialogTab == 2 && documentManager.isBookmarkLine {
+                    StatusFlagPill(title: "🔖")
                 }
             }
         }
         .padding(.horizontal, 16)
-        .padding(.vertical, 8)
-        .background(Color(red: 0.10, green: 0.11, blue: 0.13))
+        .padding(.vertical, 10)
+        .background(Color(NSColor.controlBackgroundColor))
     }
 
     private var statusIcon: String {
         let status = documentManager.searchStatus.lowercased()
-        if status.contains("not found") || status.contains("no match") {
+        if status.contains("not found") || status.contains("no match") || status.contains("invalid") {
             return "exclamationmark.circle.fill"
         }
-        if status.contains("found") || status.contains("replaced") || status.contains("count:") {
+        if status.contains("found") || status.contains("replaced") || status.contains("count:") || status.contains("marked") || status.contains("cleared") || status.contains("copied") {
             return "checkmark.circle.fill"
         }
-        return "info.circle"
+        return "info.circle.fill"
     }
 
     private var statusColor: Color {
         let status = documentManager.searchStatus.lowercased()
-        if status.contains("not found") || status.contains("no match") {
-            return Color(hex: "#ff7b72")
+        if status.contains("not found") || status.contains("no match") || status.contains("invalid") {
+            return .red
         }
-        if status.contains("found") || status.contains("replaced") || status.contains("count:") {
-            return Color(hex: "#7ee787")
+        if status.contains("found") || status.contains("replaced") || status.contains("count:") || status.contains("marked") || status.contains("cleared") || status.contains("copied") {
+            return .green
         }
-        return Color.white.opacity(0.65)
+        return .secondary
     }
 
     // MARK: - Search Triggers
@@ -514,47 +633,51 @@ public struct FindReplaceDialogView: View {
             ]
         )
     }
+
+    private func triggerMarkAll() {
+        guard !documentManager.searchQuery.isEmpty else { return }
+        NotificationCenter.default.post(
+            name: .notepadMarkAll,
+            object: nil,
+            userInfo: [
+                "query": documentManager.searchQuery,
+                "matchCase": documentManager.isMatchCase,
+                "wholeWord": documentManager.isWholeWord,
+                "isRegex": documentManager.isRegex,
+                "bookmarkLine": documentManager.isBookmarkLine,
+                "purge": documentManager.isPurgeOnSearch
+            ]
+        )
+    }
+
+    private func triggerClearMarks() {
+        NotificationCenter.default.post(
+            name: .notepadClearMarks,
+            object: nil
+        )
+    }
+
+    private func triggerCopyMarkedText() {
+        NotificationCenter.default.post(
+            name: .notepadCopyMarkedText,
+            object: nil
+        )
+    }
 }
 
 // MARK: - Helper Views & Components
 
-private struct TabPillButton: View {
-    let title: String
-    let icon: String
-    let isSelected: Bool
-    let action: () -> Void
-
-    var body: some View {
-        Button(action: action) {
-            HStack(spacing: 6) {
-                Image(systemName: icon)
-                    .font(.system(size: 11, weight: .medium))
-                Text(title)
-                    .font(.system(size: 12, weight: isSelected ? .semibold : .regular))
-            }
-            .foregroundColor(isSelected ? .white : Color.white.opacity(0.65))
-            .padding(.horizontal, 14)
-            .padding(.vertical, 5)
-            .background(isSelected ? Color.blue.opacity(0.8) : Color.clear)
-            .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
-            .contentShape(Rectangle())
-        }
-        .buttonStyle(PlainButtonStyle())
-        .contentShape(Rectangle())
-    }
-}
-
-private struct CustomOptionCheckbox: View {
+private struct OptionToggleCard: View {
     let title: String
     let badge: String
     @Binding var isOn: Bool
 
     var body: some View {
         Button(action: { isOn.toggle() }) {
-            HStack(spacing: 7) {
+            HStack(spacing: 6) {
                 ZStack {
                     RoundedRectangle(cornerRadius: 4, style: .continuous)
-                        .stroke(isOn ? Color.blue : Color.white.opacity(0.3), lineWidth: 1.2)
+                        .stroke(isOn ? Color.blue : Color.gray.opacity(0.4), lineWidth: 1.2)
                         .frame(width: 14, height: 14)
 
                     if isOn {
@@ -570,16 +693,16 @@ private struct CustomOptionCheckbox: View {
 
                 Text(title)
                     .font(.system(size: 11))
-                    .foregroundColor(isOn ? .white : Color.white.opacity(0.8))
+                    .foregroundColor(isOn ? .primary : .secondary)
 
                 Spacer()
 
                 Text(badge)
                     .font(.system(size: 9, weight: .semibold, design: .monospaced))
-                    .foregroundColor(isOn ? Color(hex: "#58a6ff") : Color.white.opacity(0.35))
+                    .foregroundColor(isOn ? .blue : .secondary.opacity(0.7))
                     .padding(.horizontal, 4)
                     .padding(.vertical, 1)
-                    .background(Color.white.opacity(0.06))
+                    .background(Color(NSColor.controlBackgroundColor))
                     .clipShape(RoundedRectangle(cornerRadius: 3))
             }
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -590,7 +713,7 @@ private struct CustomOptionCheckbox: View {
     }
 }
 
-private struct DialogSecondaryButton: View {
+private struct DialogActionSecondaryButton: View {
     let title: String
     let icon: String
     let action: () -> Void
@@ -605,14 +728,14 @@ private struct DialogSecondaryButton: View {
                 Text(title)
                     .font(.system(size: 11, weight: .medium))
             }
-            .foregroundColor(isHovering ? .white : Color.white.opacity(0.85))
+            .foregroundColor(isHovering ? .primary : .secondary)
             .frame(maxWidth: .infinity)
-            .frame(height: 26)
-            .background(isHovering ? Color.white.opacity(0.15) : Color.white.opacity(0.08))
+            .frame(height: 27)
+            .background(isHovering ? Color(NSColor.controlBackgroundColor) : Color(NSColor.controlBackgroundColor).opacity(0.6))
             .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
             .overlay(
                 RoundedRectangle(cornerRadius: 6, style: .continuous)
-                    .stroke(Color.white.opacity(isHovering ? 0.25 : 0.12), lineWidth: 0.8)
+                    .stroke(Color.gray.opacity(isHovering ? 0.35 : 0.18), lineWidth: 0.8)
             )
             .contentShape(Rectangle())
         }
@@ -622,16 +745,16 @@ private struct DialogSecondaryButton: View {
     }
 }
 
-private struct StatusOptionBadge: View {
+private struct StatusFlagPill: View {
     let title: String
 
     var body: some View {
         Text(title)
             .font(.system(size: 9, weight: .semibold))
-            .foregroundColor(Color(hex: "#58a6ff"))
+            .foregroundColor(.blue)
             .padding(.horizontal, 5)
             .padding(.vertical, 2)
-            .background(Color.blue.opacity(0.18))
+            .background(Color.blue.opacity(0.12))
             .clipShape(RoundedRectangle(cornerRadius: 3))
     }
 }

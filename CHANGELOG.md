@@ -20,16 +20,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Extended Lexilla languages: Ada, Assembly (x86/ARM), COBOL, CoffeeScript, D, Dart, Dockerfile, Erlang, Fortran, F#, GDScript, Haskell, Julia, Kotlin, LaTeX/TeX, Common Lisp/Scheme, MATLAB/Octave, Nim, Nix, OCaml, Pascal/Delphi, R, Scala, Tcl/Tk, Verilog HDL, VHDL, Visual Basic.
   - Organized all 50+ languages alphabetically with dedicated letter submenus (A–Z) across the App Menu, Toolbar, and Status Bar.
   - Automatic Lexilla colorization (`SCI_COLOURISE`) on document load and tab switching.
-- **SparkNotePad-Style Dedicated Find & Replace Dialog**:
-  - Added `FindReplaceDialogView`: floating dialog window with tabbed Find and Replace modes.
+- **Modernized Find, Replace & Mark Hub & Inline Bar**:
+  - Completely redesigned `FindReplaceDialogView` and `FindReplaceBar` matching the exact visual architecture, color system, and layout of `ToolsDialogView`.
+  - Built-in full **Mark** subsystem: Mark All with Indicator 8 highlighting, line bookmarking in margin 1, Clear All Marks, and Copy Marked Text.
+  - Native segmented tab control (Find, Replace, Mark) in standard macOS control background.
+  - Added Bookmark Line (`🔖`) and Purge for each search (`🧹`) attributes.
+  - Added dedicated Toolbar and Menu Bar actions for Mark (`⇧⌘M`).
+  - Added `FindReplaceDialogView`: floating dialog window with tabbed Find, Replace, and Mark modes.
   - Advanced search controls: Match case, Whole word only, Regular expression, and Wrap around.
   - Direction controls: Up and Down radio selectors.
-  - Action buttons: Find Next (`Return`), Find Previous, Replace, Replace All, Count occurrences across the buffer, and Close (`Esc`).
-  - Native count calculation engine for fast, non-moving occurrence detection with visual highlight marking.
+  - Action buttons: Find Next (`Return`), Find Previous, Replace, Replace All, Mark All, Clear Marks, Count occurrences across the buffer, and Close (`Esc`).
   - Continuous single replacement workflow: replaces matching selection and immediately advances to next match.
   - Bidirectional wrap-around search in both normal and regular expression modes.
   - Smart Highlighting: automatically highlights occurrences of selected text or search queries using Scintilla native indicator 8 (`INDIC_ROUNDBOX`).
-  - In-window collapsible search bar (`⇧⌘F`) retained for inline quick-search.
+  - In-window collapsible search bar (`⇧⌘F`) retained for inline quick-search with full localization and quick-expand button.
 - **Themes & Styling (7 Developer Themes)**:
   - SparkNotePad Light, SparkNotePad Dark, One Dark Pro, Dracula, Monokai, GitHub Light, and Solarized Light.
   - Automatic BGR Scintilla color calculation and SwiftUI color-space synchronizers.

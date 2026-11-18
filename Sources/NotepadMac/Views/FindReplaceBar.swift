@@ -32,119 +32,16 @@ public struct FindReplaceBar: View {
 
     public var body: some View {
         VStack(spacing: 6) {
-            // Find Row
-            HStack(spacing: 8) {
-                Image(systemName: "magnifyingglass")
-                    .foregroundColor(.secondary)
-                    .font(.system(size: 11))
-
-                TextField("Find", text: $documentManager.searchQuery, onCommit: {
-                    findNext()
-                })
-                .textFieldStyle(PlainTextFieldStyle())
-                .font(.system(size: 12))
-                .padding(.horizontal, 6)
-                .padding(.vertical, 4)
-                .background(
-                    RoundedRectangle(cornerRadius: 4)
-                        .fill(documentManager.activeTheme.isDark ? Color(white: 0.15) : Color.white)
-                )
-                .overlay(
-                    RoundedRectangle(cornerRadius: 4)
-                        .stroke(documentManager.activeTheme.borderSwiftUIColor, lineWidth: 1)
-                )
-                .frame(minWidth: 160)
-
-                // Search options toggles
-                ToggleOptionButton(title: "Aa", tooltip: "Match Case", isOn: $documentManager.isMatchCase)
-                ToggleOptionButton(title: "\\b", tooltip: "Match Whole Word", isOn: $documentManager.isWholeWord)
-                ToggleOptionButton(title: ".*", tooltip: "Use Regular Expression", isOn: $documentManager.isRegex)
-
-                Divider().frame(height: 16)
-
-                // Navigation Buttons
-                Button("Previous") {
-                    findPrevious()
-                }
-                .buttonStyle(SecondaryButtonStyle())
-                .font(.system(size: 11))
-
-                Button("Next") {
-                    findNext()
-                }
-                .buttonStyle(ProminentButtonStyle())
-                .font(.system(size: 11))
-
-                if !searchStatus.isEmpty {
-                    Text(searchStatus)
-                        .font(.system(size: 10))
-                        .foregroundColor(.secondary)
-                }
-
-                Spacer()
-
-                // Close button
-                Button(
-                    action: {
-                        withAnimation {
-                            documentManager.isFindReplaceBarVisible = false
-                        }
-                    },
-                    label: {
-                        Image(systemName: "xmark")
-                            .font(.system(size: 10, weight: .bold))
-                            .foregroundColor(.secondary)
-                            .frame(width: 18, height: 18)
-                    }
-                )
-                .buttonStyle(PlainButtonStyle())
-            }
-
-            // Replace Row
-            HStack(spacing: 8) {
-                Image(systemName: "arrow.2.squarepath")
-                    .foregroundColor(.secondary)
-                    .font(.system(size: 11))
-
-                TextField("Replace", text: $documentManager.replaceQuery, onCommit: {
-                    replaceNext()
-                })
-                .textFieldStyle(PlainTextFieldStyle())
-                .font(.system(size: 12))
-                .padding(.horizontal, 6)
-                .padding(.vertical, 4)
-                .background(
-                    RoundedRectangle(cornerRadius: 4)
-                        .fill(documentManager.activeTheme.isDark ? Color(white: 0.15) : Color.white)
-                )
-                .overlay(
-                    RoundedRectangle(cornerRadius: 4)
-                        .stroke(documentManager.activeTheme.borderSwiftUIColor, lineWidth: 1)
-                )
-                .frame(minWidth: 160)
-
-                Button("Replace") {
-                    replaceNext()
-                }
-                .buttonStyle(SecondaryButtonStyle())
-                .font(.system(size: 11))
-
-                Button("Replace All") {
-                    replaceAll()
-                }
-                .buttonStyle(SecondaryButtonStyle())
-                .font(.system(size: 11))
-
-                Spacer()
-            }
+            findRow
+            replaceRow
         }
         .padding(.horizontal, 12)
         .padding(.vertical, 8)
-        .background(documentManager.activeTheme.tabBarBgSwiftUIColor)
+        .background(Color(NSColor.controlBackgroundColor))
         .overlay(
             Rectangle()
                 .frame(height: 1)
-                .foregroundColor(documentManager.activeTheme.borderSwiftUIColor),
+                .foregroundColor(Color.gray.opacity(0.2)),
             alignment: .bottom
         )
         .onReceive(NotificationCenter.default.publisher(for: .notepadSearchStatusUpdate)) { notif in
@@ -152,6 +49,177 @@ public struct FindReplaceBar: View {
                 self.searchStatus = status
             }
         }
+    }
+
+    // MARK: - Find Row
+
+    private var findRow: some View {
+        HStack(spacing: 8) {
+            Image(systemName: "magnifyingglass")
+                .foregroundColor(.blue.opacity(0.8))
+                .font(.system(size: 11))
+
+            HStack(spacing: 4) {
+                TextField(loc("find"), text: $documentManager.searchQuery, onCommit: {
+                    findNext()
+                })
+                .textFieldStyle(PlainTextFieldStyle())
+                .font(.system(size: 12))
+
+                if !documentManager.searchQuery.isEmpty {
+                    Button(action: { documentManager.searchQuery = "" }) {
+                        Image(systemName: "xmark.circle.fill")
+                            .font(.system(size: 11))
+                            .foregroundColor(.secondary)
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                }
+            }
+            .padding(.horizontal, 8)
+            .padding(.vertical, 4)
+            .background(Color(NSColor.textBackgroundColor))
+            .clipShape(RoundedRectangle(cornerRadius: 5, style: .continuous))
+            .overlay(
+                RoundedRectangle(cornerRadius: 5, style: .continuous)
+                    .stroke(
+                        !documentManager.searchQuery.isEmpty
+                            ? Color.blue.opacity(0.5)
+                            : Color.gray.opacity(0.25),
+                        lineWidth: 1
+                    )
+            )
+            .frame(minWidth: 160, maxWidth: 260)
+
+            // Search options toggles
+            ToggleOptionButton(title: "Aa", tooltip: loc("match_case"), isOn: $documentManager.isMatchCase)
+            ToggleOptionButton(title: "\\b", tooltip: loc("whole_word"), isOn: $documentManager.isWholeWord)
+            ToggleOptionButton(title: ".*", tooltip: loc("regex"), isOn: $documentManager.isRegex)
+            ToggleOptionButton(title: "↩", tooltip: loc("wrap_around"), isOn: $documentManager.isWrapAround)
+
+            Divider().frame(height: 16)
+
+            // Navigation Buttons
+            Button(loc("find_prev")) {
+                findPrevious()
+            }
+            .buttonStyle(SecondaryButtonStyle())
+            .font(.system(size: 11))
+
+            Button(loc("find_next")) {
+                findNext()
+            }
+            .buttonStyle(ProminentButtonStyle())
+            .font(.system(size: 11))
+
+            Button(action: countMatches) {
+                Image(systemName: "number")
+                    .font(.system(size: 10))
+            }
+            .buttonStyle(SecondaryButtonStyle())
+            .help(loc("count_matches"))
+
+            if !searchStatus.isEmpty {
+                Text(searchStatus)
+                    .font(.system(size: 10, weight: .medium))
+                    .foregroundColor(statusColor)
+                    .lineLimit(1)
+            }
+
+            Spacer()
+
+            // Open Full Dialog Button
+            Button(
+                action: {
+                    documentManager.isFindReplaceDialogPresented = true
+                },
+                label: {
+                    Image(systemName: "arrow.up.left.and.arrow.down.right")
+                        .font(.system(size: 10))
+                        .foregroundColor(.secondary)
+                        .frame(width: 18, height: 18)
+                }
+            )
+            .buttonStyle(PlainButtonStyle())
+            .help(loc("find_replace_hub"))
+
+            // Close button
+            Button(
+                action: {
+                    withAnimation {
+                        documentManager.isFindReplaceBarVisible = false
+                    }
+                },
+                label: {
+                    Image(systemName: "xmark")
+                        .font(.system(size: 10, weight: .bold))
+                        .foregroundColor(.secondary)
+                        .frame(width: 18, height: 18)
+                }
+            )
+            .buttonStyle(PlainButtonStyle())
+            .help(loc("close"))
+        }
+    }
+
+    // MARK: - Replace Row
+
+    private var replaceRow: some View {
+        HStack(spacing: 8) {
+            Image(systemName: "arrow.triangle.2.circlepath")
+                .foregroundColor(.orange.opacity(0.85))
+                .font(.system(size: 11))
+
+            HStack(spacing: 4) {
+                TextField(loc("replace"), text: $documentManager.replaceQuery, onCommit: {
+                    replaceNext()
+                })
+                .textFieldStyle(PlainTextFieldStyle())
+                .font(.system(size: 12))
+
+                if !documentManager.replaceQuery.isEmpty {
+                    Button(action: { documentManager.replaceQuery = "" }) {
+                        Image(systemName: "xmark.circle.fill")
+                            .font(.system(size: 11))
+                            .foregroundColor(.secondary)
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                }
+            }
+            .padding(.horizontal, 8)
+            .padding(.vertical, 4)
+            .background(Color(NSColor.textBackgroundColor))
+            .clipShape(RoundedRectangle(cornerRadius: 5, style: .continuous))
+            .overlay(
+                RoundedRectangle(cornerRadius: 5, style: .continuous)
+                    .stroke(Color.gray.opacity(0.25), lineWidth: 1)
+            )
+            .frame(minWidth: 160, maxWidth: 260)
+
+            Button(loc("replace_next")) {
+                replaceNext()
+            }
+            .buttonStyle(SecondaryButtonStyle())
+            .font(.system(size: 11))
+
+            Button(loc("replace_all")) {
+                replaceAll()
+            }
+            .buttonStyle(SecondaryButtonStyle())
+            .font(.system(size: 11))
+
+            Spacer()
+        }
+    }
+
+    private var statusColor: Color {
+        let status = searchStatus.lowercased()
+        if status.contains("not found") || status.contains("no match") || status.contains("invalid") {
+            return .red
+        }
+        if status.contains("found") || status.contains("replaced") || status.contains("count:") {
+            return .green
+        }
+        return .secondary
     }
 
     // MARK: - Search Operations
@@ -165,7 +233,8 @@ public struct FindReplaceBar: View {
                 "query": documentManager.searchQuery,
                 "matchCase": documentManager.isMatchCase,
                 "wholeWord": documentManager.isWholeWord,
-                "isRegex": documentManager.isRegex
+                "isRegex": documentManager.isRegex,
+                "wrap": documentManager.isWrapAround
             ]
         )
     }
@@ -179,7 +248,8 @@ public struct FindReplaceBar: View {
                 "query": documentManager.searchQuery,
                 "matchCase": documentManager.isMatchCase,
                 "wholeWord": documentManager.isWholeWord,
-                "isRegex": documentManager.isRegex
+                "isRegex": documentManager.isRegex,
+                "wrap": documentManager.isWrapAround
             ]
         )
     }
@@ -214,6 +284,20 @@ public struct FindReplaceBar: View {
             ]
         )
     }
+
+    private func countMatches() {
+        guard !documentManager.searchQuery.isEmpty else { return }
+        NotificationCenter.default.post(
+            name: .notepadCountOccurrences,
+            object: nil,
+            userInfo: [
+                "query": documentManager.searchQuery,
+                "matchCase": documentManager.isMatchCase,
+                "wholeWord": documentManager.isWholeWord,
+                "isRegex": documentManager.isRegex
+            ]
+        )
+    }
 }
 
 public struct ToggleOptionButton: View {
@@ -228,10 +312,14 @@ public struct ToggleOptionButton: View {
                 Text(title)
                     .font(.system(size: 11, weight: .bold, design: .monospaced))
                     .foregroundColor(isOn ? .white : .secondary)
-                    .frame(width: 22, height: 20)
+                    .frame(width: 24, height: 22)
                     .background(
-                        RoundedRectangle(cornerRadius: 3)
-                            .fill(isOn ? Color.blue : Color.white.opacity(0.08))
+                        RoundedRectangle(cornerRadius: 4)
+                            .fill(isOn ? Color.blue : Color(NSColor.controlBackgroundColor))
+                    )
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 4)
+                            .stroke(isOn ? Color.blue : Color.gray.opacity(0.3), lineWidth: 0.8)
                     )
             }
         )

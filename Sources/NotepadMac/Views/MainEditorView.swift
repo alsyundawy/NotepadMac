@@ -178,6 +178,10 @@ private extension View {
                 manager.findDialogTab = 1
                 manager.isFindReplaceDialogPresented = true
             }
+            .onReceive(NotificationCenter.default.publisher(for: .notepadShowMarkDialog)) { _ in
+                manager.findDialogTab = 2
+                manager.isFindReplaceDialogPresented = true
+            }
     }
 
     func applyViewTogglesNotifications(manager: DocumentManager) -> some View {

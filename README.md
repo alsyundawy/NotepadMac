@@ -50,14 +50,13 @@ Unlike heavy Electron-based or web-wrapper text editors, NotepadMac starts insta
   - Block Indent (`Tab` / `increase.indent`) and Outdent (`⇧Tab` / `decrease.indent`).
   - White Space & EOL character display toggle (`paragraphsign`) and Indentation Guides toggle (`ruler`).
   - Smart word detection fallback when no text is explicitly selected.
-- **SparkNotePad-Style Dedicated Find & Replace Dialog**:
-  - Standalone modal dialog box featuring tabbed navigation (`Find` vs `Replace`).
-  - Search options: Match Case, Whole Word Only, Regular Expression, and Wrap Around.
+- **Modernized Find, Replace & Mark Hub**:
+  - Standalone modal dialog box perfectly aligned with Tools Hub design tokens and macOS HIG.
+  - Tabbed navigation across **Find**, **Replace**, and **Mark** modes with native segmented controls.
+  - Search options: Match Case (`Aa`), Whole Word Only (`\b`), Regular Expression (`.*`), and Wrap Around (`↩`).
   - Direction controls (Up / Down) and comprehensive actions: Find Next (`Return`), Find Previous, Replace, Replace All, and Count occurrences across the entire buffer.
-  - Continuous single replacement workflow: automatically substitutes matching selection and advances to next match.
-  - Bidirectional wrap-around search in both normal and regular expression modes.
-  - Smart Highlighting: automatically highlights occurrences of selected text or search queries using Scintilla native indicator 8 (`INDIC_ROUNDBOX`).
-  - Collapsible in-window search bar (`⇧⌘F`) also available for lightweight inline searching.
+  - Full Notepad++ **Mark** engine: Mark All with Indicator 8 highlighting, line bookmarking in margin 1, Clear All Marks, and Copy Marked Text.
+  - Modernized in-window collapsible search bar (`⇧⌘F`) with localized buttons, clear buttons, live status pills, and quick expand to full dialog.
 - **Developer & Security Tools Hub**:
   - **Hash Tools**: Fast computation of MD5, SHA-1, SHA-256, SHA-384, SHA-512, and IEEE 802.3 CRC32 with real-time hash verification and checksum matching.
   - **Crypto Tools**: Military-grade AES-256-GCM encryption and decryption with PBKDF2-HMAC-SHA256 key derivation (100,000 iterations) and interactive password strength evaluation.

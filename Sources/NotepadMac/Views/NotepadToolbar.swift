@@ -209,6 +209,16 @@ public struct NotepadToolbar: View {
                 documentManager.findDialogTab = 1
                 documentManager.isFindReplaceDialogPresented = true
             }
+            ToolbarButton(
+                icon: "bookmark.fill",
+                title: loc("mark"),
+                shortcut: "⇧⌘M",
+                isEnabled: hasDoc,
+                isActive: documentManager.isFindReplaceDialogPresented && documentManager.findDialogTab == 2
+            ) {
+                documentManager.findDialogTab = 2
+                documentManager.isFindReplaceDialogPresented = true
+            }
         }
     }
 

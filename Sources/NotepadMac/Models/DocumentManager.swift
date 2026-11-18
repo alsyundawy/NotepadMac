@@ -65,6 +65,8 @@ public final class DocumentManager: ObservableObject, EditorActionDelegate {
     @Published public var isRegex: Bool = false
     @Published public var isWrapAround: Bool = true
     @Published public var searchDirectionUp: Bool = false
+    @Published public var isBookmarkLine: Bool = true
+    @Published public var isPurgeOnSearch: Bool = true
     @Published public var searchStatus: String = ""
 
     public let luaEngine = LuaEngine()

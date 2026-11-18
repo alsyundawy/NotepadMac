@@ -62,16 +62,9 @@ public struct CheckUpdateDialogView: View {
 
             Spacer()
 
-            Button(action: {
+            ModalCloseButton {
                 documentManager.isCheckUpdatePresented = false
-            }) {
-                Image(systemName: "xmark")
-                    .foregroundColor(.secondary)
-                    .font(.system(size: 13, weight: .semibold))
-                    .frame(width: 20, height: 20)
             }
-            .buttonStyle(PlainButtonStyle())
-            .keyboardShortcut(.cancelAction)
         }
         .padding(.horizontal, 16)
         .padding(.vertical, 12)

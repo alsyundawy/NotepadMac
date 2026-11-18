@@ -68,17 +68,9 @@ public struct FindReplaceDialogView: View {
 
             Spacer()
 
-            Button(action: {
+            ModalCloseButton {
                 documentManager.isFindReplaceDialogPresented = false
-            }) {
-                Image(systemName: "xmark")
-                    .foregroundColor(.secondary)
-                    .font(.system(size: 13, weight: .semibold))
-                    .frame(width: 20, height: 20)
             }
-            .buttonStyle(PlainButtonStyle())
-            .keyboardShortcut(.cancelAction)
-            .help("Close (Esc)")
         }
         .padding(.horizontal, 16)
         .padding(.vertical, 10)
@@ -88,7 +80,7 @@ public struct FindReplaceDialogView: View {
     private var headerIcon: String {
         switch documentManager.findDialogTab {
         case 1: return "arrow.triangle.2.circlepath"
-        case 2: return "bookmark.fill"
+        case 2: return "bookmark"
         default: return "magnifyingglass"
         }
     }
@@ -151,7 +143,7 @@ public struct FindReplaceDialogView: View {
                     .foregroundColor(.secondary)
 
                 HStack(spacing: 8) {
-                    Image(systemName: documentManager.findDialogTab == 2 ? "bookmark.fill" : "magnifyingglass")
+                    Image(systemName: documentManager.findDialogTab == 2 ? "bookmark" : "magnifyingglass")
                         .font(.system(size: 12))
                         .foregroundColor(.blue.opacity(0.8))
 
@@ -166,12 +158,13 @@ public struct FindReplaceDialogView: View {
                     .font(.system(size: 12))
 
                     if !documentManager.searchQuery.isEmpty {
-                        Button(action: { documentManager.searchQuery = "" }) {
-                            Image(systemName: "xmark.circle")
-                                .font(.system(size: 12))
-                                .foregroundColor(.secondary)
-                        }
-                        .buttonStyle(PlainButtonStyle())
+                        Image(systemName: "xmark.circle")
+                            .font(.system(size: 12))
+                            .foregroundColor(.secondary)
+                            .contentShape(Rectangle())
+                            .onTapGesture {
+                                documentManager.searchQuery = ""
+                            }
                     }
                 }
                 .padding(.horizontal, 10)
@@ -208,12 +201,13 @@ public struct FindReplaceDialogView: View {
                         .font(.system(size: 12))
 
                         if !documentManager.replaceQuery.isEmpty {
-                            Button(action: { documentManager.replaceQuery = "" }) {
-                                Image(systemName: "xmark.circle")
-                                    .font(.system(size: 12))
-                                    .foregroundColor(.secondary)
-                            }
-                            .buttonStyle(PlainButtonStyle())
+                            Image(systemName: "xmark.circle")
+                                .font(.system(size: 12))
+                                .foregroundColor(.secondary)
+                                .contentShape(Rectangle())
+                                .onTapGesture {
+                                    documentManager.replaceQuery = ""
+                                }
                         }
                     }
                     .padding(.horizontal, 10)
@@ -229,7 +223,7 @@ public struct FindReplaceDialogView: View {
             } else if documentManager.findDialogTab == 2 {
                 // Informative helper text for Mark tab
                 HStack(spacing: 6) {
-                    Image(systemName: "info.circle.fill")
+                    Image(systemName: "info.circle")
                         .foregroundColor(.blue.opacity(0.8))
                         .font(.system(size: 11))
                     Text("Highlights matching occurrences and optionally bookmarks lines in the margin.")
@@ -335,6 +329,7 @@ public struct FindReplaceDialogView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 4, style: .continuous))
                     }
                     .buttonStyle(PlainButtonStyle())
+                    .focusable(false)
 
                     Button(action: { documentManager.searchDirectionUp = true }) {
                         HStack(spacing: 4) {
@@ -350,6 +345,7 @@ public struct FindReplaceDialogView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 4, style: .continuous))
                     }
                     .buttonStyle(PlainButtonStyle())
+                    .focusable(false)
                 }
                 .padding(2)
                 .background(Color(NSColor.controlBackgroundColor))
@@ -472,7 +468,7 @@ public struct FindReplaceDialogView: View {
             // Mark All (Primary)
             Button(action: triggerMarkAll) {
                 HStack(spacing: 5) {
-                    Image(systemName: "bookmark.fill")
+                    Image(systemName: "bookmark")
                         .font(.system(size: 11, weight: .bold))
                     Text(loc("mark_all"))
                         .font(.system(size: 11, weight: .semibold))
@@ -708,6 +704,7 @@ private struct OptionToggleCard: View {
             .contentShape(Rectangle())
         }
         .buttonStyle(PlainButtonStyle())
+        .focusable(false)
         .contentShape(Rectangle())
     }
 }
@@ -739,6 +736,7 @@ private struct DialogActionSecondaryButton: View {
             .contentShape(Rectangle())
         }
         .buttonStyle(PlainButtonStyle())
+        .focusable(false)
         .contentShape(Rectangle())
         .onHover { isHovering = $0 }
     }

@@ -75,6 +75,10 @@ Unlike heavy Electron-based or web-wrapper text editors, NotepadMac starts insta
   - Complete right-click contextual menu on the editor canvas with editing, find/replace submenus, case conversion, line navigation, and view toggles.
 - **About, Credits & GPLv3 Licensing Panel**:
   - Tabbed panel featuring Application Details, Third-Party Component Credits (Scintilla 5.6.9, Lexilla 5.5.5, Lua 5.5.1, SparkNotePad & TextEdit), and GNU General Public License v3.0 statements.
+- **Dialog Box & Icon Polish (Focus Ring Elimination)**:
+  - Eliminated the blue focus ring / rectangular background artifact around dialog close icons by introducing `ModalCloseButton`: decoupled the visible glyph (`Image` with `.contentShape(Circle())` and `.onTapGesture`) from an invisible zero-size key equivalent receiver (`Button` with `.frame(width: 0, height: 0)`, `.opacity(0)`, and `.keyboardShortcut(.cancelAction)`).
+  - Applied across `ToolsDialogView`, `FindReplaceDialogView`, `CheckUpdateDialogView`, and `FindReplaceBar`.
+  - Replaced text-field clear buttons and tab close buttons with gesture-driven glyphs, ensuring clean, native rendering with zero focus ring artifacts during tab navigation and dialog interactions.
 - **Modern SwiftUI Chrome**:
   - Distinctive permanent dark toolbar (`#21252b`) with quick-action buttons.
   - Custom tab bar with document status badges (saved, unsaved/modified indicator dot, read-only) and color-coded tab tagging.

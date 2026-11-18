@@ -152,17 +152,34 @@
 - **Application Quit Interception**: `AppDelegate` implements `applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply`. If any open document has unsaved modifications, it sequentially requests user confirmation. Returning `.terminateCancel` cleanly prevents macOS from killing the app process if the user cancels.
 - **Bilingual Localization**: Added localized strings (`save_changes_title`, `save_changes_message`, `dont_save`) in `LocalizationManager` for both English and Indonesian.
 
+### 3.5 Modal Icon Button & Focus Ring Elimination (`ModalCloseButton`)
+
+- **Root Cause of Icon Focus Ring / Background Artifacts**:
+  - In macOS SwiftUI, a standard `Button` with `.buttonStyle(PlainButtonStyle())` and `.keyboardShortcut(.cancelAction)` retains default AppKit responder chain properties.
+  - When Full Keyboard Access (FKA) is enabled or when a modal sheet is presented, AppKit draws the system accent-colored focus ring (a high-contrast blue rounded rectangular outline) around the button bounds (`22x22` pt).
+  - This focus ring appeared intermittently whenever the close button or clear button acquired keyboard focus, appearing to users as a "random blue background behind the icon."
+- **Architectural Solution**:
+  - Implemented `ModalCloseButton` (`Sources/NotepadMac/Views/ModalCloseButton.swift`) utilizing a `ZStack` decoupling pattern:
+    1. **Visible Interactive Icon**: Uses an `Image(systemName: "xmark")` with `.contentShape(Circle())`, `.onHover`, and `.onTapGesture { action() }`. Because it is an `Image` with a gesture recognizer rather than an `NSButton`, AppKit will **never** draw a focus ring or background box around it.
+    2. **Hover Indicator**: Displays a subtle circular background (`Circle().fill(isHovered ? Color(NSColor.quaternaryLabelColor) : Color.clear)`) matching Apple Human Interface Guidelines for sheets and dialogs.
+    3. **Invisible Shortcut Handler**: Contains an invisible, zero-size `Button(action: action) { EmptyView() }` with `.frame(width: 0, height: 0)`, `.opacity(0)`, and `.keyboardShortcut(.cancelAction)`, preserving instant `Esc` key modal dismissal without visual footprint.
+  - Deployed across `ToolsDialogView`, `FindReplaceDialogView`, `CheckUpdateDialogView`, and `FindReplaceBar`.
+  - Replaced text-field clear buttons (`xmark.circle`) and tab close buttons in `NotepadTabBar` with gesture-driven glyphs to prevent button focus rings across the entire application interface.
+
 ---
 
 ## 4. Security & Hardening Review (2025–2026 Analysis)
 
 - **Input Validation**: Text transformations, hex parsers, and search inputs are bounded and sanitized against buffer overflows and memory exhaustion (CWE-119 / CWE-787).
 - **Safe Memory Operations**: Removed all force unwraps (`!`) in cryptographic memory buffers; replaced line-splitting arrays with zero-allocation UTF-8 byte traversal in `EditorDocument.lineCount`.
-- **Mitigation of Upstream Vulnerabilities**:
-  - _CVE-2025-49144 / CVE-2025-56383 (DLL / Binary Hijacking)_: Irrelevant on macOS due to sandboxed Mach-O loading and explicit bundle paths.
-  - _CVE-2025-15556 (WinGUp Updater Hijacking)_: NotepadMac uses native HTTPS GitHub API for update checks without executing unverified third-party binaries.
-  - _CVE-2026-25926 / CVE-2026-5525 (Path Buffer Overflows)_: macOS paths are handled dynamically via Foundation `URL` without MAX_PATH (260 byte) limits.
-  - _CVE-2026-48770 / CVE-2026-48800 (Config / IPC RCE)_: NotepadMac does not use Windows IPC (`WM_COPYDATA`) or insecure XML deserialization; configuration is managed through Swift type-safe models.
+- **Ecosystem Vulnerability Analysis (2025–2026 Primary Research & Applicability)**:
+  - _`cxasm/notepad--`_: Comprehensive review of GitHub repositories, security advisories, and commit logs confirms **0 official CVEs or security advisories** issued for `cxasm/notepad--` spanning 2025–2026.
+  - _`Notepad++` Updates & Vulnerability Mitigations_:
+    - **CVE-2025-15556** (CVSS 7.7 High - WinGUp Updater Integrity Flaw): Notepad++ updaters prior to v8.8.9 lacked cryptographic package verification. _NotepadMac Mitigation_: NotepadMac does not use WinGUp; update checks run via read-only HTTPS queries to the official GitHub Releases API without executing arbitrary unverified binaries.
+    - **CVE-2025-49144, CVE-2026-73250, CVE-2026-25926** (Installer Binary Planting & Insecure Search Path): Insecure executable search paths in Windows installers allowing local privilege escalation (`NT AUTHORITY\SYSTEM`). _NotepadMac Mitigation_: Irrelevant on macOS due to sandboxed Mach-O loading, AppKit bundle isolation, and standard Apple `.dmg` drag-and-drop installation.
+    - **CVE-2026-52884** (CVSS 7.8 High - Path Traversal in Run Dialog `isInTrustedDirectory`): Flaw in path canonicalization allowing command execution outside trusted folders via `..\..\`. _NotepadMac Mitigation_: NotepadMac resolves all paths through Foundation `URL` with sandbox path canonicalization and does not expose arbitrary unverified `ShellExecute` invocations.
+  - _`Scintilla 5.6.9` & `Lexilla 5.5.5`_: Zero CVEs or security advisories logged in 2025–2026. The Cocoa C++17 port (`ScintillaCocoa`) runs with memory-safe buffer management and bounded style runs.
+  - _`Lua 5.5.1`_: Embedded scripting engine is sandboxed through `CLua` bridge without exposing raw OS syscalls or dangerous external process spawns.
 
 ---
 

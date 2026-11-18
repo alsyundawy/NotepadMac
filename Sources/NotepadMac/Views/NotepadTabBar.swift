@@ -229,35 +229,33 @@ public struct TabItemView: View {
     }
 
     private var closeButton: some View {
-        Button(action: onClose) {
-            ZStack {
-                if isCloseHovering {
-                    Circle()
-                        .fill(Color(hex: "#ff5f56"))
-                        .frame(width: 14, height: 14)
-                } else {
-                    Circle()
-                        .fill(Color.clear)
-                        .frame(width: 14, height: 14)
-                }
-
-                Image(systemName: "xmark")
-                    .font(.system(size: 8, weight: .bold))
-                    .foregroundColor(
-                        isCloseHovering
-                            ? .white
-                            : (isActive
-                                ? (theme.isDark ? Color.white.opacity(0.65) : Color.black.opacity(0.55))
-                                : (isHovering ? (theme.isDark ? Color.white.opacity(0.4) : Color.black.opacity(0.4)) : Color.clear))
-                    )
+        ZStack {
+            if isCloseHovering {
+                Circle()
+                    .fill(Color(hex: "#ff5f56"))
+                    .frame(width: 14, height: 14)
+            } else {
+                Circle()
+                    .fill(Color.clear)
+                    .frame(width: 14, height: 14)
             }
-            .contentShape(Circle())
+
+            Image(systemName: "xmark")
+                .font(.system(size: 8, weight: .bold))
+                .foregroundColor(
+                    isCloseHovering
+                        ? .white
+                        : (isActive
+                            ? (theme.isDark ? Color.white.opacity(0.65) : Color.black.opacity(0.55))
+                            : (isHovering ? (theme.isDark ? Color.white.opacity(0.4) : Color.black.opacity(0.4)) : Color.clear))
+                )
         }
-        .buttonStyle(PlainButtonStyle())
-        .contentShape(Circle())
-        .contentShape(Circle())
         .frame(width: 16, height: 16)
+        .contentShape(Circle())
         .onHover { isCloseHovering = $0 }
+        .onTapGesture {
+            onClose()
+        }
         .help("\(loc("close_tab")) (⌘W)")
         .opacity(isActive || isHovering ? 1.0 : 0.0)
     }

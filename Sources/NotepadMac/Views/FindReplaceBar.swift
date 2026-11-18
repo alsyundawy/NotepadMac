@@ -67,12 +67,13 @@ public struct FindReplaceBar: View {
                 .font(.system(size: 12))
 
                 if !documentManager.searchQuery.isEmpty {
-                    Button(action: { documentManager.searchQuery = "" }) {
-                        Image(systemName: "xmark.circle")
-                            .font(.system(size: 11))
-                            .foregroundColor(.secondary)
-                    }
-                    .buttonStyle(PlainButtonStyle())
+                    Image(systemName: "xmark.circle")
+                        .font(.system(size: 11))
+                        .foregroundColor(.secondary)
+                        .contentShape(Rectangle())
+                        .onTapGesture {
+                            documentManager.searchQuery = ""
+                        }
                 }
             }
             .padding(.horizontal, 8)
@@ -140,24 +141,15 @@ public struct FindReplaceBar: View {
                 }
             )
             .buttonStyle(PlainButtonStyle())
+            .focusable(false)
             .help(loc("find_replace_hub"))
 
             // Close button
-            Button(
-                action: {
-                    withAnimation {
-                        documentManager.isFindReplaceBarVisible = false
-                    }
-                },
-                label: {
-                    Image(systemName: "xmark")
-                        .font(.system(size: 10, weight: .bold))
-                        .foregroundColor(.secondary)
-                        .frame(width: 18, height: 18)
+            ModalCloseButton {
+                withAnimation {
+                    documentManager.isFindReplaceBarVisible = false
                 }
-            )
-            .buttonStyle(PlainButtonStyle())
-            .help(loc("close"))
+            }
         }
     }
 
@@ -177,12 +169,13 @@ public struct FindReplaceBar: View {
                 .font(.system(size: 12))
 
                 if !documentManager.replaceQuery.isEmpty {
-                    Button(action: { documentManager.replaceQuery = "" }) {
-                        Image(systemName: "xmark.circle")
-                            .font(.system(size: 11))
-                            .foregroundColor(.secondary)
-                    }
-                    .buttonStyle(PlainButtonStyle())
+                    Image(systemName: "xmark.circle")
+                        .font(.system(size: 11))
+                        .foregroundColor(.secondary)
+                        .contentShape(Rectangle())
+                        .onTapGesture {
+                            documentManager.replaceQuery = ""
+                        }
                 }
             }
             .padding(.horizontal, 8)
@@ -324,6 +317,7 @@ public struct ToggleOptionButton: View {
             }
         )
         .buttonStyle(PlainButtonStyle())
+        .focusable(false)
         .help(tooltip)
     }
 }

@@ -52,6 +52,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Full third-party notices for Scintilla Cocoa (HPND / Neil Hodgson), Lexilla (HPND / Neil Hodgson), and Lua (MIT / PUC-Rio).
 - **Licensing**:
   - Re-licensed NotepadMac under **GNU General Public License v3.0 or later** (`GPL-3.0-or-later`).
+- **Dialog Box & Icon Polish (Focus Ring Elimination)**:
+  - Eliminated the blue focus ring / rectangular background artifact around dialog close icons by introducing `ModalCloseButton`: decoupled the visible glyph (`Image` with `.contentShape(Circle())` and `.onTapGesture`) from a zero-size invisible key equivalent receiver (`Button` with `.frame(width: 0, height: 0)`, `.opacity(0)`, `.focusable(false)`, and `.keyboardShortcut(.cancelAction)`).
+  - Applied `ModalCloseButton` across `ToolsDialogView`, `FindReplaceDialogView`, `CheckUpdateDialogView`, and `FindReplaceBar`.
+  - Replaced text-field clear buttons in `FindReplaceBar` and `FindReplaceDialogView` with direct tap-gesture glyphs to prevent AppKit button focus borders.
+  - Refactored tab close buttons in `NotepadTabBar` with native circular hover and tap gestures, ensuring clean rendering with zero focus outline artifacts during tab navigation.
 - **Developer & Power Tools Suite (`Sources/NotepadMac/Tools/`)**:
   - `HashTools`: Fast MD5, SHA-1, SHA-256, SHA-384, SHA-512, and IEEE 802.3 CRC32 hash calculation with checksum comparator.
   - `CryptoTools`: AES-256-GCM authenticated encryption/decryption with PBKDF2-HMAC-SHA256 key derivation (100,000 rounds) and password strength scoring.

@@ -88,7 +88,7 @@ public struct ToolsDialogView: View {
 
     private var headerBar: some View {
         HStack {
-            Image(systemName: "wrench.and.screwdriver.fill")
+            Image(systemName: "wrench.and.screwdriver")
                 .foregroundColor(.blue)
                 .font(.system(size: 15))
 
@@ -97,16 +97,9 @@ public struct ToolsDialogView: View {
 
             Spacer()
 
-            Button(action: {
+            ModalCloseButton {
                 documentManager.isToolsDialogPresented = false
-            }) {
-                Image(systemName: "xmark")
-                    .foregroundColor(.secondary)
-                    .font(.system(size: 13, weight: .semibold))
-                    .frame(width: 20, height: 20)
             }
-            .buttonStyle(PlainButtonStyle())
-            .keyboardShortcut(.cancelAction)
         }
         .padding(.horizontal, 16)
         .padding(.vertical, 10)

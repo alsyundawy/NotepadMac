@@ -104,10 +104,51 @@ struct NotepadMacApp: App {
     }
 }
 
-final class AppDelegate: NSObject, NSApplicationDelegate {
+final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
+    weak var documentManager: DocumentManager?
+
+    var activeManager: DocumentManager? {
+        documentManager ?? DocumentManager.mainInstance
+    }
+
     func applicationDidFinishLaunching(_ notification: Notification) {
         NSApp.setActivationPolicy(.regular)
         NSApp.activate(ignoringOtherApps: true)
+
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(handleWindowDidBecomeKey(_:)),
+            name: NSWindow.didBecomeKeyNotification,
+            object: nil
+        )
+    }
+
+    @objc private func handleWindowDidBecomeKey(_ notif: Notification) {
+        if let window = notif.object as? NSWindow, window.delegate == nil {
+            window.delegate = self
+        }
+    }
+
+    func windowShouldClose(_ sender: NSWindow) -> Bool {
+        guard let manager = activeManager else { return true }
+        for doc in manager.documents where doc.isModified {
+            manager.activeDocumentID = doc.id
+            if !manager.confirmCloseDocument(doc, window: sender) {
+                return false
+            }
+        }
+        return true
+    }
+
+    func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
+        guard let manager = activeManager else { return .terminateNow }
+        for doc in manager.documents where doc.isModified {
+            manager.activeDocumentID = doc.id
+            if !manager.confirmCloseDocument(doc) {
+                return .terminateCancel
+            }
+        }
+        return .terminateNow
     }
 
     func applicationShouldTerminateAfterLastWindowClosed(

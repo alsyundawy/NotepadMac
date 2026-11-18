@@ -68,6 +68,10 @@ Unlike heavy Electron-based or web-wrapper text editors, NotepadMac starts insta
   - Full native support for **English** and **Bahasa Indonesia** across all menus, dialogs, toolbar controls, status badges, and toolkits.
 - **Check for Updates Dialog**:
   - Live GitHub API integration for checking the latest releases and updates directly inside the application.
+- **Unsaved Changes Protection Guard (Data Loss Prevention)**:
+  - Native confirmation dialogs on tab close, window close, and application quit (`⌘Q`).
+  - Standard options: **Save** (`Return`), **Don't Save** (`⌘D`), and **Cancel** (`Esc`).
+  - Automatically switches tab focus to the modified document so changes can be reviewed before deciding.
 - **Rich Context Menu**:
   - Complete right-click contextual menu on the editor canvas with editing, find/replace submenus, case conversion, line navigation, and view toggles.
 - **About, Credits & GPLv3 Licensing Panel**:

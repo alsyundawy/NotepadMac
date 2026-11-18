@@ -123,6 +123,23 @@
 - Connects to GitHub Releases REST API (`https://api.github.com/repos/alsyundawy/NotepadMac/releases/latest`) with custom User-Agent and 5-second connection timeout.
 - Gracefully handles rate-limiting and offline scenarios with safe local status fallback.
 
+### 3.10 Unsaved Changes Protection Subsystem (Data Loss Prevention Guard)
+
+- **Native Confirmation Dialog**: Implemented `confirmCloseDocument(_:window:) -> Bool` in `DocumentManager` displaying a native macOS `NSAlert` modal whenever an unsaved / modified buffer is targeted for closure or termination.
+- **Apple HIG-Compliant Action Buttons**:
+  - **Save** (Primary / Return key `\r`): Commits changes to the existing file URL, or presents a modal `NSSavePanel` (`promptSaveAsModal(for:window:)`) for untitled documents. Returns `true` on successful write, or `false` if cancelled.
+  - **Cancel** (Escape key `\u{1b}`): Aborts the close / quit operation immediately, leaving the tab, window, and application state intact. Returns `false`.
+  - **Don't Save** (Command-D `⌘D`): Discards unsaved modifications without writing to disk and returns `true`, proceeding with tab or window closure.
+- **Active Tab Focus**: Before presenting the confirmation alert, `activeDocumentId` is automatically switched to the affected document, ensuring the user visually inspects the exact modified buffer before making a decision.
+- **Tab Lifecycle Interception**: Guarded inside all document-closing workflows:
+  - `closeDocument(id:)`
+  - `closeOtherDocuments(except:)`
+  - `closeTabsToTheRight(of:)`
+  - `closeAllDocuments()`
+- **Window Close Interception**: `AppDelegate` conforms to `NSWindowDelegate` and implements `windowShouldClose(_ sender: NSWindow) -> Bool`. It iterates over all opened modified documents and prompts confirmation before allowing the window to close.
+- **Application Quit Interception**: `AppDelegate` implements `applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply`. If any open document has unsaved modifications, it sequentially requests user confirmation. Returning `.terminateCancel` cleanly prevents macOS from killing the app process if the user cancels.
+- **Bilingual Localization**: Added localized strings (`save_changes_title`, `save_changes_message`, `dont_save`) in `LocalizationManager` for both English and Indonesian.
+
 ---
 
 ## 4. Security & Hardening Review (2025–2026 Analysis)

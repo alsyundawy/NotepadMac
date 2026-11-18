@@ -477,5 +477,28 @@ final class NotepadMacTests: XCTestCase {
         XCTAssertEqual(registry.detectLanguage(forFilename: "Dockerfile", content: "").id, "dockerfile")
         XCTAssertEqual(registry.detectLanguage(forFilename: "CMakeLists.txt", content: "").id, "cmake")
     }
+
+    func testDocumentModificationAndCloseGuards() {
+        let docMgr = DocumentManager()
+        guard let doc = docMgr.activeDocument else {
+            XCTFail("Active document should exist")
+            return
+        }
+
+        XCTAssertFalse(doc.isModified)
+        // Closing unmodified document should succeed immediately
+        let closedUnmodified = docMgr.closeDocument(id: doc.id)
+        XCTAssertTrue(closedUnmodified)
+
+        // Create new doc and modify
+        let newDoc = docMgr.newDocument(title: "TestDoc", content: "Initial content")
+        XCTAssertFalse(newDoc.isModified)
+        newDoc.content = "Modified content"
+        XCTAssertTrue(newDoc.isModified)
+
+        // confirmCloseDocument on unmodified doc returns true
+        newDoc.isModified = false
+        XCTAssertTrue(docMgr.confirmCloseDocument(newDoc))
+    }
 }
 #endif

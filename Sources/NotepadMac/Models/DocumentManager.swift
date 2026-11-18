@@ -24,6 +24,8 @@ import AppKit
 import SwiftUI
 
 public final class DocumentManager: ObservableObject, EditorActionDelegate {
+    public static weak var mainInstance: DocumentManager?
+
     @Published public var documents: [EditorDocument] = []
     @Published public var activeDocumentID: UUID?
 
@@ -68,6 +70,7 @@ public final class DocumentManager: ObservableObject, EditorActionDelegate {
     public let luaEngine = LuaEngine()
 
     public init() {
+        DocumentManager.mainInstance = self
         // Create an initial default empty document
         newDocument()
     }
@@ -140,7 +143,8 @@ public final class DocumentManager: ObservableObject, EditorActionDelegate {
         }
     }
 
-    public func saveDocument(_ doc: EditorDocument, to url: URL) {
+    @discardableResult
+    public func saveDocument(_ doc: EditorDocument, to url: URL) -> Bool {
         do {
             guard let data = doc.content.data(using: doc.encoding) else {
                 throw NSError(domain: "NotepadMac", code: 1, userInfo: [NSLocalizedDescriptionKey: "Encoding error"])
@@ -153,8 +157,10 @@ public final class DocumentManager: ObservableObject, EditorActionDelegate {
                 forFilename: url.lastPathComponent,
                 content: doc.content
             )
+            return true
         } catch {
             print("Failed to save document to \(url): \(error.localizedDescription)")
+            return false
         }
     }
 
@@ -167,6 +173,61 @@ public final class DocumentManager: ObservableObject, EditorActionDelegate {
             if response == .OK, let targetURL = savePanel.url {
                 self?.saveDocument(doc, to: targetURL)
             }
+        }
+    }
+
+    @discardableResult
+    public func promptSaveAsModal(for doc: EditorDocument, window: NSWindow? = nil) -> Bool {
+        let savePanel = NSSavePanel()
+        savePanel.nameFieldStringValue = doc.title
+        savePanel.canCreateDirectories = true
+
+        let response = savePanel.runModal()
+        if response == .OK, let targetURL = savePanel.url {
+            return saveDocument(doc, to: targetURL)
+        }
+        return false
+    }
+
+    /// Prompts the user when closing a document with unsaved changes.
+    /// Returns true if it is safe to proceed with closing, or false if the user cancelled.
+    public func confirmCloseDocument(_ doc: EditorDocument, window: NSWindow? = nil) -> Bool {
+        guard doc.isModified else { return true }
+
+        let alert = NSAlert()
+        alert.alertStyle = .warning
+        let titleFormat = loc("save_changes_title")
+        alert.messageText = String(format: titleFormat, doc.title)
+        alert.informativeText = loc("save_changes_message")
+
+        let saveBtn = alert.addButton(withTitle: loc("save"))
+        saveBtn.keyEquivalent = "\r"
+
+        let cancelBtn = alert.addButton(withTitle: loc("cancel"))
+        cancelBtn.keyEquivalent = "\u{1b}"
+
+        let dontSaveBtn = alert.addButton(withTitle: loc("dont_save"))
+        dontSaveBtn.keyEquivalent = "d"
+        dontSaveBtn.keyEquivalentModifierMask = .command
+
+        let response = alert.runModal()
+
+        switch response {
+        case .alertFirstButtonReturn:
+            // User chose Save
+            if let url = doc.fileURL {
+                return saveDocument(doc, to: url)
+            } else {
+                return promptSaveAsModal(for: doc, window: window)
+            }
+        case .alertSecondButtonReturn:
+            // User chose Cancel
+            return false
+        case .alertThirdButtonReturn:
+            // User chose Don't Save
+            return true
+        default:
+            return false
         }
     }
 
@@ -185,8 +246,18 @@ public final class DocumentManager: ObservableObject, EditorActionDelegate {
         }
     }
 
-    public func closeDocument(id: UUID) {
-        guard let index = documents.firstIndex(where: { $0.id == id }) else { return }
+    @discardableResult
+    public func closeDocument(id: UUID) -> Bool {
+        guard let index = documents.firstIndex(where: { $0.id == id }) else { return true }
+        let doc = documents[index]
+
+        if doc.isModified {
+            activeDocumentID = doc.id
+            if !confirmCloseDocument(doc) {
+                return false
+            }
+        }
+
         documents.remove(at: index)
 
         if activeDocumentID == id {
@@ -198,21 +269,40 @@ public final class DocumentManager: ObservableObject, EditorActionDelegate {
                 newDocument()
             }
         }
+        return true
     }
 
-    public func closeOtherDocuments(except id: UUID) {
+    @discardableResult
+    public func closeOtherDocuments(except id: UUID) -> Bool {
+        let others = documents.filter { $0.id != id }
+        for doc in others where doc.isModified {
+            activeDocumentID = doc.id
+            if !confirmCloseDocument(doc) {
+                return false
+            }
+        }
         documents.removeAll(where: { $0.id != id })
         activeDocumentID = id
+        return true
     }
 
-    public func closeTabsToTheRight(of id: UUID) {
-        guard let index = documents.firstIndex(where: { $0.id == id }) else { return }
+    @discardableResult
+    public func closeTabsToTheRight(of id: UUID) -> Bool {
+        guard let index = documents.firstIndex(where: { $0.id == id }) else { return true }
+        let rightDocs = Array(documents.suffix(from: index + 1))
+        for doc in rightDocs where doc.isModified {
+            activeDocumentID = doc.id
+            if !confirmCloseDocument(doc) {
+                return false
+            }
+        }
         if index + 1 < documents.count {
             documents.removeSubrange((index + 1)...)
             if let activeID = activeDocumentID, !documents.contains(where: { $0.id == activeID }) {
                 activeDocumentID = id
             }
         }
+        return true
     }
 
     public func saveAllDocuments() {
@@ -225,9 +315,17 @@ public final class DocumentManager: ObservableObject, EditorActionDelegate {
         }
     }
 
-    public func closeAllDocuments() {
+    @discardableResult
+    public func closeAllDocuments() -> Bool {
+        for doc in documents where doc.isModified {
+            activeDocumentID = doc.id
+            if !confirmCloseDocument(doc) {
+                return false
+            }
+        }
         documents.removeAll()
         newDocument()
+        return true
     }
 
     public func duplicateLine() {

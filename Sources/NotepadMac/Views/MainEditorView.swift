@@ -61,6 +61,11 @@ public struct MainEditorView: View {
         .applyViewTogglesNotifications(manager: documentManager)
         .applyZoomAndSelectionNotifications(manager: documentManager)
         .applyToolAndDialogNotifications(manager: documentManager)
+        .onAppear {
+            if let appDelegate = NSApp.delegate as? AppDelegate {
+                appDelegate.documentManager = documentManager
+            }
+        }
     }
 
     @ViewBuilder

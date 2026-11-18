@@ -58,6 +58,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Complete native localization in English and Bahasa Indonesia (`id`) across all menus, toolbars, dialogs, status badges, and toolkits.
 - **Check for Updates Dialog (`CheckUpdateDialogView`)**:
   - Native update checker with GitHub Releases API integration and release notes display.
+- **Unsaved Changes Confirmation & Data Loss Prevention Guard**:
+  - Added native `NSAlert` confirmation sheet/dialog on closing tabs, closing other tabs, closing tabs to the right, closing the window, and quitting the application.
+  - Dialog options: **Save** (writes to disk / prompts Save As for untitled documents), **Don't Save** (discards unsaved modifications), and **Cancel** (aborts closing/quitting and preserves buffer).
+  - Integrated `NSWindowDelegate` (`windowShouldClose`) and `NSApplicationDelegate` (`applicationShouldTerminate`) to intercept window closing and app quit (`⌘Q`) events.
+  - Full bilingual localization in English ("Do you want to save the changes made to the document “%@”?") and Indonesian ("Apakah Anda ingin menyimpan perubahan pada dokumen “%@”?").
 - **Tools Hub Dialog (`ToolsDialogView`)**:
   - Unified modal interface organizing all 5 tool categories with interactive inputs, live calculations, copy-to-clipboard, and insertion directly into the active editor buffer.
 - **Performance & Security Hardening**:

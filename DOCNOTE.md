@@ -1,102 +1,114 @@
-# NotepadMac: Technical Documentation & Architecture Notes (DOCNOTE)
+# NotepadMac Release DocNote — v1.0.0
 
-## 1. System Overview
+```text
+================================================================================
+Release Version     : 1.0.0 (Native Scintilla Cocoa 5.6.9, Lexilla 5.5.5, Embedded Lua 5.5.1,
+                      Developer & Security Tools Hub, Modern Find/Replace/Mark Hub,
+                      Data Loss Prevention Guard, Focus Ring Elimination & 2025–2026 CVE Audit)
+Release Date        : 2026-11-19
+Lead Maintainer     : Harry Dertin Sutisna Alsyundawy (@alsyundawy)
+Organization        : ALSYUNDAWY IT SOLUTION (https://alsyundawy.com)
+Repository          : https://github.com/alsyundawy/NotepadMac
+Core Editing Engine : Scintilla 5.6.9 (Cocoa C++17) & Lexilla 5.5.5 (50+ Languages)
+Embedded Lua Core   : Sandboxed Lua 5.5.1 (CLua ISO C Bridge)
+GUI Framework       : SwiftUI & AppKit (Swift 5.9+ / Swift 6.x)
+Target Platforms    : macOS 11.0–26.0 (Universal: Apple Silicon ARM64 & Intel x86_64)
+License             : GNU General Public License v3.0 (GPL-3.0-or-later)
+Architecture        : 100% Additive Safe Enhancements Inspired by SparkNotePad, Notepad++, Notepad-- & Notepad3
+CI/CD Status        : 100% Passing across all release matrices, MegaLinter & CodeQL
+================================================================================
+```
 
-**NotepadMac** is a hybrid macOS desktop application combining high-performance native C++17 editing engines with modern SwiftUI reactive UI and embedded Lua scripting.
+---
 
-### Tech Stack & Version Manifest
+## 1. Executive Summary: Production Release v1.0.0
 
-| Component          | Version              | Language / Toolchain            | Purpose                                              |
-| :----------------- | :------------------- | :------------------------------ | :--------------------------------------------------- |
-| **Scintilla Core** | **5.6.9**            | C++17 / Objective-C++           | Text buffer, caret handling, undo/redo, text styling |
-| **Lexilla**        | **5.5.5**            | C++17                           | 50+ syntax highlighting lexers, syntax folding       |
-| **Lua Engine**     | **5.5.1**            | ISO C (via `CLua`)              | Embedded script runner, editor automation            |
-| **UI Chrome**      | **macOS 11.0+**      | Swift 5.9+ / Swift 6.x          | Toolbar, TabBar, StatusBar, Menus, Panels            |
-| **Architecture**   | **Universal**        | `arm64` + `x86_64`              | Native execution on Apple Silicon & Intel            |
-| **License**        | **GPL-3.0-or-later** | GNU General Public License v3.0 | Copyleft protection with Scintilla/Lua credits       |
+**NotepadMac v1.0.0** is a fast, lightweight, and modern native macOS desktop text editor engineered from the ground up for macOS using modern **SwiftUI** and the proven **Scintilla / Lexilla** native editing engine. Unlike heavy Electron-based or web-wrapper editors, NotepadMac starts instantaneously, runs with minimal memory footprint, and provides complete native macOS integration: AppKit menus, custom tabs, keyboard shortcuts, deep system font rendering, and universal binary distribution (`arm64` + `x86_64`).
+
+### Key Highlights & Features
+
+- **Core Editing Engine (Scintilla Cocoa 5.6.9 & Lexilla 5.5.5)**:
+  - Official Scintilla 5.6.9 Cocoa port (`ScintillaView`) wrapped cleanly in SwiftUI via `NSViewRepresentable`.
+  - 50+ Lexilla programming language highlighters with hierarchical code folding.
+  - Automatic Lexilla colorization (`SCI_COLOURISE`) on document load and tab switching.
+  - Zero-allocation UTF-8 byte traversal in `EditorDocument.lineCount`.
+- **Embedded Sandboxed Lua 5.5.1 Engine**:
+  - Sandboxed Lua 5.5.1 runtime with interactive console sheet (`⌘K`) and direct `editor.*` APIs for automation, macros, and scripting.
+- **Modernized Find, Replace & Mark Hub (`FindReplaceDialogView`)**:
+  - Standalone modal dialog box perfectly aligned with Tools Hub design tokens and macOS Human Interface Guidelines.
+  - Full Notepad++ **Mark** engine: Mark All with Indicator 8 highlighting, line bookmarking in margin 1 (`🔖`), Clear All Marks, and Copy Marked Text.
+  - Collapsible in-window search bar (`⇧⌘F`) retained for inline quick-search.
+- **Developer & Security Tools Hub (`ToolsDialogView`)**:
+  - **Developer Tools**: Syntax minification & unminification (formatting) for HTML, JSON, CSS, and JavaScript with configurable indentation, HTML encryption & decryption (JS unescape, Base64, and standalone password-protected AES-GCM Web Crypto containers), XML validation, JWT token inspector, UUID v4 generator, and Unix Epoch / ISO 8601 converter.
+  - **Hash Tools**: Fast computation of MD5, SHA-1, SHA-256, SHA-384, SHA-512, and IEEE 802.3 CRC32 with real-time text and attached file checksum calculation, matching verification, and two-file comparison.
+  - **Crypto Tools**: Military-grade AES-256-GCM encryption/decryption with PBKDF2-HMAC-SHA256 key derivation (100,000 rounds) and interactive password strength evaluation.
+  - **MIME Tools**: Base64 encoding/decoding (full and line-by-line), RFC 3986 URL percent-encoding, and HTML entity sanitization.
+  - **Converter Tools**: ASCII to Hexadecimal (and reverse) and multi-base numeric converter (Binary, Octal, Decimal, Hexadecimal).
+- **Data Loss Prevention Guard (Unsaved Changes Protection)**:
+  - Native confirmation sheet (`NSAlert`) triggered before closing modified tabs, closing other tabs, closing tabs to the right, closing the window, and quitting the application (`⌘Q`).
+  - Standard options: **Save** (`Return`), **Don't Save** (`⌘D`), and **Cancel** (`Esc`).
+  - Automatically switches tab focus to the modified document so changes can be visually inspected before making a decision.
+- **Modal Dialog & Tab Icon Polish with Focus Ring Elimination (`ModalCloseButton`)**:
+  - Completely eliminated the macOS AppKit blue focus ring / rectangular background artifact around dialog close icons by introducing `ModalCloseButton`.
+  - Decoupled the visible glyph (`Image` with `.contentShape(Circle())`, `.onHover`, and `.onTapGesture`) from an invisible zero-size key equivalent receiver (`Button` with `.frame(width: 0, height: 0)`, `.opacity(0)`, `.focusable(false)`, and `.keyboardShortcut(.cancelAction)`).
+  - Applied across `ToolsDialogView`, `FindReplaceDialogView`, `CheckUpdateDialogView`, and `FindReplaceBar`.
+  - Replaced text-field clear buttons (`xmark.circle`) and tab close buttons in `NotepadTabBar` with gesture-driven glyphs, ensuring clean, native rendering with zero focus ring artifacts during tab navigation and dialog interactions.
+- **7 Handcrafted Developer Themes**:
+  - SparkNotePad Light, SparkNotePad Dark, One Dark Pro, Dracula, Monokai, GitHub Light, and Solarized Light with automatic BGR color-space synchronizers.
+- **Bilingual Localization (i18n)**:
+  - Full native support for **English** and **Bahasa Indonesia** (`id`) across all menus, dialogs, toolbar controls, status badges, and toolkits via `LocalizationManager`.
+- **Universal Binary Distribution**:
+  - Compiles natively for both **Apple Silicon (`arm64`)** and **Intel (`x86_64`)** architectures.
+  - Automated packaging into `.app` bundle, `.zip` archive, and `.dmg` disk image with verified CRC32 checksum.
 
 ---
 
 ## 2. Architecture & Layering
 
 ```text
-+-------------------------------------------------------------+
-|                     SwiftUI Chrome Layer                    |
-|   (NotepadToolbar, NotepadTabBar, NotepadStatusBar, ...)    |
-|   (FindReplaceDialogView, PreferencesView, AboutView)       |
-+-------------------------------------------------------------+
-                              |
-                     Swift / AppKit Bridge
-                              |
-+-------------------------------------------------------------+
-|              ScintillaEditorCoordinator Layer               |
-|  - ScintillaEditorCoordinator+Search.swift (Find / Replace) |
-|  - ScintillaEditorCoordinator+ContextMenu.swift (NSMenu)    |
-|  - ScintillaNotificationProtocol (2008, 2007, 2010 events)   |
-+-------------------------------------------------------------+
-                              |
-                     C++17 / Objective-C++
-                              |
-+-------------------------------------------------------------+
-|                    Native Engine Layer                      |
-|       - ScintillaCocoa 5.6.9 (ScintillaView, PlatCocoa)     |
-|       - Lexilla 5.5.5 (50+ programming language lexers)     |
-|       - CLua 5.5.1 (Official C runtime & CLuaBridge)        |
-+-------------------------------------------------------------+
++-----------------------------------------------------------------------------------+
+|                              SwiftUI Chrome Layer                                 |
+|  - NotepadToolbar (Permanent Dark #21252b, Notepad++ Classic layout)              |
+|  - NotepadTabBar (Custom tab bar with dirty indicators, tags & gesture close)     |
+|  - NotepadStatusBar (Live cursor pos, total lines, encoding, lexer, theme)       |
+|  - FindReplaceDialogView & FindReplaceBar (Find, Replace & Mark Hub)              |
+|  - ToolsDialogView (Hash, MIME, Converter, Encryption, Developer Tools)           |
+|  - PreferencesView (Themes, Font family/size, Tab width, Word wrap)               |
+|  - AboutView (App overview, Third-party credits, GPLv3 license)                  |
+|  - ModalCloseButton (Anti-focus-ring gesture-driven modal dismissal)              |
++-----------------------------------------------------------------------------------+
+                                          |
+                                Swift / AppKit Bridge
+                                          |
++-----------------------------------------------------------------------------------+
+|                        ScintillaEditorCoordinator Layer                           |
+|  - ScintillaEditorCoordinator+Search.swift (Find, Replace & Mark indicator 8)     |
+|  - ScintillaEditorCoordinator+ContextMenu.swift (Native NSMenu integration)       |
+|  - ScintillaNotificationProtocol (Event 2008, 2007, 2010 notifications)           |
+|  - DocumentManager & EditorDocument (Tab state, dirty tracking, file I/O)         |
++-----------------------------------------------------------------------------------+
+                                          |
+                                C++17 / Objective-C++
+                                          |
++-----------------------------------------------------------------------------------+
+|                              Native Engine Layer                                  |
+|  - ScintillaCocoa 5.6.9 (ScintillaView, PlatCocoa, CellBuffer, Caret)             |
+|  - Lexilla 5.5.5 (50+ programming language lexers, folding managers)             |
+|  - CLua 5.5.1 (Official C runtime & CLuaBridge for editor scripting)              |
++-----------------------------------------------------------------------------------+
 ```
 
 ---
 
-## 3. Core Modules & Key Classes
+## 3. Deep Technical Module Walkthrough
 
-### 3.1 Editor Bridge (`ScintillaEditorRepresentable`)
+### 3.1 Scintilla Cocoa & Lexilla Bridge (`Sources/ScintillaCocoa/`)
 
-- Implements `NSViewRepresentable` to bridge AppKit `ScintillaView` into SwiftUI hierarchies.
-- Maintains `isUpdatingFromScintilla` flag to break cyclical feedback loops between Scintilla buffer mutations and SwiftUI state updates.
-- Attaches the custom native `NSMenu` context menu via `buildEditorContextMenu()`.
+- Direct integration of official Scintilla 5.6.9 Cocoa sources (`ScintillaView.mm`, `PlatCocoa.mm`, `InfoBar.mm`) compiled under C++17 (`-std=c++17`) with Automatic Reference Counting (`-fobjc-arc`).
+- Lexilla 5.5.5 lexer engine integrated with external lexer catalog, providing 50+ language definitions with keyword sets, styling masks, and indentation folding levels.
+- Wrapped in SwiftUI via `NSViewRepresentable` (`ScintillaEditorRepresentable.swift`) with two-way binding for text synchronization, caret tracking, and theme color application.
 
-### 3.2 Search & Replace Subsystem (`ScintillaEditorCoordinator+Search`)
-
-- Dispatches search commands directly to Scintilla's native methods:
-  - `view.findAndHighlightText(...)`: Performs rapid incremental search with automatic viewport scrolling (`SCI_SCROLLCARET`) and text highlighting.
-  - Continuous Replace: If the current selection matches the find query, it atomically replaces it via `SCI_REPLACESEL` (2170) and immediately triggers `findNext` so the user can replace matches continuously.
-  - Bidirectional Wrap-Around: Searches wrap around smoothly from end to beginning (downward) or beginning to end (upward) in both regular and regex search modes.
-  - Smart Highlighting: Utilizes Scintilla native indicator 8 (`INDIC_ROUNDBOX` 7) with warm amber gold BGR styling (`0x00A5FF`) and alpha blending (`SCI_INDICSETALPHA` 75, `SCI_INDICSETOUTLINEALPHA` 160) to automatically illuminate all matching occurrences of selected words or active queries across the document.
-  - Regular expression evaluation via `SCFIND_REGEXP`, `SCFIND_MATCHCASE`, and `SCFIND_WHOLEWORD`.
-  - Occurrence counting via `countMatches(in:query:matchCase:wholeWord:isRegex:)` without disrupting the user's cursor or viewport.
-
-### 3.3 Modernized Find, Replace & Mark Hub (`FindReplaceDialogView` & `FindReplaceBar`)
-
-- **Design Harmony with Tools Hub**: Completely redesigned with the exact same visual architecture, geometry, and styling tokens as `ToolsDialogView`:
-  - Uniform window background (`Color(NSColor.windowBackgroundColor)`), 12pt continuous corner radii, and matching header/footer bars (`Color(NSColor.controlBackgroundColor)`).
-  - Native segmented tab selector seamlessly switching between **Find**, **Replace**, and **Mark** tabs.
-  - Comfortable, non-cramped fixed frame dimensions (`660x490`) eliminating jarring height jumps.
-- **Dedicated Mark & Bookmark Engine**:
-  - Full support for Notepad++-style buffer marking and margin bookmarking.
-  - **Mark All**: Highlights all matches across the buffer using Scintilla Indicator 8 (`INDIC_ROUNDBOX`) and dynamically adds rounded bookmark markers (Marker 20) in margin 1.
-  - **Clear All Marks**: Flushes indicator highlights and removes bookmark markers (`SCI_MARKERDELETEALL`).
-  - **Copy Marked Text**: Automatically extracts all bookmarked/marked lines and commits them to the macOS system pasteboard.
-  - Attribute toggles: **Bookmark Line** (`🔖`) and **Purge for each search** (`🧹`).
-- **Modernized Inline Search Bar (`FindReplaceBar`)**:
-  - Modernized with full localization (`loc(...)`), clean text fields with clear buttons, quick option toggles (`Aa`, `\b`, `.*`, `↩`), navigation buttons, occurrence counting, status pills, and one-click expand to the full dialog hub.
-
-### 3.4 Text Transformations & Format Menu (`NotepadMenuCommands`)
-
-- Relocated under `FormatMenuCommands`:
-  - `UPPERCASE` (`SCI_UPPERCASE` 2341)
-  - `lowercase` (`SCI_LOWERCASE` 2340)
-  - `Capitalize` (Title Case via Swift string capitalization)
-  - `Invert Case` (Character-by-character case inversion)
-  - `Indent Selection` (`SCI_TAB` 2327) & `Outdent Selection` (`SCI_BACKTAB` 2328)
-- Automatic fallback: If no selection is active, detects and transforms the word currently under the caret using `SCI_WORDSTARTPOSITION` and `SCI_WORDENDPOSITION`.
-
-### 3.5 Expanded Lexilla Lexers & Alphabetical Submenus (`LexerRegistry`)
-
-- Over 50 supported languages registered across `LanguagesCore`, `LanguagesData`, and `LanguagesExtended`.
-- Clean alphabetical organization: Sorted and grouped into A–Z letter submenus (`alphabeticalGroups`) with "Plain Text" pinned at the top across Menu Bar, Toolbar, and Status Bar.
-- Immediate Lexilla colorization: Automatically triggers `SCI_COLOURISE` (4003) on buffer load and tab switching so syntax highlighting is rendered immediately.
-
-### 3.6 Embedded Lua 5.5.1 Runtime (`LuaEngine`)
+### 3.2 Embedded Lua 5.5.1 Automation Subsystem (`Sources/CLua/` & `Sources/NotepadMac/Lua/`)
 
 - Sandboxed Lua execution environment initialized with `luaL_newstate()`.
 - Standard library opened via C wrapper `lua_open_all_libs(L)` in `CLuaBridge.h`.
@@ -111,7 +123,17 @@
   - `editor.clear()`: Resets editor buffer
   - `editor.zoomIn()` / `editor.zoomOut()`: Adjusts zoom level
 
-### 3.7 Developer & Security Tools Suite (`Sources/NotepadMac/Tools/`)
+### 3.3 Find, Replace & Mark Hub (`FindReplaceDialogView` & `FindReplaceBar`)
+
+- **Find Subsystem**: Forward and backward wrap-around search in both normal and regular expression modes.
+- **Replace Subsystem**: Continuous single replacement workflow: replaces current selection and automatically advances to next match. Replace All scans entire buffer in single pass.
+- **Mark Subsystem**:
+  - Mark All highlights occurrences using Scintilla native indicator 8 (`INDIC_ROUNDBOX`).
+  - Bookmarks lines in margin 1 (`🔖`).
+  - Clear All Marks removes indicator highlights and line bookmarks.
+  - Copy Marked Text extracts all marked lines into clipboard.
+
+### 3.4 Developer & Security Tools Suite (`Sources/NotepadMac/Tools/`)
 
 - **`HashTools`**:
   - Hardware-accelerated cryptographic hash functions (MD5, SHA-1, SHA-256, SHA-384, SHA-512) via Apple `CryptoKit` and standard IEEE 802.3 CRC32 with precomputed lookup table.
@@ -123,34 +145,6 @@
   - **HTML, JSON, CSS & JavaScript Minify & Unminify (Prettify)**: Fast syntax-aware beautification and minification for web assets with configurable indent spacing.
   - **HTML Encrypt & Decrypt**: Obfuscation and encryption engine inspired by `html-code-generator.com`, including client-side JS `unescape`, Base64 dynamic evaluation, and password-protected standalone AES-GCM Web Crypto HTML containers.
   - XML document validation and minification, JWT inspection (header, claims, payload, signature, exp/iat timestamp parsing), UUID v4 generator, and ISO 8601 / Unix Epoch conversion.
-
-### 3.8 Bilingual Localization Subsystem (`LocalizationManager`)
-
-- Centralized `ObservableObject` handling dynamic runtime language switching between **English** and **Bahasa Indonesia** (`id`).
-- Persists user language preference in `UserDefaults` (`notepad_app_language`) with fallback to macOS system preferred languages.
-- Provides immediate reactivity across SwiftUI menus, buttons, status bars, and modal dialogs via `loc(key)` helper.
-
-### 3.9 Check for Updates Subsystem (`CheckUpdateDialogView`)
-
-- Connects to GitHub Releases REST API (`https://api.github.com/repos/alsyundawy/NotepadMac/releases/latest`) with custom User-Agent and 5-second connection timeout.
-- Gracefully handles rate-limiting and offline scenarios with safe local status fallback.
-
-### 3.10 Unsaved Changes Protection Subsystem (Data Loss Prevention Guard)
-
-- **Native Confirmation Dialog**: Implemented `confirmCloseDocument(_:window:) -> Bool` in `DocumentManager` displaying a native macOS `NSAlert` modal whenever an unsaved / modified buffer is targeted for closure or termination.
-- **Apple HIG-Compliant Action Buttons**:
-  - **Save** (Primary / Return key `\r`): Commits changes to the existing file URL, or presents a modal `NSSavePanel` (`promptSaveAsModal(for:window:)`) for untitled documents. Returns `true` on successful write, or `false` if cancelled.
-  - **Cancel** (Escape key `\u{1b}`): Aborts the close / quit operation immediately, leaving the tab, window, and application state intact. Returns `false`.
-  - **Don't Save** (Command-D `⌘D`): Discards unsaved modifications without writing to disk and returns `true`, proceeding with tab or window closure.
-- **Active Tab Focus**: Before presenting the confirmation alert, `activeDocumentId` is automatically switched to the affected document, ensuring the user visually inspects the exact modified buffer before making a decision.
-- **Tab Lifecycle Interception**: Guarded inside all document-closing workflows:
-  - `closeDocument(id:)`
-  - `closeOtherDocuments(except:)`
-  - `closeTabsToTheRight(of:)`
-  - `closeAllDocuments()`
-- **Window Close Interception**: `AppDelegate` conforms to `NSWindowDelegate` and implements `windowShouldClose(_ sender: NSWindow) -> Bool`. It iterates over all opened modified documents and prompts confirmation before allowing the window to close.
-- **Application Quit Interception**: `AppDelegate` implements `applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply`. If any open document has unsaved modifications, it sequentially requests user confirmation. Returning `.terminateCancel` cleanly prevents macOS from killing the app process if the user cancels.
-- **Bilingual Localization**: Added localized strings (`save_changes_title`, `save_changes_message`, `dont_save`) in `LocalizationManager` for both English and Indonesian.
 
 ### 3.5 Modal Icon Button & Focus Ring Elimination (`ModalCloseButton`)
 
@@ -165,6 +159,24 @@
     3. **Invisible Shortcut Handler**: Contains an invisible, zero-size `Button(action: action) { EmptyView() }` with `.frame(width: 0, height: 0)`, `.opacity(0)`, and `.keyboardShortcut(.cancelAction)`, preserving instant `Esc` key modal dismissal without visual footprint.
   - Deployed across `ToolsDialogView`, `FindReplaceDialogView`, `CheckUpdateDialogView`, and `FindReplaceBar`.
   - Replaced text-field clear buttons (`xmark.circle`) and tab close buttons in `NotepadTabBar` with gesture-driven glyphs to prevent button focus rings across the entire application interface.
+
+### 3.6 Data Loss Prevention Guard (Unsaved Changes Protection)
+
+- **Native Confirmation Dialog**: Implemented `confirmCloseDocument(_:window:) -> Bool` in `DocumentManager` displaying a native macOS `NSAlert` modal whenever an unsaved / modified buffer is targeted for closure or termination.
+- **Apple HIG-Compliant Action Buttons**:
+  - **Save** (Primary / Return key `\r`): Commits changes to the existing file URL, or presents a modal `NSSavePanel` (`promptSaveAsModal(for:window:)`) for untitled documents. Returns `true` on successful write, or `false` if cancelled.
+  - **Cancel** (Escape key `\u{1b}`): Aborts the close / quit operation immediately, leaving the tab, window, and application state intact. Returns `false`.
+  - **Don't Save** (Command-D `⌘D`): Discards unsaved modifications without writing to disk and returns `true`, proceeding with tab or window closure.
+- **Active Tab Focus**: Before presenting the confirmation alert, `activeDocumentId` is automatically switched to the affected document, ensuring the user visually inspects the exact modified buffer before making a decision.
+- **Tab Lifecycle Interception**: Guarded inside all document-closing workflows (`closeDocument(id:)`, `closeOtherDocuments(except:)`, `closeTabsToTheRight(of:)`, `closeAllDocuments()`).
+- **Window Close Interception**: `AppDelegate` conforms to `NSWindowDelegate` and implements `windowShouldClose(_ sender: NSWindow) -> Bool`. It iterates over all opened modified documents and prompts confirmation before allowing the window to close.
+- **Application Quit Interception**: `AppDelegate` implements `applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply`. If any open document has unsaved modifications, it sequentially requests user confirmation. Returning `.terminateCancel` cleanly prevents macOS from killing the app process if the user cancels.
+
+### 3.7 Bilingual Localization Subsystem (`LocalizationManager`)
+
+- Centralized `ObservableObject` handling dynamic runtime language switching between **English** and **Bahasa Indonesia** (`id`).
+- Persists user language preference in `UserDefaults` (`notepad_app_language`) with fallback to macOS system preferred languages.
+- Provides immediate reactivity across SwiftUI menus, buttons, status bars, and modal dialogs via `loc(key)` helper.
 
 ---
 
@@ -185,13 +197,24 @@
 
 ## 5. Packaging & CI/CD Pipeline
 
-### 4.1 Local Build Scripts
+### 5.1 Local Build Scripts
 
 - `scripts/build-app.sh`: Compiles `arm64` and `x86_64` release slices via `swift build`, merges them with `lipo -create`, applies ad-hoc codesigning with `codesign --force --deep --sign -`, and produces `build/NotepadMac.app` and `build/NotepadMac-1.0.0-macOS-Universal.zip`.
-- `scripts/build-dmg.sh`: Packages `NotepadMac.app` with an `/Applications` symlink into a compressed `UDZO` disk image (`build/NotepadMac-1.0.0-macOS-Universal.dmg`).
+- `scripts/build-dmg.sh`: Packages `NotepadMac.app` with an `/Applications` symlink into a compressed `UDZO` disk image (`build/NotepadMac-1.0.0-macOS-Universal.dmg`) with verified CRC32 checksum.
 - `scripts/test-runner.sh`: Runs the unit test suite and color encoding assertions.
 
-### 4.2 GitHub Actions Workflows
+### 5.2 GitHub Actions Workflows
 
 - `.github/workflows/build-universal.yml`: Automated CI that builds, tests, packages both DMG and ZIP, and publishes releases on version tags (`v*`).
 - `.github/workflows/mega-linter.yml`: Automated code quality gate scanning Swift, Shell, YAML, Markdown, and Python.
+
+---
+
+## 6. Third-Party Credits & Acknowledgments
+
+- **Harry Dertin Sutisna Alsyundawy (@alsyundawy)** — Lead Developer, Architect & Maintainer, ALSYUNDAWY IT SOLUTION.
+- **Scintilla (v5.6.9) & Lexilla (v5.5.5)** — Neil Hodgson & Contributors (HPND License).
+- **Lua Programming Language (v5.5.1)** — Roberto Ierusalimschy, Waldemar Celes, Luiz Henrique de Figueiredo / PUC-Rio (MIT License).
+- **SparkNotePad** — Harry Dertin Sutisna Alsyundawy & ALSYUNDAWY IT SOLUTION (GPLv3).
+- **Notepad++** — Don Ho & Notepad++ Contributors (GPLv3).
+- **Apple Inc.** — AppKit, SwiftUI, and macOS Platform SDKs.

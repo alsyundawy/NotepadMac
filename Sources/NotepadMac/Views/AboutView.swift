@@ -153,11 +153,14 @@ public struct AboutView: View {
                     .foregroundColor(Color(NSColor.labelColor))
 
                 VStack(alignment: .leading, spacing: 4) {
-                    FeatureCheckRow(text: "50+ Lexilla programming language lexers with folding")
-                    FeatureCheckRow(text: "Dedicated SparkNotePad-style Find & Replace dialog")
+                    FeatureCheckRow(text: "50+ Lexilla programming language lexers with hierarchical code folding")
+                    FeatureCheckRow(text: "Dedicated Find, Replace & Mark Hub with line bookmarks and indicator 8")
+                    FeatureCheckRow(text: "Developer & Security Tools Hub (HTML/CSS/JS/JSON Minifier, HTML Encrypt/Decrypt, File Checksums)")
+                    FeatureCheckRow(text: "Data Loss Prevention Guard with native confirmation alerts on close and quit (⌘Q)")
                     FeatureCheckRow(text: "7 handcrafted developer color themes with dark/light auto-sync")
-                    FeatureCheckRow(text: "Native Format menu with uppercase, lowercase, capitalize, invert")
-                    FeatureCheckRow(text: "Multi-tab document manager with dirty tracking and colors")
+                    FeatureCheckRow(text: "Native Format menu with case conversions and block indent/outdent")
+                    FeatureCheckRow(text: "Multi-tab document manager with dirty tracking, tab tagging, and zero focus ring artifacts")
+                    FeatureCheckRow(text: "Embedded sandboxed Lua 5.5.1 scripting console with direct editor.* APIs")
                 }
             }
             .padding(18)
@@ -201,12 +204,32 @@ public struct AboutView: View {
                 )
 
                 CreditBlockView(
-                    name: "SparkNotePad & TextEdit",
-                    author: "SparkNotePad & Apple Inc.",
-                    licenseName: "Design & UX Inspiration",
+                    name: "SparkNotePad",
+                    author: "Harry Dertin Sutisna Alsyundawy (@alsyundawy) & ALSYUNDAWY IT SOLUTION",
+                    licenseName: "GPL-3.0-or-later",
                     description: (
-                        "Inspired the native macOS menu hierarchies, keyboard " +
-                        "shortcuts, and the dedicated Find & Replace dialog."
+                        "Provides the architectural design, 7 developer themes, " +
+                        "multi-category Developer Tools, and desktop editor ergonomics."
+                    )
+                )
+
+                CreditBlockView(
+                    name: "Notepad++",
+                    author: "Don Ho & Notepad++ Contributors",
+                    licenseName: "GPL-3.0-or-later",
+                    description: (
+                        "Pioneered the classic desktop tabbed editing paradigm, " +
+                        "Find/Replace/Mark indicators, and line bookmarking workflows."
+                    )
+                )
+
+                CreditBlockView(
+                    name: "Apple AppKit & SwiftUI Frameworks",
+                    author: "Apple Inc.",
+                    licenseName: "macOS Platform SDK",
+                    description: (
+                        "Provides the native Cocoa windowing system, menu hierarchies, " +
+                        "accessibility features, and modern declarative user interface."
                     )
                 )
             }

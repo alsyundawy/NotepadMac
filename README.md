@@ -109,6 +109,12 @@
   - Standard options: **Save** (`Return`), **Don't Save** (`⌘D`), and **Cancel** (`Esc`).
   - Automatically switches tab focus to the modified document so changes can be visually inspected before making a decision.
   - Intercepts `NSWindowDelegate.windowShouldClose` and `NSApplicationDelegate.applicationShouldTerminate` (`.terminateCancel` cleanly preserves buffers).
+- **Autosave Snapshot & Crash Recovery Subsystem (`AutosaveRecoveryManager` & `CrashRecoverySheet`)**:
+  - Background periodic snapshot engine running every 10 seconds across all modified in-memory Scintilla buffers.
+  - Secure sandboxed recovery store in `~/Library/Application Support/NotepadMac/Recovery/` with POSIX `0700` directory and `0600` private file permissions (CWE-732 defense).
+  - Cryptographic SHA-256 tamper-detection checksums (`CryptoKit`) on every snapshot, automatically pruning and rejecting corrupted recovery data (CWE-353 / CWE-354 defense).
+  - Automatic snapshot cleanup upon clean document saving (`saveDocument`) or closing (`closeDocument`).
+  - Native SwiftUI `CrashRecoverySheet` modal presentation upon app startup after an ungraceful incident (SIGKILL, crash, sudden power outage), offering one-click "Recover All", selective document restoration, content preview with line/byte metrics, and discard actions.
 - **Modal Dialog & Tab Icon Polish with Focus Ring Elimination (`ModalCloseButton`)**:
   - Completely eliminated the macOS AppKit blue focus ring / rectangular background artifact around dialog close icons by introducing `ModalCloseButton`.
   - Decoupled the visible glyph (`Image` with `.contentShape(Circle())`, `.onHover`, and `.onTapGesture`) from an invisible zero-size key equivalent receiver (`Button` with `.frame(width: 0, height: 0)`, `.opacity(0)`, `.focusable(false)`, and `.keyboardShortcut(.cancelAction)`).

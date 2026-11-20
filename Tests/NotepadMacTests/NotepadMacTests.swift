@@ -589,5 +589,106 @@ final class NotepadMacTests: XCTestCase {
         XCTAssertNotNil(sha256)
         XCTAssertEqual(sha256, HashTools.computeHash(content, algorithm: .sha256))
     }
+
+    // MARK: - Pillar 10 & 14: Autosave & Crash Recovery Tests
+
+    func testAutosaveSnapshotCreationAndRecovery() {
+        let tempRecoveryDir = FileManager.default.temporaryDirectory
+            .appendingPathComponent("test_recovery_\(UUID().uuidString)")
+        let recoveryManager = AutosaveRecoveryManager(recoveryDirectory: tempRecoveryDir, interval: 60)
+
+        defer {
+            try? FileManager.default.removeItem(at: tempRecoveryDir)
+        }
+
+        let docId = UUID()
+        let doc = EditorDocument(
+            id: docId,
+            title: "UnsavedTest.swift",
+            content: "func recoverMe() { print(\"Safe!\") }",
+            isModified: true
+        )
+
+        let saved = recoveryManager.saveSnapshot(for: doc)
+        XCTAssertTrue(saved)
+
+        // Verify pending snapshots loaded correctly
+        let snapshots = recoveryManager.loadPendingSnapshots()
+        XCTAssertEqual(snapshots.count, 1)
+        XCTAssertEqual(snapshots.first?.title, "UnsavedTest.swift")
+        XCTAssertEqual(snapshots.first?.content, "func recoverMe() { print(\"Safe!\") }")
+        XCTAssertEqual(snapshots.first?.documentId, docId)
+    }
+
+    func testAutosaveCorruptedSnapshotRejection() {
+        let tempRecoveryDir = FileManager.default.temporaryDirectory
+            .appendingPathComponent("test_recovery_corrupt_\(UUID().uuidString)")
+        let recoveryManager = AutosaveRecoveryManager(recoveryDirectory: tempRecoveryDir, interval: 60)
+
+        defer {
+            try? FileManager.default.removeItem(at: tempRecoveryDir)
+        }
+
+        let docId = UUID()
+        let doc = EditorDocument(
+            id: docId,
+            title: "TamperedDoc.txt",
+            content: "Original Content",
+            isModified: true
+        )
+
+        XCTAssertTrue(recoveryManager.saveSnapshot(for: doc))
+
+        // Tamper with the snapshot JSON directly to simulate corruption (checksum mismatch)
+        let snapshotFile = tempRecoveryDir.appendingPathComponent("\(docId.uuidString).snapshot.json")
+        XCTAssertTrue(FileManager.default.fileExists(atPath: snapshotFile.path))
+
+        if let data = try? Data(contentsOf: snapshotFile),
+           var jsonStr = String(data: data, encoding: .utf8) {
+            jsonStr = jsonStr.replacingOccurrences(of: "Original Content", with: "Tampered Malicious Content")
+            try? jsonStr.data(using: .utf8)?.write(to: snapshotFile)
+        }
+
+        // When loading, corrupted snapshot with mismatched SHA-256 must be rejected
+        let pending = recoveryManager.loadPendingSnapshots()
+        XCTAssertEqual(pending.count, 0, "Corrupted snapshot must be rejected due to SHA-256 mismatch")
+    }
+
+    func testAutosaveSnapshotRemovalOnSave() {
+        let tempRecoveryDir = FileManager.default.temporaryDirectory
+            .appendingPathComponent("test_recovery_remove_\(UUID().uuidString)")
+        let recoveryManager = AutosaveRecoveryManager(recoveryDirectory: tempRecoveryDir, interval: 60)
+
+        defer {
+            try? FileManager.default.removeItem(at: tempRecoveryDir)
+        }
+
+        let doc = EditorDocument(title: "SaveClean.txt", content: "Clean Content", isModified: true)
+        XCTAssertTrue(recoveryManager.saveSnapshot(for: doc))
+        XCTAssertTrue(recoveryManager.hasPendingSnapshots())
+
+        recoveryManager.removeSnapshot(for: doc.id)
+        XCTAssertFalse(recoveryManager.hasPendingSnapshots())
+    }
+
+    func testAutosaveClearAllSnapshots() {
+        let tempRecoveryDir = FileManager.default.temporaryDirectory
+            .appendingPathComponent("test_recovery_clear_\(UUID().uuidString)")
+        let recoveryManager = AutosaveRecoveryManager(recoveryDirectory: tempRecoveryDir, interval: 60)
+
+        defer {
+            try? FileManager.default.removeItem(at: tempRecoveryDir)
+        }
+
+        let doc1 = EditorDocument(title: "Doc1.txt", content: "Doc 1", isModified: true)
+        let doc2 = EditorDocument(title: "Doc2.txt", content: "Doc 2", isModified: true)
+
+        XCTAssertTrue(recoveryManager.saveSnapshot(for: doc1))
+        XCTAssertTrue(recoveryManager.saveSnapshot(for: doc2))
+        XCTAssertEqual(recoveryManager.loadPendingSnapshots().count, 2)
+
+        recoveryManager.clearAllSnapshots()
+        XCTAssertEqual(recoveryManager.loadPendingSnapshots().count, 0)
+    }
 }
 #endif

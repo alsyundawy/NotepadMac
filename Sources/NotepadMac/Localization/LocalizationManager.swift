@@ -267,7 +267,20 @@ public final class LocalizationManager: ObservableObject {
             "checking_for_updates": "Checking for updates from GitHub...",
             "up_to_date": "You are using the latest version of NotepadMac!",
             "check_again": "Check Again",
-            "visit_releases": "Visit GitHub Releases"
+            "visit_releases": "Visit GitHub Releases",
+
+            // Crash Recovery
+            "crash_recovery_title": "Document Recovery",
+            "crash_recovery_subtitle": "Unsaved document snapshots found from a previous session.",
+            "crash_recovery_info": "NotepadMac detected that one or more documents were not cleanly saved before exiting. You can restore or discard them below.",
+            "recover_all": "Recover All",
+            "recover_selected": "Recover Selected",
+            "discard_all": "Discard All",
+            "discard_selected": "Discard Selected",
+            "recovered_badge": "Auto-Snapshot",
+            "untitled_document": "Untitled Document",
+            "last_saved": "Last modified",
+            "original_file": "Original path"
         ],
         .indonesian: [
             // App & General
@@ -454,7 +467,20 @@ public final class LocalizationManager: ObservableObject {
             "checking_for_updates": "Memeriksa pembaruan dari GitHub...",
             "up_to_date": "Anda menggunakan versi NotepadMac paling baru!",
             "check_again": "Periksa Lagi",
-            "visit_releases": "Kunjungi Rilis GitHub"
+            "visit_releases": "Kunjungi Rilis GitHub",
+
+            // Crash Recovery
+            "crash_recovery_title": "Pemulihan Dokumen",
+            "crash_recovery_subtitle": "Draf dokumen belum disimpan ditemukan dari sesi sebelumnya.",
+            "crash_recovery_info": "NotepadMac mendeteksi bahwa terdapat dokumen yang belum tersimpan secara normal sebelum aplikasi ditutup atau mengalami insiden. Anda dapat memulihkan atau membuangnya di bawah ini.",
+            "recover_all": "Pulihkan Semua",
+            "recover_selected": "Pulihkan Terpilih",
+            "discard_all": "Buang Semua",
+            "discard_selected": "Buang Terpilih",
+            "recovered_badge": "Draf Otomatis",
+            "untitled_document": "Dokumen Tanpa Judul",
+            "last_saved": "Terakhir diubah",
+            "original_file": "Lokasi berkas asli"
         ]
     ]
 }

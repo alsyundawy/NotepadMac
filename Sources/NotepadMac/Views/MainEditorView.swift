@@ -57,6 +57,9 @@ public struct MainEditorView: View {
         .sheet(isPresented: $documentManager.isCheckUpdatePresented) {
             CheckUpdateDialogView(documentManager: documentManager)
         }
+        .sheet(isPresented: $documentManager.isCrashRecoveryPresented) {
+            CrashRecoverySheet(documentManager: documentManager)
+        }
         .applyDocumentNotifications(manager: documentManager)
         .applyViewTogglesNotifications(manager: documentManager)
         .applyZoomAndSelectionNotifications(manager: documentManager)
@@ -65,6 +68,7 @@ public struct MainEditorView: View {
             if let appDelegate = NSApp.delegate as? AppDelegate {
                 appDelegate.documentManager = documentManager
             }
+            documentManager.checkPendingRecoverySnapshots()
         }
     }
 

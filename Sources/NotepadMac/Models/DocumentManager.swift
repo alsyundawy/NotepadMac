@@ -53,6 +53,11 @@ public final class DocumentManager: ObservableObject, EditorActionDelegate {
     @Published public var isCheckUpdatePresented: Bool = false
     @Published public var targetLineInput: String = ""
 
+    // Autosave & Crash Recovery
+    public let recoveryManager = AutosaveRecoveryManager()
+    @Published public var isCrashRecoveryPresented: Bool = false
+    @Published public var pendingRecoverySnapshots: [RecoverySnapshot] = []
+
     // Formatting & Indentation Preferences
     @Published public var tabIndentSpaces: Int = 4
     @Published public var useSpacesForTab: Bool = true
@@ -75,6 +80,13 @@ public final class DocumentManager: ObservableObject, EditorActionDelegate {
         DocumentManager.mainInstance = self
         // Create an initial default empty document
         newDocument()
+        startAutosaveTimer()
+    }
+
+    private func startAutosaveTimer() {
+        recoveryManager.start { [weak self] in
+            self?.documents ?? []
+        }
     }
 
     public var activeDocument: EditorDocument? {
@@ -159,6 +171,7 @@ public final class DocumentManager: ObservableObject, EditorActionDelegate {
                 forFilename: url.lastPathComponent,
                 content: doc.content
             )
+            recoveryManager.removeSnapshot(for: doc.id)
             return true
         } catch {
             print("Failed to save document to \(url): \(error.localizedDescription)")
@@ -261,6 +274,7 @@ public final class DocumentManager: ObservableObject, EditorActionDelegate {
         }
 
         documents.remove(at: index)
+        recoveryManager.removeSnapshot(for: id)
 
         if activeDocumentID == id {
             if documents.indices.contains(index) {
@@ -283,6 +297,9 @@ public final class DocumentManager: ObservableObject, EditorActionDelegate {
                 return false
             }
         }
+        for doc in others {
+            recoveryManager.removeSnapshot(for: doc.id)
+        }
         documents.removeAll(where: { $0.id != id })
         activeDocumentID = id
         return true
@@ -297,6 +314,9 @@ public final class DocumentManager: ObservableObject, EditorActionDelegate {
             if !confirmCloseDocument(doc) {
                 return false
             }
+        }
+        for doc in rightDocs {
+            recoveryManager.removeSnapshot(for: doc.id)
         }
         if index + 1 < documents.count {
             documents.removeSubrange((index + 1)...)
@@ -326,6 +346,7 @@ public final class DocumentManager: ObservableObject, EditorActionDelegate {
             }
         }
         documents.removeAll()
+        recoveryManager.clearAllSnapshots()
         newDocument()
         return true
     }
@@ -463,5 +484,82 @@ public final class DocumentManager: ObservableObject, EditorActionDelegate {
 
     public func showCheckForUpdates() {
         isCheckUpdatePresented = true
+    }
+
+    // MARK: - Crash Recovery Operations
+
+    public func checkPendingRecoverySnapshots() {
+        let snapshots = recoveryManager.loadPendingSnapshots()
+        if !snapshots.isEmpty {
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                self.pendingRecoverySnapshots = snapshots
+                self.isCrashRecoveryPresented = true
+            }
+        }
+    }
+
+    public func recoverSnapshots(_ snapshots: [RecoverySnapshot]) {
+        for snapshot in snapshots {
+            let fileURL = snapshot.originalPath.map { URL(fileURLWithPath: $0) }
+            let detectedLanguage = LexerRegistry.shared.detectLanguage(
+                forFilename: snapshot.originalPath != nil ? (fileURL?.lastPathComponent ?? snapshot.title) : snapshot.title,
+                content: snapshot.content
+            )
+            let detectedLineEnding = LineEnding.detect(in: snapshot.content)
+
+            let doc = EditorDocument(
+                title: snapshot.title,
+                fileURL: fileURL,
+                content: snapshot.content,
+                isModified: true,
+                lineEnding: detectedLineEnding,
+                language: detectedLanguage,
+                cursorLine: snapshot.cursorLine
+            )
+
+            // If the only existing document is an untouched empty "New 1", replace it
+            if documents.count == 1,
+               let first = documents.first,
+               first.fileURL == nil,
+               !first.isModified,
+               first.content.isEmpty {
+                documents = [doc]
+                activeDocumentID = doc.id
+            } else {
+                documents.append(doc)
+                activeDocumentID = doc.id
+            }
+
+            // Remove snapshot file once recovered into memory
+            recoveryManager.removeSnapshot(for: snapshot.documentId)
+        }
+
+        // Refresh pending list
+        pendingRecoverySnapshots.removeAll(where: { snapshot in
+            snapshots.contains(where: { $0.id == snapshot.id })
+        })
+
+        if pendingRecoverySnapshots.isEmpty {
+            isCrashRecoveryPresented = false
+        }
+    }
+
+    public func discardRecoverySnapshots(_ snapshots: [RecoverySnapshot]) {
+        for snapshot in snapshots {
+            recoveryManager.removeSnapshot(for: snapshot.documentId)
+        }
+        pendingRecoverySnapshots.removeAll(where: { snapshot in
+            snapshots.contains(where: { $0.id == snapshot.id })
+        })
+        if pendingRecoverySnapshots.isEmpty {
+            isCrashRecoveryPresented = false
+        }
+    }
+
+    public func discardAllRecoverySnapshots() {
+        recoveryManager.clearAllSnapshots()
+        pendingRecoverySnapshots.removeAll()
+        isCrashRecoveryPresented = false
     }
 }

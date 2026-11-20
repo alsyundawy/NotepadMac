@@ -75,6 +75,14 @@ NotepadMac v1.0.0 marks the initial major production release of the fast, lightw
   - Standard options: **Save** (`Return`), **Don't Save** (`⌘D`), and **Cancel** (`Esc`).
   - Automatically switches tab focus to the modified document so changes can be visually inspected before making a decision.
   - Intercepts `NSWindowDelegate.windowShouldClose` and `NSApplicationDelegate.applicationShouldTerminate` (`.terminateCancel` cleanly preserves buffers).
+- **Autosave Snapshot & Crash Recovery Subsystem (`AutosaveRecoveryManager` & `CrashRecoverySheet`)**:
+  - Industrial-grade background document snapshot daemon running periodically (default 10s interval) capturing modified in-memory Scintilla buffers.
+  - Secure sandboxed snapshot directory in `~/Library/Application Support/NotepadMac/Recovery/` with strict POSIX `0700` directory and `0600` private file permissions (CWE-732 defense).
+  - Cryptographic SHA-256 tamper-detection and integrity checksum validation (`CryptoKit`) on every snapshot write and read, immediately rejecting and pruning corrupted or tampered recovery files (CWE-353 / CWE-354 defense).
+  - Automatic snapshot cleanup/pruning upon clean document save (`saveDocument`) or clean document closure (`closeDocument`).
+  - Native SwiftUI `CrashRecoverySheet` modal presentation upon app launch whenever ungraceful termination or sudden crashes (SIGSEGV, SIGKILL, sudden power loss) leave pending snapshots on disk.
+  - Features real-time content preview pane, byte and line statistics, individual checkbox selection, and one-click actions: **Recover All**, **Recover Selected**, **Discard Selected**, and **Discard All**.
+  - Fully integrated with bilingual localization (`LocalizationManager`) in both English and Bahasa Indonesia.
 - **7 Handcrafted Developer Color Themes**:
   - SparkNotePad Light, SparkNotePad Dark, One Dark Pro (Default Dark), Dracula, Monokai, GitHub Light, and Solarized Light.
   - Automatic BGR Scintilla color calculation and SwiftUI color-space synchronizers.

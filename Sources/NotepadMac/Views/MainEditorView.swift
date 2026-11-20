@@ -60,6 +60,9 @@ public struct MainEditorView: View {
         .sheet(isPresented: $documentManager.isCrashRecoveryPresented) {
             CrashRecoverySheet(documentManager: documentManager)
         }
+        .sheet(isPresented: $documentManager.isRenameTabPresented) {
+            RenameTabSheet(documentManager: documentManager)
+        }
         .applyDocumentNotifications(manager: documentManager)
         .applyViewTogglesNotifications(manager: documentManager)
         .applyZoomAndSelectionNotifications(manager: documentManager)
@@ -169,6 +172,9 @@ private extension View {
             }
             .onReceive(NotificationCenter.default.publisher(for: .notepadCloseAllTabs)) { _ in
                 manager.closeAllDocuments()
+            }
+            .onReceive(NotificationCenter.default.publisher(for: .notepadRenameTab)) { _ in
+                manager.promptRenameActiveDocument()
             }
             .onReceive(NotificationCenter.default.publisher(for: .notepadToggleFind)) { _ in
                 manager.findDialogTab = 0

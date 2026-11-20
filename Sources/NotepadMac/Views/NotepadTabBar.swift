@@ -53,6 +53,9 @@ public struct NotepadTabBar: View {
                             onSelect: {
                                 documentManager.activeDocumentID = doc.id
                             },
+                            onRename: {
+                                documentManager.promptRenameDocument(doc)
+                            },
                             onClose: {
                                 documentManager.closeDocument(id: doc.id)
                             },
@@ -109,6 +112,7 @@ public struct TabItemView: View {
     public let isActive: Bool
     public let theme: Theme
     public let onSelect: () -> Void
+    public let onRename: () -> Void
     public let onClose: () -> Void
     public let onCloseOthers: () -> Void
     public let onCloseToTheRight: () -> Void
@@ -124,6 +128,16 @@ public struct TabItemView: View {
     }
 
     private var tabBgColor: Color {
+        if let tagHex = document.tagColorHex {
+            let baseTag = Color(hex: tagHex)
+            if isActive {
+                return theme.isDark ? baseTag.opacity(0.24) : baseTag.opacity(0.16)
+            } else if isHovering {
+                return theme.isDark ? baseTag.opacity(0.18) : baseTag.opacity(0.11)
+            } else {
+                return theme.isDark ? baseTag.opacity(0.12) : baseTag.opacity(0.07)
+            }
+        }
         if isActive {
             return theme.activeTabBgSwiftUIColor
         }
@@ -152,6 +166,13 @@ public struct TabItemView: View {
                     Image(systemName: fileIconInfo.name)
                         .font(.system(size: 11.5, weight: .medium))
                         .foregroundColor(isActive ? fileIconInfo.color : fileIconInfo.color.opacity(0.7))
+
+                    // Color tag badge if customized
+                    if let tagHex = document.tagColorHex {
+                        Circle()
+                            .fill(Color(hex: tagHex))
+                            .frame(width: 6, height: 6)
+                    }
 
                     // Document title
                     Text(document.title)
@@ -202,10 +223,13 @@ public struct TabItemView: View {
         // Elegant top accent indicator bar that stays neatly inside and respects curvature
         .overlay(
             VStack {
-                if isActive {
+                if isActive || document.tagColorHex != nil {
                     Capsule()
                         .fill(accentColor)
-                        .frame(width: 28, height: 2.2)
+                        .frame(
+                            width: isActive ? (document.tagColorHex != nil ? 34 : 28) : 22,
+                            height: isActive ? 2.5 : 1.8
+                        )
                         .padding(.top, 2)
                 }
                 Spacer()
@@ -215,14 +239,19 @@ public struct TabItemView: View {
         .overlay(
             RoundedRectangle(cornerRadius: 8, style: .continuous)
                 .stroke(
-                    isActive
-                        ? theme.borderSwiftUIColor.opacity(theme.isDark ? 0.75 : 0.85)
-                        : (isHovering ? theme.borderSwiftUIColor.opacity(0.3) : Color.clear),
+                    document.tagColorHex != nil
+                        ? accentColor.opacity(isActive ? 0.7 : 0.35)
+                        : (isActive
+                            ? theme.borderSwiftUIColor.opacity(theme.isDark ? 0.75 : 0.85)
+                            : (isHovering ? theme.borderSwiftUIColor.opacity(0.3) : Color.clear)),
                     lineWidth: 1
                 )
         )
         .contentShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
         .onHover { isHovering = $0 }
+        .simultaneousGesture(TapGesture(count: 2).onEnded {
+            onRename()
+        })
         .contextMenu {
             tabContextMenu
         }
@@ -262,6 +291,8 @@ public struct TabItemView: View {
 
     @ViewBuilder
     private var tabContextMenu: some View {
+        Button(loc("rename_tab") + "...") { onRename() }
+        Divider()
         Button(loc("close_tab")) { onClose() }
         Button(loc("close_other_tabs")) { onCloseOthers() }
         Button(loc("close_tabs_to_right")) { onCloseToTheRight() }
@@ -276,14 +307,23 @@ public struct TabItemView: View {
             }
             Divider()
         }
-        Menu(loc("color_tag")) {
-            Button(loc("none")) { document.tagColorHex = nil }
-            Button("Red") { document.tagColorHex = "#ff5f57" }
-            Button("Orange") { document.tagColorHex = "#fe942e" }
-            Button("Yellow") { document.tagColorHex = "#fdbc40" }
-            Button("Green") { document.tagColorHex = "#28c840" }
-            Button("Blue") { document.tagColorHex = "#528bff" }
-            Button("Purple") { document.tagColorHex = "#b362ff" }
+        Menu(loc("tab_color")) {
+            Button(loc("no_color")) { document.tagColorHex = nil }
+            Divider()
+            Button("🔴 Red") { document.tagColorHex = "#ff5f57" }
+            Button("🟠 Coral") { document.tagColorHex = "#fe942e" }
+            Button("🟡 Amber") { document.tagColorHex = "#fdbc40" }
+            Button("🟢 Emerald") { document.tagColorHex = "#28c840" }
+            Button("🟢 Teal") { document.tagColorHex = "#20c997" }
+            Button("🔵 Sky Blue") { document.tagColorHex = "#528bff" }
+            Button("🟣 Indigo") { document.tagColorHex = "#6366f1" }
+            Button("🟣 Purple") { document.tagColorHex = "#b362ff" }
+            Button("🌸 Pink") { document.tagColorHex = "#ec4899" }
+            Button("⚪ Gray") { document.tagColorHex = "#808080" }
+            Divider()
+            Button(loc("custom_color") + "...") {
+                onRename()
+            }
         }
     }
 

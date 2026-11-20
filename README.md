@@ -115,6 +115,10 @@
   - Cryptographic SHA-256 tamper-detection checksums (`CryptoKit`) on every snapshot, automatically pruning and rejecting corrupted recovery data (CWE-353 / CWE-354 defense).
   - Automatic snapshot cleanup upon clean document saving (`saveDocument`) or closing (`closeDocument`).
   - Native SwiftUI `CrashRecoverySheet` modal presentation upon app startup after an ungraceful incident (SIGKILL, crash, sudden power outage), offering one-click "Recover All", selective document restoration, content preview with line/byte metrics, and discard actions.
+- **Tab Renaming & Custom Tab Coloring Subsystem (`RenameTabSheet` & `NotepadTabBar`)**:
+  - Full tab and underlying file renaming via double-clicking tab, right-click context menu, and keyboard shortcut (`⇧⌘R`).
+  - Safety checks preventing filename collisions and automatic syntax lexer re-detection upon extension changes.
+  - 10 vibrant tab color swatches (Red, Coral, Amber, Emerald, Teal, Sky Blue, Indigo, Purple, Pink, Gray) and full native macOS `ColorPicker` custom hex support with harmonic background tinting and glowing top accent bars.
 - **Modal Dialog & Tab Icon Polish with Focus Ring Elimination (`ModalCloseButton`)**:
   - Completely eliminated the macOS AppKit blue focus ring / rectangular background artifact around dialog close icons by introducing `ModalCloseButton`.
   - Decoupled the visible glyph (`Image` with `.contentShape(Circle())`, `.onHover`, and `.onTapGesture`) from an invisible zero-size key equivalent receiver (`Button` with `.frame(width: 0, height: 0)`, `.opacity(0)`, `.focusable(false)`, and `.keyboardShortcut(.cancelAction)`).

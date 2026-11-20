@@ -83,6 +83,12 @@ NotepadMac v1.0.0 marks the initial major production release of the fast, lightw
   - Native SwiftUI `CrashRecoverySheet` modal presentation upon app launch whenever ungraceful termination or sudden crashes (SIGSEGV, SIGKILL, sudden power loss) leave pending snapshots on disk.
   - Features real-time content preview pane, byte and line statistics, individual checkbox selection, and one-click actions: **Recover All**, **Recover Selected**, **Discard Selected**, and **Discard All**.
   - Fully integrated with bilingual localization (`LocalizationManager`) in both English and Bahasa Indonesia.
+- **Tab Renaming & Custom Tab Coloring Subsystem (`RenameTabSheet` & `NotepadTabBar`)**:
+  - Dedicated modal sheet (`RenameTabSheet`) allowing seamless renaming of untitled documents and physical disk files.
+  - Triggered via Tab right-click context menu ("Rename Tab..."), double-clicking on any tab title, or menu bar / keyboard shortcut (`⇧⌘R`).
+  - Atomic filesystem rename with duplicate file collision detection and immediate Lexilla language re-detection when changing extensions.
+  - Full tab coloring palette featuring 10 vibrant presets (Red, Coral, Amber, Emerald, Teal, Sky Blue, Indigo, Purple, Pink, Gray) plus native macOS `ColorPicker` custom hex support.
+  - Visual tab styling enhancements: glowing top indicator capsule, soft color tinting across active and inactive states, tinted border stroke, and dedicated color dot indicator.
 - **7 Handcrafted Developer Color Themes**:
   - SparkNotePad Light, SparkNotePad Dark, One Dark Pro (Default Dark), Dracula, Monokai, GitHub Light, and Solarized Light.
   - Automatic BGR Scintilla color calculation and SwiftUI color-space synchronizers.

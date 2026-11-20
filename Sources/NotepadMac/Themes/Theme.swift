@@ -508,6 +508,11 @@ extension Color {
     public init(hex: String) {
         self.init(NSColor(hex: hex))
     }
+
+    /// Formats Color into standard #RRGGBB uppercase hex string
+    public func toHex() -> String {
+        NSColor(self).toHex()
+    }
 }
 
 public struct ProminentButtonStyle: ButtonStyle {
@@ -569,6 +574,15 @@ extension NSColor {
         }
 
         self.init(red: redVal, green: greenVal, blue: blueVal, alpha: alphaVal)
+    }
+
+    /// Formats NSColor into standard #RRGGBB uppercase hex string
+    public func toHex() -> String {
+        guard let rgb = usingColorSpace(.sRGB) else { return "#808080" }
+        let redInt = Int(round(rgb.redComponent * 255.0))
+        let greenInt = Int(round(rgb.greenComponent * 255.0))
+        let blueInt = Int(round(rgb.blueComponent * 255.0))
+        return String(format: "#%02X%02X%02X", redInt, greenInt, blueInt)
     }
 
     /// Converts NSColor to BGR integer representation expected by Scintilla

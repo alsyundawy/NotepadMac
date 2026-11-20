@@ -85,6 +85,7 @@ extension Notification.Name {
     public static let notepadShowAbout = Notification.Name("notepadShowAbout")
     public static let notepadShowTools = Notification.Name("notepadShowTools")
     public static let notepadShowCheckUpdate = Notification.Name("notepadShowCheckUpdate")
+    public static let notepadRenameTab = Notification.Name("notepadRenameTab")
     public static let notepadQuitApp = Notification.Name("notepadQuitApp")
 }
 

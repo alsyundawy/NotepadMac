@@ -54,6 +54,10 @@ CI/CD Status        : 100% Passing across all release matrices, MegaLinter & Cod
   - Cryptographic SHA-256 tamper detection on snapshot storage and loading (CWE-353 / CWE-354).
   - Automatic snapshot pruning upon clean document save or closure.
   - Native SwiftUI `CrashRecoverySheet` modal dialog on startup after an ungraceful crash or sudden power failure, featuring content preview, SHA-256 verification status, and one-click restoration or discard.
+- **Tab Renaming & Custom Tab Coloring Subsystem (`RenameTabSheet` & `NotepadTabBar`)**:
+  - Seamless tab and physical file renaming via `RenameTabSheet`, tab double-click, context menu, and `⇧⌘R`.
+  - Comprehensive collision check, POSIX atomic rename, and automatic Lexilla highlighter adjustment on extension change.
+  - Full tab coloring palette with 10 presets and native `ColorPicker` custom hex support, featuring dynamic tab background tinting, glowing accent capsules, and color badges.
 - **Modal Dialog & Tab Icon Polish with Focus Ring Elimination (`ModalCloseButton`)**:
   - Completely eliminated the macOS AppKit blue focus ring / rectangular background artifact around dialog close icons by introducing `ModalCloseButton`.
   - Decoupled the visible glyph (`Image` with `.contentShape(Circle())`, `.onHover`, and `.onTapGesture`) from an invisible zero-size key equivalent receiver (`Button` with `.frame(width: 0, height: 0)`, `.opacity(0)`, `.focusable(false)`, and `.keyboardShortcut(.cancelAction)`).

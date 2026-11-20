@@ -690,5 +690,72 @@ final class NotepadMacTests: XCTestCase {
         recoveryManager.clearAllSnapshots()
         XCTAssertEqual(recoveryManager.loadPendingSnapshots().count, 0)
     }
+
+    // MARK: - Pillar 4 & 14: Tab Rename and Tab Color Tests
+
+    func testRenameUntitledDocument() {
+        let manager = DocumentManager()
+        let doc = manager.newDocument(title: "New 99", content: "let x = 42")
+        manager.promptRenameDocument(doc)
+        manager.renameTabInput = "CustomScript.swift"
+        let success = manager.applyRenameDocument()
+        XCTAssertTrue(success)
+        XCTAssertEqual(doc.title, "CustomScript.swift")
+        XCTAssertEqual(doc.language.id, "swift")
+        XCTAssertNil(manager.renameTabError)
+    }
+
+    func testRenameEmptyTitleRejected() {
+        let manager = DocumentManager()
+        let doc = manager.newDocument(title: "DraftDoc", content: "")
+        manager.promptRenameDocument(doc)
+        manager.renameTabInput = "   "
+        let success = manager.applyRenameDocument()
+        XCTAssertFalse(success)
+        XCTAssertNotNil(manager.renameTabError)
+        XCTAssertEqual(doc.title, "DraftDoc")
+    }
+
+    func testRenameDiskDocument() {
+        let tempDir = FileManager.default.temporaryDirectory
+        let oldURL = tempDir.appendingPathComponent("old_name_\(UUID().uuidString).txt")
+        let content = "Hello disk rename"
+        try? content.data(using: .utf8)?.write(to: oldURL)
+
+        let manager = DocumentManager()
+        manager.openDocument(from: oldURL)
+        guard let doc = manager.documents.first(where: { $0.fileURL == oldURL }) else {
+            XCTFail("Failed to open temp document")
+            return
+        }
+
+        let newFileName = "renamed_\(UUID().uuidString).txt"
+        let expectedNewURL = tempDir.appendingPathComponent(newFileName)
+
+        manager.promptRenameDocument(doc)
+        manager.renameTabInput = newFileName
+        let success = manager.applyRenameDocument()
+
+        XCTAssertTrue(success)
+        XCTAssertEqual(doc.title, newFileName)
+        XCTAssertEqual(doc.fileURL?.path, expectedNewURL.path)
+        XCTAssertTrue(FileManager.default.fileExists(atPath: expectedNewURL.path))
+        XCTAssertFalse(FileManager.default.fileExists(atPath: oldURL.path))
+
+        // Cleanup
+        try? FileManager.default.removeItem(at: expectedNewURL)
+    }
+
+    func testTabColorPreservationAndHex() {
+        let manager = DocumentManager()
+        let doc = manager.newDocument(title: "ColorDoc", content: "")
+        XCTAssertNil(doc.tagColorHex)
+
+        manager.setTabColor(for: doc, colorHex: "#28C840")
+        XCTAssertEqual(doc.tagColorHex, "#28C840")
+
+        let testColor = NSColor(hex: "#FF5F57")
+        XCTAssertEqual(testColor.toHex(), "#FF5F57")
+    }
 }
 #endif

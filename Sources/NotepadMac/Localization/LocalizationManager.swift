@@ -280,7 +280,22 @@ public final class LocalizationManager: ObservableObject {
             "recovered_badge": "Auto-Snapshot",
             "untitled_document": "Untitled Document",
             "last_saved": "Last modified",
-            "original_file": "Original path"
+            "original_file": "Original path",
+
+            // Tab Management & Coloring
+            "rename_tab": "Rename Tab",
+            "rename_tab_title": "Rename Tab",
+            "rename_tab_subtitle": "Change the display name or disk filename for this document.",
+            "document_name": "Document Name",
+            "original_location": "Original Location",
+            "tab_color": "Tab Color",
+            "custom_color": "Custom Color",
+            "no_color": "No Color",
+            "choose_color": "Choose Color",
+            "file_rename_warning": "Renaming this tab will also rename the file on your disk.",
+            "title_empty_error": "Document name cannot be empty.",
+            "file_exists_error": "A file with this name already exists in this folder.",
+            "rename_failed_error": "Failed to rename file: %@"
         ],
         .indonesian: [
             // App & General
@@ -480,7 +495,22 @@ public final class LocalizationManager: ObservableObject {
             "recovered_badge": "Draf Otomatis",
             "untitled_document": "Dokumen Tanpa Judul",
             "last_saved": "Terakhir diubah",
-            "original_file": "Lokasi berkas asli"
+            "original_file": "Lokasi berkas asli",
+
+            // Tab Management & Coloring
+            "rename_tab": "Ganti Nama Tab",
+            "rename_tab_title": "Ganti Nama Tab",
+            "rename_tab_subtitle": "Ubah nama tab atau nama berkas untuk dokumen ini.",
+            "document_name": "Nama Dokumen",
+            "original_location": "Lokasi Berkas Asli",
+            "tab_color": "Warna Tab",
+            "custom_color": "Warna Kustom",
+            "no_color": "Tanpa Warna",
+            "choose_color": "Pilih Warna",
+            "file_rename_warning": "Mengganti nama tab ini juga akan mengubah nama berkas di penyimpanan disk Anda.",
+            "title_empty_error": "Nama dokumen tidak boleh kosong.",
+            "file_exists_error": "Berkas dengan nama tersebut sudah ada di folder ini.",
+            "rename_failed_error": "Gagal mengganti nama berkas: %@"
         ]
     ]
 }

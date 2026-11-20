@@ -58,6 +58,13 @@ public final class DocumentManager: ObservableObject, EditorActionDelegate {
     @Published public var isCrashRecoveryPresented: Bool = false
     @Published public var pendingRecoverySnapshots: [RecoverySnapshot] = []
 
+    // Rename Tab & Coloring state
+    @Published public var isRenameTabPresented: Bool = false
+    @Published public var documentToRename: EditorDocument?
+    @Published public var renameTabInput: String = ""
+    @Published public var renameTabError: String?
+    @Published public var renameTabColorHex: String?
+
     // Formatting & Indentation Preferences
     @Published public var tabIndentSpaces: Int = 4
     @Published public var useSpacesForTab: Bool = true
@@ -561,5 +568,92 @@ public final class DocumentManager: ObservableObject, EditorActionDelegate {
         recoveryManager.clearAllSnapshots()
         pendingRecoverySnapshots.removeAll()
         isCrashRecoveryPresented = false
+    }
+
+    // MARK: - Tab Rename & Color Operations
+
+    public func promptRenameDocument(_ doc: EditorDocument) {
+        documentToRename = doc
+        renameTabInput = doc.title
+        renameTabError = nil
+        renameTabColorHex = doc.tagColorHex
+        isRenameTabPresented = true
+    }
+
+    public func promptRenameActiveDocument() {
+        guard let doc = activeDocument else { return }
+        promptRenameDocument(doc)
+    }
+
+    public func setTabColor(for doc: EditorDocument, colorHex: String?) {
+        doc.tagColorHex = colorHex
+    }
+
+    @discardableResult
+    public func applyRenameDocument() -> Bool {
+        guard let doc = documentToRename else { return false }
+        let trimmed = renameTabInput.trimmingCharacters(in: .whitespacesAndNewlines)
+
+        guard !trimmed.isEmpty else {
+            renameTabError = loc("title_empty_error")
+            return false
+        }
+
+        // Apply updated color tag if modified
+        doc.tagColorHex = renameTabColorHex
+
+        // If title hasn't changed, simply close
+        if trimmed == doc.title {
+            isRenameTabPresented = false
+            return true
+        }
+
+        // If document is backed by a physical file on disk, rename the actual file
+        if let currentURL = doc.fileURL {
+            let directory = currentURL.deletingLastPathComponent()
+            let newURL = directory.appendingPathComponent(trimmed)
+
+            if newURL.path != currentURL.path && FileManager.default.fileExists(atPath: newURL.path) {
+                renameTabError = loc("file_exists_error")
+                return false
+            }
+
+            do {
+                try FileManager.default.moveItem(at: currentURL, to: newURL)
+                doc.fileURL = newURL
+                doc.title = trimmed
+                doc.language = LexerRegistry.shared.detectLanguage(
+                    forFilename: trimmed,
+                    content: doc.content
+                )
+
+                // Update recovery snapshot to reflect new title/path
+                recoveryManager.removeSnapshot(for: doc.id)
+                if doc.isModified {
+                    recoveryManager.saveSnapshot(for: doc)
+                }
+
+                isRenameTabPresented = false
+                return true
+            } catch {
+                renameTabError = String(format: loc("rename_failed_error"), error.localizedDescription)
+                return false
+            }
+        } else {
+            // Untitled in-memory document
+            doc.title = trimmed
+            doc.language = LexerRegistry.shared.detectLanguage(
+                forFilename: trimmed,
+                content: doc.content
+            )
+
+            // Update recovery snapshot if modified
+            if doc.isModified {
+                recoveryManager.saveSnapshot(for: doc)
+            }
+
+            isRenameTabPresented = false
+            return true
+        }
     }
 }

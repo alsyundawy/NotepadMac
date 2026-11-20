@@ -78,6 +78,11 @@ struct FileMenuCommands: Commands {
             }
             .keyboardShortcut("w", modifiers: [.command, .option])
 
+            Button(loc("rename_tab") + "...") {
+                NotificationCenter.default.post(name: .notepadRenameTab, object: nil)
+            }
+            .keyboardShortcut("r", modifiers: [.command, .shift])
+
             Divider()
 
             Button("Save") {

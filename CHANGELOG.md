@@ -7,9 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-## [1.0.0] - 2026-11-19
+## [1.0.0] - 2026-11-21
 
-### 🌟 Release: Production Native macOS Text Editor (Scintilla Cocoa 5.6.9, Lexilla 5.5.5, Embedded Lua 5.5.1, Developer & Security Tools Hub, Modern Find/Replace/Mark Hub, Data Loss Prevention Guard, Focus Ring Elimination & Universal Binary)
+### 🌟 Release: Production Native macOS Text Editor (Scintilla Cocoa 5.6.9, Lexilla 5.5.5, Embedded Lua 5.5.1, Developer & Security Tools Hub, Modern Find/Replace/Mark Hub, Data Loss Prevention Guard, Focus Ring Elimination, Autosave Snapshot & Crash Recovery, Tab Rename & Custom Color & Universal Binary)
 
 NotepadMac v1.0.0 marks the initial major production release of the fast, lightweight, and modern native macOS desktop text editor powered by Scintilla Cocoa 5.6.9, Lexilla 5.5.5, SwiftUI, AppKit, and an embedded sandboxed Lua 5.5.1 scripting engine.
 

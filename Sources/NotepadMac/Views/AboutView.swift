@@ -160,6 +160,8 @@ public struct AboutView: View {
                     FeatureCheckRow(text: "7 handcrafted developer color themes with dark/light auto-sync")
                     FeatureCheckRow(text: "Native Format menu with case conversions and block indent/outdent")
                     FeatureCheckRow(text: "Multi-tab document manager with dirty tracking, tab tagging, and zero focus ring artifacts")
+                    FeatureCheckRow(text: "Autosave snapshot daemon & crash recovery manager with SHA-256 integrity")
+                    FeatureCheckRow(text: "Tab renaming (untitled & disk files) and custom tab coloring with 10 presets & ColorPicker")
                     FeatureCheckRow(text: "Embedded sandboxed Lua 5.5.1 scripting console with direct editor.* APIs")
                 }
             }
@@ -220,6 +222,26 @@ public struct AboutView: View {
                     description: (
                         "Pioneered the classic desktop tabbed editing paradigm, " +
                         "Find/Replace/Mark indicators, and line bookmarking workflows."
+                    )
+                )
+
+                CreditBlockView(
+                    name: "Notepad--",
+                    author: "cxasm & Contributors",
+                    licenseName: "GPL-3.0-or-later",
+                    description: (
+                        "Cross-platform desktop text editor inspiring clean, fast " +
+                        "native C++/Qt and Cocoa architecture and modern utility tools."
+                    )
+                )
+
+                CreditBlockView(
+                    name: "Notepad2 / Notepad3 / Notepad4",
+                    author: "Florian Balmer, Kai Liu, Rizonesoft, Zufuliu",
+                    licenseName: "BSD-3-Clause",
+                    description: (
+                        "Pioneered lightweight Scintilla desktop editor optimizations, " +
+                        "encoding auto-detection, and streamlined developer ergonomics."
                     )
                 )
 

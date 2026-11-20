@@ -4,8 +4,9 @@
 ================================================================================
 Release Version     : 1.0.0 (Native Scintilla Cocoa 5.6.9, Lexilla 5.5.5, Embedded Lua 5.5.1,
                       Developer & Security Tools Hub, Modern Find/Replace/Mark Hub,
-                      Data Loss Prevention Guard, Focus Ring Elimination & 2025–2026 CVE Audit)
-Release Date        : 2026-11-19
+                      Data Loss Prevention Guard, Focus Ring Elimination,
+                      Autosave Snapshot & Crash Recovery, Tab Rename & Color & 2025–2026 CVE Audit)
+Release Date        : 2026-11-21
 Lead Maintainer     : Harry Dertin Sutisna Alsyundawy (@alsyundawy)
 Organization        : ALSYUNDAWY IT SOLUTION (https://alsyundawy.com)
 Repository          : https://github.com/alsyundawy/NotepadMac
@@ -188,6 +189,21 @@ CI/CD Status        : 100% Passing across all release matrices, MegaLinter & Cod
 - Persists user language preference in `UserDefaults` (`notepad_app_language`) with fallback to macOS system preferred languages.
 - Provides immediate reactivity across SwiftUI menus, buttons, status bars, and modal dialogs via `loc(key)` helper.
 
+### 3.8 Autosave Snapshot & Crash Recovery Subsystem (`AutosaveRecoveryManager` & `CrashRecoverySheet`)
+
+- Decoupled background timer daemon executing every 10 seconds across all modified in-memory Scintilla buffers.
+- Enforces strict POSIX `0700` directory and `0600` file permissions in `~/Library/Application Support/NotepadMac/Recovery/` (CWE-732).
+- Verifies SHA-256 cryptographic integrity checksums (`CryptoKit`) on save and load, immediately discarding tampered or incomplete snapshots (CWE-353 / CWE-354).
+- Automatic snapshot cleanup on clean document save and tab closure.
+- Native modal sheet (`CrashRecoverySheet`) on startup after unexpected terminations with preview, byte/line metrics, and one-click recovery.
+
+### 3.9 Tab Renaming & Custom Tab Coloring Subsystem (`RenameTabSheet` & `NotepadTabBar`)
+
+- Modal dialog (`RenameTabSheet`) supporting inline renaming of untitled documents and physical disk files.
+- Duplicate filename collision detection preventing accidental data overwrites in the target folder.
+- Dynamic syntax highlighter re-detection when changing file extensions during rename.
+- Tab color customization with 10 presets and macOS `ColorPicker` custom hex support, featuring dynamic tab background tinting, glowing accent capsules, and color badges.
+
 ---
 
 ## 4. Security & Hardening Review (2025–2026 Analysis)
@@ -227,4 +243,6 @@ CI/CD Status        : 100% Passing across all release matrices, MegaLinter & Cod
 - **Lua Programming Language (v5.5.1)** — Roberto Ierusalimschy, Waldemar Celes, Luiz Henrique de Figueiredo / PUC-Rio (MIT License).
 - **SparkNotePad** — Harry Dertin Sutisna Alsyundawy & ALSYUNDAWY IT SOLUTION (GPLv3).
 - **Notepad++** — Don Ho & Notepad++ Contributors (GPLv3).
-- **Apple Inc.** — AppKit, SwiftUI, and macOS Platform SDKs.
+- **Notepad--** — cxasm & Contributors (GPLv3).
+- **Notepad2 / Notepad3 / Notepad4** — Florian Balmer, Kai Liu, Rizonesoft, Zufuliu (BSD-3-Clause).
+- **Apple Inc.** — AppKit, SwiftUI, CryptoKit, and macOS Platform SDKs.

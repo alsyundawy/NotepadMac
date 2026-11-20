@@ -69,7 +69,7 @@
 >
 > 1. **Scintilla & Lexilla Core Heritage**: NotepadMac is built upon the official Cocoa port of Scintilla 5.6.9 and Lexilla 5.5.5, authored by Neil Hodgson. Scintilla and Lexilla are distributed under the Historical Permission Notice and Disclaimer (HPND) license, which is fully compatible with GNU General Public License v3.0.
 > 2. **Embedded Lua Automation Core**: Embedded automation is powered by official Lua 5.5.1 under the MIT License by PUC-Rio.
-> 3. **Design & Ergonomics Heritage**: NotepadMac incorporates UI paradigms, theme palettes, and toolset workflows inspired by **SparkNotePad** (by Harry Dertin Sutisna Alsyundawy) and **Notepad++** (by Don Ho).
+> 3. **Design & Ergonomics Heritage**: NotepadMac incorporates UI paradigms, theme palettes, and toolset workflows inspired by **SparkNotePad** (by Harry Dertin Sutisna Alsyundawy), **Notepad++** (by Don Ho), **Notepad--** (by cxasm), and **Notepad2 / Notepad3 / Notepad4** (by Florian Balmer, Kai Liu, Rizonesoft, Zufuliu).
 > 4. **License Compliance**: NotepadMac is licensed under the **GNU General Public License v3.0 or later (GPL-3.0-or-later)**. All original author copyrights, notices, and permissive third-party software attributions are preserved in full.
 
 ---
@@ -200,11 +200,11 @@ NotepadMac is engineered with memory safety and modern macOS sandboxing invarian
 
 ## Downloads & Release Artifacts
 
-| Platform            | Target Architecture                        | Format | Artifact File                                                                      |  Checksum Type  |
-| :------------------ | :----------------------------------------- | :----: | :--------------------------------------------------------------------------------- | :-------------: |
-| **macOS Universal** | `arm64` (Apple Silicon) + `x86_64` (Intel) | `.dmg` | [NotepadMac-1.0.0-macOS-Universal.dmg](build/NotepadMac-1.0.0-macOS-Universal.dmg) | CRC32 / SHA-256 |
-| **macOS Universal** | `arm64` (Apple Silicon) + `x86_64` (Intel) | `.zip` | [NotepadMac-1.0.0-macOS-Universal.zip](build/NotepadMac-1.0.0-macOS-Universal.zip) |     SHA-256     |
-| **macOS Bundle**    | `arm64` (Apple Silicon) + `x86_64` (Intel) | `.app` | [NotepadMac.app](build/NotepadMac.app)                                             |   Mach-O Fat    |
+| Platform            | Target Architecture                        | Format | Artifact File                                                                      |  Size  | SHA-256 Checksum                                                   |
+| :------------------ | :----------------------------------------- | :----: | :--------------------------------------------------------------------------------- | :----: | :----------------------------------------------------------------- |
+| **macOS Universal** | `arm64` (Apple Silicon) + `x86_64` (Intel) | `.dmg` | [NotepadMac-1.0.0-macOS-Universal.dmg](build/NotepadMac-1.0.0-macOS-Universal.dmg) | 7.5 MB | `ac08e31aa97933dfc714bfffea615574b1217ee0a642077dd881db544b766968` |
+| **macOS Universal** | `arm64` (Apple Silicon) + `x86_64` (Intel) | `.zip` | [NotepadMac-1.0.0-macOS-Universal.zip](build/NotepadMac-1.0.0-macOS-Universal.zip) | 6.8 MB | `7e0290bd6d99a0ccdbf9ffa1722c06ab8c0b3817b5d3882a348e305d92df15ea` |
+| **macOS Bundle**    | `arm64` (Apple Silicon) + `x86_64` (Intel) | `.app` | [NotepadMac.app](build/NotepadMac.app)                                             |   —    | Universal Mach-O Fat Binary                                        |
 
 ---
 
@@ -242,7 +242,9 @@ cd NotepadMac
 - **Lua Programming Language (v5.5.1)** — Roberto Ierusalimschy, Waldemar Celes, Luiz Henrique de Figueiredo / PUC-Rio (MIT License).
 - **SparkNotePad** — Harry Dertin Sutisna Alsyundawy & ALSYUNDAWY IT SOLUTION (GPLv3).
 - **Notepad++** — Don Ho & Notepad++ Contributors (GPLv3).
-- **Apple Inc.** — AppKit, SwiftUI, and macOS Platform SDKs.
+- **Notepad--** — cxasm & Contributors (GPLv3).
+- **Notepad2 / Notepad3 / Notepad4** — Florian Balmer, Kai Liu, Rizonesoft, Zufuliu (BSD-3-Clause).
+- **Apple Inc.** — AppKit, SwiftUI, CryptoKit, and macOS Platform SDKs.
 
 ---
 
